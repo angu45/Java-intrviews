@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Syntax Rules & Program Structure: A Complete Beginner's Guide | InterviewHub</title>
+    <meta name='description' content='Master Java syntax rules and basic program structure. Learn about Java keywords, access modifiers, and naming conventions in this comprehensive developer's guide for 2026.'>
+    <meta name='keywords' content='Java syntax rules, Java program structure, Java keywords and modifiers, Java naming conventions, Java identifiers, public static void main explained, Java access modifiers, Java non-access modifiers, Java coding standards, Java reserved words, Java syntax guide for beginners, Java main method syntax.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+h1>Java Syntax and Program Structure: The Definitive Developer’s Guide</h1>
+
+<p>Mastering Java starts with understanding its grammar. Just as English has rules for sentence structure, Java has strict syntax rules that dictate how code must be written and organized. For the page <code>/Pages/java-syntax-questions.html</code>, we will dive deep into the building blocks of Java code, from the smallest identifiers to the overall architecture of a professional Java application.</p>
+
+<p>Java is a strictly typed, case-sensitive language. This means that every character, space, and brace matters. Writing clean, syntactically correct code is not just about making the program run; it is about making the code maintainable, scalable, and readable for other developers. In this guide, we will break down the fundamental rules, keywords, and structures that define Java programming.</p>
+
+<h2>1. The Fundamental Rules of Java Syntax</h2>
+<p>Before writing a single line of code, every developer must memorize the core syntax rules of Java. These rules are non-negotiable and will cause compilation errors if ignored.</p>
+
+<ul>
+<li><strong>Case Sensitivity:</strong> Java is case-sensitive. This means that <code>myVariable</code>, <code>MyVariable</code>, and <code>MYVARIABLE</code> are three completely different entities in the eyes of the compiler.</li>
+<li><strong>Class Names:</strong> By convention, class names should always start with an uppercase letter. If the name consists of multiple words, use CamelCase (e.g., <code>public class MyFirstJavaProgram</code>).</li>
+<li><strong>Method Names:</strong> Methods should always start with a lowercase letter. If the name contains multiple words, use lowerCamelCase (e.g., <code>public void calculateTotalSum()</code>).</li>
+<li><strong>File Name:</strong> The name of the Java file <strong>must</strong> exactly match the name of the public class within that file, followed by the <code>.java</code> extension.</li>
+<li><strong>The main Method:</strong> Every standalone Java application must contain the <code>public static void main(String[] args)</code> method, which serves as the entry point for program execution.</li>
+</ul>
+
+<h2>2. Basic Structure of a Java Program</h2>
+<p>A Java program follows a hierarchical structure. It starts with a package declaration, followed by imports, the class definition, and finally, variables and methods.</p>
+
+<h3>Example of a Standard Java Program</h3>
+<p>Below is a visual representation of how a basic Java class is structured. Notice the placement of curly braces and semicolons.</p>
+
+<pre>
+// 1. Package Declaration
+package com.tutorial.basics;
+
+// 2. Import Statements
+import java.util.Scanner;
+
+// 3. Class Definition
+public class SyntaxDemo {
+
+// 4. Instance Variables (State)
+private String message = &quot;Welcome to Java Syntax&quot;;
+
+// 5. The Main Method (Entry Point)
+public static void main(String[] args) {
+    
+    // 6. Local Variables
+    int version = 21;
+    
+    // 7. Statements and Logic
+    System.out.println(&quot;Hello World!&quot;);
+    System.out.println(&quot;Current Java Version: &quot; + version);
+}
+}
+</pre>
+
+<p>In the example above, every statement ends with a <strong>semicolon (;)</strong>. Braces <code>{}</code> are used to define the boundaries of classes and methods. Forgetting a single semicolon is the most common cause of "Syntax Error" messages for beginners.</p>
+
+<h2>3. Java Keywords: The Reserved Vocabulary</h2>
+<p>Keywords are reserved words in Java that have a specific meaning to the compiler. You cannot use these words as identifiers (names for variables, classes, or methods).</p>
+
+<p>Java has over 50 reserved keywords. Using them incorrectly will lead to immediate compilation failure. Below is a table of some of the most commonly used Java keywords and their functions.</p>
+
+<table>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+<th>Category</th>
+</tr>
+<tr>
+<td><strong>public</strong></td>
+<td>An access modifier making the code visible to all other classes.</td>
+<td>Access Modifier</td>
+</tr>
+<tr>
+<td><strong>class</strong></td>
+<td>Used to declare a new class.</td>
+<td>Declaration</td>
+</tr>
+<tr>
+<td><strong>static</strong></td>
+<td>Indicates that a member belongs to the class, not an instance.</td>
+<td>Modifier</td>
+</tr>
+<tr>
+<td><strong>void</strong></td>
+<td>Indicates that a method does not return a value.</td>
+<td>Return Type</td>
+</tr>
+<tr>
+<td><strong>new</strong></td>
+<td>Used to create new objects in memory.</td>
+<td>Operator</td>
+</tr>
+<tr>
+<td><strong>this</strong></td>
+<td>Refers to the current object instance.</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td><strong>return</strong></td>
+<td>Exits from a method and optionally returns a value.</td>
+<td>Control Flow</td>
+</tr>
+</table>
+
+<h2>4. Understanding Modifiers</h2>
+<p>Modifiers are keywords added to definitions to change their meaning. In Java, they are divided into two main categories: <strong>Access Modifiers</strong> and <strong>Non-Access Modifiers</strong>.</p>
+
+<h3>Access Modifiers</h3>
+<p>Access modifiers control the visibility and accessibility of classes, constructors, variables, and methods.</p>
+<ul>
+<li><strong>public:</strong> The class or member is accessible from any other class in the Java environment.</li>
+<li><strong>private:</strong> The member is only accessible within the class it is declared in. This is key for data encapsulation.</li>
+<li><strong>protected:</strong> Accessible within the same package and by subclasses in different packages.</li>
+<li><strong>Default (No modifier):</strong> Accessible only within the same package.</li>
+</ul>
+
+<h3>Non-Access Modifiers</h3>
+<p>These modifiers provide specific functionalities rather than controlling access levels.</p>
+<ul>
+<li><strong>final:</strong> When applied to a variable, the value cannot be changed. When applied to a class, it cannot be inherited.</li>
+<li><strong>abstract:</strong> Used to create abstract classes and methods that must be implemented by subclasses.</li>
+<li><strong>synchronized:</strong> Used in multi-threading to ensure that only one thread accesses a block of code at a time.</li>
+</ul>
+
+<h2>5. Java Identifiers and Naming Rules</h2>
+<p>Identifiers are the names given to classes, variables, and methods. While you have the freedom to name them, you must follow these syntax rules:</p>
+<ol>
+<li>Identifiers must start with a letter (A-Z or a-z), a currency character ($), or an underscore (_).</li>
+<li>After the first character, identifiers can have any combination of characters and numbers.</li>
+<li>A keyword cannot be used as an identifier.</li>
+<li>Identifiers are case-sensitive.</li>
+<li>Whitespace is not allowed within an identifier name.</li>
+</ol>
+
+<h2>6. Comments in Java Syntax</h2>
+<p>Comments are ignored by the compiler and are used to explain the code's logic. Good syntax includes proper documentation.</p>
+<ul>
+<li><strong>Single-line comment:</strong> Starts with <code>//</code>.</li>
+<li><strong>Multi-line comment:</strong> Starts with <code>/</code> and ends with <code>/</code>.</li>
+<li><strong>Documentation comment:</strong> Starts with <code>/**</code> and ends with <code>*/</code>. These are used by the Javadoc tool to create HTML documentation.</li>
+</ul>
+
+<h2>7. Frequently Asked Questions (FAQ) on Java Syntax</h2>
+
+<h3>Q1. Why is the 'main' method always static?</h3>
+<p>The <code>main</code> method is static so that the JVM can call it without having to create an instance (object) of the class first. Since the <code>main</code> method is the starting point, no objects exist when the program begins.</p>
+
+<h3>Q2. Can a Java file have more than one public class?</h3>
+<p>No. A Java file can have multiple classes, but only <strong>one</strong> can be public. Furthermore, the filename must match the name of that single public class.</p>
+
+<h3>Q3. What happens if I forget the 'String[] args' in the main method?</h3>
+<p>The program will compile successfully, but the JVM will not recognize it as the entry point. You will receive a "Main method not found" error at runtime.</p>
+
+<h3>Q4. Is 'goto' a keyword in Java?</h3>
+<p>Yes, <code>goto</code> is a reserved keyword in Java, but it is currently not used. It was reserved to prevent developers from using it as an identifier, as it is generally considered bad practice in structured programming.</p>
+
+<h3>Q5. What is the difference between a Statement and an Expression?</h3>
+<p>An <strong>expression</strong> is a construct that evaluates to a single value (e.g., <code>5 + 2</code>). A <strong>statement</strong> is a complete unit of execution that usually ends with a semicolon (e.g., <code>int x = 5 + 2;</code>).</p>
+
+<h2>Conclusion</h2>
+<p>Java syntax is the foundation upon which all complex applications are built. By adhering to naming conventions, understanding the role of access modifiers, and respecting reserved keywords, you ensure your code is "compiler-friendly." As you progress to more advanced topics like Object-Oriented Programming (OOP) or Exception Handling, these syntax rules will remain the constant framework that keeps your logic organized and functional.</p>
+
+<p>For more practice, try writing a simple class that utilizes different access modifiers and see how the compiler reacts when you intentionally break the rules. Mastering syntax is the first step toward becoming a professional Java developer.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
