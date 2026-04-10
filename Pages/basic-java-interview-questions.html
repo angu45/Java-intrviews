@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Basic Java Interview Questions and Answers for Beginners (Full Guide) | InterviewHub</title>
+    <meta name='description' content='Master your first interview with these Top Java Interview Questions for Freshers. Covering JDK vs JRE, JVM, Memory Management, and Basic Syntax. Start now!Java interview questions for freshers ​Basic Java interview questions ​Java fundamentals for interview ​Core Java questions for beginners'>
+    <meta name='keywords' content='Java technical interview questions, Java basic coding questions, Java basic concepts for freshers, JDK JRE JVM differences for interview, Java theory questions for freshers, Java interview questions for freshers, Basic Java interview questions, Java fundamentals for interview, Core Java questions for beginners'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">
+          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="/">Home</a>
+        <a href="/java-interview-questions.html">Java</a>
+        <a href="/oop-interview-questions.html">OOP</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+        <button id="menu-btn" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+    <main class='main-content'>
+Java Interview Questions for Freshers: Your Complete Guide to Success
+​<p>Starting a career in software development is an exciting journey, and for many, Java is the gateway to the professional coding world. As a fresher, the technical interview can feel intimidating, but the secret to cracking it lies in having a rock-solid foundation. This guide covers the most essential Java interview questions specifically tailored for beginners, explaining the "why" behind the "what."</p>
+​<h2>1. Introduction to the Java Ecosystem</h2>
+​<p>Before diving into complex code, interviewers want to see if you understand the environment in which Java operates. Java isn't just a language; it’s a platform.</p>
+​<h3>What is Java and why is it called a Platform Independent language?</h3>
+<p>Java is a high-level, object-oriented programming language developed by Sun Microsystems. Its most famous feature is "Write Once, Run Anywhere" (WORA). This is possible because Java does not compile your code directly into machine-specific code. Instead, it compiles it into an intermediate form called <strong>Bytecode</strong>.</p>
+<p>When you run a Java program, the Java Virtual Machine (JVM) on that specific operating system interprets the bytecode. Since every OS has its own version of JVM, the same bytecode can run on Windows, Linux, or macOS without any changes to the source code.</p>
+​<h3>Explain the difference between JDK, JRE, and JVM.</h3>
+<p>This is a classic "fresher" question to test your fundamental knowledge of the Java setup:</p>
+<ul>
+<li><strong>JVM (Java Virtual Machine):</strong> It is the heart of Java. It is responsible for loading, verifying, and executing the bytecode. It is a runtime instance created when you run a Java program.</li>
+<li><strong>JRE (Java Runtime Environment):</strong> Think of this as a package that provides the minimum requirements to execute a Java application. It includes the JVM plus the standard libraries (JAR files) needed to run the code.</li>
+<li><strong>JDK (Java Development Kit):</strong> This is the full toolbox. It contains the JRE plus development tools like the compiler (javac) and debugger. If you want to write and compile code, you need the JDK.</li>
+</ul>
+​<h2>2. Core Language Fundamentals</h2>
+​<p>Once you’ve explained the architecture, the interviewer will likely move toward the syntax and rules of the language itself.</p>
+​<h3>Why is the 'main' method static in Java?</h3>
+<p>The signature <code>public static void main(String[] args)</code> is the entry point of any Java application. The reason it is declared as <strong>static</strong> is that the JVM needs to call this method to start the program before any objects are created. If it weren't static, the JVM would have to guess how to instantiate your class, which would be inefficient and complicated.</p>
+​<h3>What are the different types of variables in Java?</h3>
+<p>In Java, variables are categorized based on where they are declared:</p>
+<ul>
+<li><strong>Local Variables:</strong> Declared inside a method or block. They are only visible within that method and are destroyed once the method finishes.</li>
+<li><strong>Instance Variables:</strong> Declared inside a class but outside any method. They are specific to an object (instance) of the class.</li>
+<li><strong>Static (Class) Variables:</strong> Declared with the <code>static</code> keyword. These belong to the class itself, and all instances share the same copy of the variable.</li>
+</ul>
+​<h2>3. Memory Management and Security</h2>
+​<p>One of the reasons Java is preferred for enterprise applications is its robust memory handling and security features.</p>
+​<h3>What is Garbage Collection in Java?</h3>
+<p>In languages like C++, developers must manually release memory. In Java, this is handled automatically by the <strong>Garbage Collector (GC)</strong>. It is a background thread that identifies objects that are no longer reachable or used by the application and deletes them to free up heap memory. This prevents memory leaks and makes the application more stable.</p>
+​<h3>Why does Java not support Pointers?</h3>
+<p>Pointers (common in C/C++) allow direct access to memory addresses. This can be dangerous because a programmer could accidentally (or intentionally) overwrite sensitive memory or cause system crashes. Java was designed with security and simplicity in mind, so it handles memory internally, hiding pointers from the developer.</p>
+​<h2>4. String Handling and Comparison</h2>
+​<p>Strings are used in almost every program, so expect at least one or two questions on this topic.</p>
+​<h3>What is the difference between equals() and ==?</h3>
+<p>This is a very common trap for freshers. While both are used for comparison, they do very different things:</p>
+<ul>
+<li><strong>== (The Operator):</strong> It compares the <strong>reference</strong> or the memory address. It checks if both variables point to the exact same object in memory.</li>
+<li><strong>.equals() (The Method):</strong> It compares the <strong>actual content</strong> of the objects. If you want to check if two different String objects contain the same text, you should always use <code>.equals()</code>.</li>
+</ul>
+​<h3>Why are Strings immutable in Java?</h3>
+<p>Immutability means that once a String object is created, its value cannot be changed. If you try to modify it, Java actually creates a new String object. This is done for:</p>
+<ul>
+<li><strong>Security:</strong> Strings are often used for usernames, passwords, and URLs. If they were changeable, it would pose a security risk.</li>
+<li><strong>Caching:</strong> Java uses a "String Constant Pool" to save memory. Multiple variables can point to the same string value in the pool.</li>
+<li><strong>Thread Safety:</strong> Since they can't change, they are naturally safe to use in multi-threaded environments.</li>
+</ul>
+​<h2>5. Standard Programming Principles</h2>
+​<h3>Is Java a purely Object-Oriented language?</h3>
+<p>The short answer is <strong>No</strong>. A pure object-oriented language is one where everything is an object. Java uses <strong>Primitive Data Types</strong> (like int, char, float, boolean, etc.) which are not objects. However, with the introduction of Wrapper Classes, Java can behave almost entirely as an OO language.</p>
+​<h3>What is a Wrapper Class?</h3>
+<p>Wrapper classes provide a way to use primitive data types as objects. For example, the <code>Integer</code> class wraps the <code>int</code> primitive, and the <code>Character</code> class wraps <code>char</code>. This is essential when working with Java Collections (like ArrayList), which can only store objects.</p>
+​<h2>Conclusion: Preparing for your Interview</h2>
+<p>Technical knowledge is vital, but how you communicate that knowledge matters just as much. When answering these questions, try to provide a small code example or a real-world analogy. For instance, explain a Class as a "Blueprint" and an Object as the "Actual House" built from that blueprint.</p>
+<p>Remember, as a fresher, interviewers aren't expecting you to know every complex API. They are looking for clarity in basics, logical thinking, and a willingness to learn. Keep practicing your coding logic alongside these theoretical questions, and you will be well on your way to landing your first Java developer role.</p>
+
+    </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h3>InterviewHub</h3>
+          <p>The definitive guide to technical interview success. Your journey to a dream tech role begins with preparation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="/">Home</a>
+          <a href="/pages/java-basics.html">Java Roadmap</a>
+          <a href="/pages/oop.html">OOP Principles</a>
+          <a href="/pages/collections.html">Collections Deep-Dive</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/pages/interview.html">Master Question Bank</a>
+          <a href="#">System Design</a>
+          <a href="#">Coding Patterns</a>
+          <a href="#">Success Stories</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InterviewHub | Built for Developers by Developers</p>
+        <p><small>https://intrviews.vercel.app/</small></p>
+      </div>
+    </div>
+  </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
