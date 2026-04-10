@@ -1,54 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-  function loadComponent(id, file) {
-    fetch(file)
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById(id).innerHTML = data;
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
 
-        if (id === "header") {
-          initDarkMode();
-          initMenu();
-          activeLink();
-        }
-      });
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
   }
 
-  loadComponent("header", "/components/header.html");
-  loadComponent("footer", "/components/footer.html");
+  toggleBtn.addEventListener("click", function () {
+    body.classList.toggle("dark-mode");
 
-  function initDarkMode() {
-    const btn = document.getElementById("theme-toggle");
-
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
     }
-
-    btn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-
-      localStorage.setItem(
-        "theme",
-        document.body.classList.contains("dark") ? "dark" : "light"
-      );
-    });
-  }
-
-  function initMenu() {
-    const btn = document.getElementById("menu-btn");
-    const nav = document.getElementById("nav-menu");
-
-    btn.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
-  }
-
-  function activeLink() {
-    document.querySelectorAll("nav a").forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      }
-    });
-  }
+  });
 
 });
