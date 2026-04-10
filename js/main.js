@@ -1,48 +1,44 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-  const menuBtn = document.getElementById("menu-btn");
-  const navMenu = document.getElementById("nav-menu");
-  const toggleBtn = document.getElementById("theme-toggle");
-  const searchBtn = document.getElementById("search-btn");
-  const searchInput = document.getElementById("searchInput");
-  const body = document.body;
-
-  if (menuBtn && navMenu) {
-    menuBtn.addEventListener("click", function () {
-      navMenu.classList.toggle("active");
-    });
-  }
-
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-    if (toggleBtn) toggleBtn.textContent = "☀️";
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", function () {
-      body.classList.toggle("dark-mode");
-
-      if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        toggleBtn.textContent = "☀️";
-      } else {
-        localStorage.setItem("theme", "light");
-        toggleBtn.textContent = "🌙";
-      }
-    });
-  }
-
-  if (searchBtn && searchInput) {
-    searchBtn.addEventListener("click", function () {
-      searchInput.classList.toggle("active");
-      searchInput.focus();
+    // --- १. मोबाईल मेनू टोगल ---
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        // बटन आयकॉन बदलण्यासाठी (पर्यायी)
+        menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
     });
 
-    document.addEventListener("click", function (e) {
-      if (!searchBtn.contains(e.target) && !searchInput.contains(e.target)) {
-        searchInput.classList.remove("active");
-      }
-    });
-  }
+    // --- २. डार्क मोड टोगल ---
+    // आधी सेव्ह केलेली थीम तपासा
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.textContent = '☀️';
+    }
 
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        
+        let theme = 'light';
+        if (body.classList.contains('dark-theme')) {
+            theme = 'dark';
+            themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
+        }
+        
+        // युजरची चॉईस ब्राउझरमध्ये सेव्ह करा
+        localStorage.setItem('theme', theme);
+    });
+
+    // स्क्रीन मोठी झाल्यावर मेनू बंद करणे (स्वच्छतेसाठी)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            nav.classList.remove('active');
+            menuBtn.textContent = '☰';
+        }
+    });
 });
