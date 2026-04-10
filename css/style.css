@@ -5,273 +5,189 @@
   box-sizing: border-box;
 }
 
-//* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* BODY */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #FFF2C6;
+  font-family: 'Segoe UI', sans-serif;
+  background: #FFF8DE;
   color: #333;
-}
-
-/* DARK MODE */
-body.dark {
-  background: #121212;
-  color: #fff;
+  line-height: 1.6;
 }
 
 /* CONTAINER */
 .container {
   width: 90%;
-  margin: auto;
   max-width: 1100px;
+  margin: auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
-  background: #8CA9FF;
-  color: #fff;
+  background: #FFF2C6;
   padding: 15px 0;
+  border-bottom: 2px solid #AAC4F5;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
-  color: #FFF8DE;
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-nav a {
-  color: #FFF8DE;
+/* LOGO */
+.logo a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+/* NAV */
+.nav a {
   margin: 0 10px;
   text-decoration: none;
-}
-
-nav a.active {
-  border-bottom: 2px solid #FFF2C6;
-}
-
-/* HEADER ACTIONS */
-.header-actions {
-  display: flex;
-  gap: 10px;
-}
-
-#searchInput {
-  padding: 6px;
-  border: none;
-  border-radius: 4px;
-}
-
-#theme-toggle,
-#menu-btn {
-  padding: 6px 10px;
-  cursor: pointer;
-  border: none;
-  background: #AAC4F5;
-  color: #000;
-  border-radius: 4px;
-}
-
-/* MOBILE MENU */
-#nav-menu {
-  display: flex;
-}
-
-#nav-menu.show {
-  display: block;
-}
-
-/* MAIN */
-main {
-  padding: 20px 0;
-}
-
-/* CARDS */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.card {
-  background: #AAC4F5;
-  padding: 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #000;
+  color: #333;
+  font-weight: 500;
   transition: 0.3s;
 }
 
-.card:hover {
-  background: #8CA9FF;
-  color: #fff;
+.nav a:hover {
+  color: #8CA9FF;
 }
 
-/* QUESTIONS */
-.question {
-  background: #FFF8DE;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 6px;
-}
-
-/* FOOTER */
-.footer {
-  background: #8CA9FF;
-  color: #FFF8DE;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 20px;
-}
-
-.footer a {
-  color: #FFF2C6;
-  margin: 0 5px;
-}
-
-/* COPY BUTTON */
-.copy-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-  padding: 3px 8px;
-  background: #8CA9FF;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-}
-
-/* DARK MODE */
-body.dark {
-  background: #121212;
-  color: #fff;
-}
-
-/* CONTAINER */
-.container {
-  width: 90%;
-  margin: auto;
-  max-width: 1100px;
-}
-
-/* HEADER */
-.header {
-  background: #222;
-  color: #fff;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #00bcd4;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-nav a.active {
-  border-bottom: 2px solid #00bcd4;
-}
-
-/* HEADER ACTIONS */
+/* ACTIONS */
 .header-actions {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-#searchInput {
-  padding: 5px;
+.search-box {
+  padding: 6px 10px;
+  border: 1px solid #AAC4F5;
+  border-radius: 5px;
 }
 
-#theme-toggle,
-#menu-btn {
-  padding: 5px 10px;
+#theme-toggle {
+  padding: 6px 10px;
+  border: none;
+  background: #AAC4F5;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-/* MOBILE MENU */
-#nav-menu {
-  display: flex;
+/* ================= TEXT ================= */
+h1 {
+  font-size: 28px;
+  margin: 20px 0;
+  color: #333;
 }
 
-#nav-menu.show {
-  display: block;
+h2 {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #444;
 }
 
-/* MAIN */
+p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* ================= CONTENT ================= */
 main {
   padding: 20px 0;
 }
 
-/* CARDS */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
+/* CARD STYLE */
 .card {
-  background: #fff;
+  background: #FFF2C6;
   padding: 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #000;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-body.dark .card {
-  background: #1e1e1e;
-  color: #fff;
+/* ================= IMAGE ================= */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
 }
 
-/* QUESTIONS */
-.question {
-  background: #fff;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-body.dark .question {
-  background: #1e1e1e;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 20px;
+  background: #AAC4F5;
+  color: #000;
+  margin-top: 40px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 10px;
 }
 
 .footer a {
-  color: #00bcd4;
-  margin: 0 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
 }
 
-/* COPY BUTTON */
-.copy-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-  padding: 3px 8px;
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background: #8CA9FF;
+  font-size: 14px;
+}
+
+/* ================= DARK MODE ================= */
+.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+.dark-mode .header {
+  background: #222;
+}
+
+.dark-mode .footer {
+  background: #333;
+}
+
+.dark-mode .card {
+  background: #222;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  
+  .header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
 }
