@@ -227,9 +227,58 @@ img {
     display: flex;
   }
 
+  /* ================= FOOTER (UPDATED CLEAN) ================= */
+.footer {
+  background: #FFF2C6;
+  color: #222;
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 2px solid #AAC4F5;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* EACH COLUMN */
+.footer-col {
+  flex: 1;
+}
+
+/* HEADINGS */
+.footer h3,
+.footer h4 {
+  margin-bottom: 10px;
+}
+
+/* LINKS VERTICAL */
+.footer a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #8CA9FF;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #AAC4F5;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
   .footer-top {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
   }
-
 }
