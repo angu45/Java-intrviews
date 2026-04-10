@@ -5,29 +5,38 @@
   box-sizing: border-box;
 }
 
+/* ROOT COLORS (NEW THEME) */
+:root {
+  --bg: #fdfcf7;
+  --primary: #6c8cff;
+  --secondary: #a7bfff;
+  --accent: #ffe7a3;
+  --text: #222;
+  --card: #ffffff;
+}
+
 /* BODY */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #FFF8DE;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
   transition: 0.3s;
 }
 
 /* CONTAINER */
 .container {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
 }
 
 /* ================= HEADER ================= */
 .header {
-  background: #FFF2C6;
-  padding: 15px 0;
-  border-bottom: 2px solid #AAC4F5;
   position: sticky;
   top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid #ddd;
   z-index: 1000;
 }
 
@@ -35,38 +44,46 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 0;
 }
 
 /* LOGO */
 .logo a {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
   text-decoration: none;
-  color: #333;
 }
 
 /* NAV */
-.nav {
-  display: flex;
+.nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
 }
 
-.nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
+.nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
   transition: 0.3s;
 }
 
-.nav a:hover {
-  color: #8CA9FF;
+.nav a:hover::after {
+  width: 100%;
 }
 
-/* HEADER ACTIONS */
+/* ACTIONS */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
-  position: relative;
 }
 
 /* SEARCH */
@@ -74,115 +91,118 @@ body {
   width: 0;
   opacity: 0;
   padding: 6px 0;
-  border: 1px solid #AAC4F5;
-  border-radius: 5px;
+  border: 1px solid var(--secondary);
+  border-radius: 20px;
   transition: 0.3s;
+  outline: none;
 }
 
 .search-box.active {
-  width: 160px;
+  width: 180px;
   opacity: 1;
-  padding: 6px 10px;
+  padding: 6px 12px;
 }
 
-#search-btn {
-  background: #AAC4F5;
+/* BUTTONS */
+button {
+  background: var(--primary);
   border: none;
+  color: #fff;
   padding: 6px 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* TOGGLE */
-#theme-toggle {
-  background: #AAC4F5;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+button:hover {
+  transform: scale(1.05);
+  background: #5a78ff;
 }
 
 /* MENU */
 #menu-btn {
   display: none;
-  background: #AAC4F5;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
 }
 
 /* ================= TEXT ================= */
 h1 {
-  margin: 20px 0;
+  font-size: 32px;
+  margin: 25px 0;
 }
 
 h2 {
-  margin: 15px 0;
+  font-size: 24px;
+  margin: 20px 0;
 }
 
 p {
-  margin: 10px 0;
+  margin: 12px 0;
+  color: #444;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card {
-  background: #FFF2C6;
-  padding: 15px;
-  border-radius: 10px;
-  margin: 15px 0;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
-/* IMAGE */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ================= IMAGE ================= */
 img {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
+  margin: 15px 0;
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background: #AAC4F5;
-  margin-top: 40px;
-  padding: 20px 0;
+  background: #111;
+  color: #eee;
+  margin-top: 50px;
+  padding: 30px 0;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
 }
 
 .footer a {
-  display: block;
+  color: #ccc;
   text-decoration: none;
-  color: #000;
-  margin: 5px 0;
+}
+
+.footer a:hover {
+  color: #fff;
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
+  font-size: 14px;
 }
 
 /* ================= DARK MODE ================= */
 .dark-mode {
-  background: #111;
-  color: #eee;
+  --bg: #0f1115;
+  --text: #eee;
+  --card: #1a1d24;
 }
 
 .dark-mode .header {
-  background: #222;
-}
-
-.dark-mode .nav a {
-  color: #eee;
-}
-
-.dark-mode .card {
-  background: #222;
+  background: rgba(20, 20, 20, 0.7);
 }
 
 .dark-mode .footer {
-  background: #333;
+  background: #000;
 }
 
 /* ================= MOBILE ================= */
@@ -196,9 +216,9 @@ img {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
     right: 20px;
-    background: #FFF2C6;
+    top: 60px;
+    background: var(--card);
     padding: 15px;
     border-radius: 10px;
   }
