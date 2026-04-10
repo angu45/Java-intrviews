@@ -27,20 +27,20 @@
 <header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
 
     <main class='main-content'>
-<h1>Java Data Types and Memory Management: Primitive vs. Non-Primitive Explained</h1>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Java Data Types and Memory Management: Primitive vs. Non-Primitive Explained</h1>
 
-<p>To write efficient Java applications, understanding how the language handles data is paramount. For your page <code>/Pages/java-data-types-questions.html</code>, we will explore the fundamental differences between data types, how they are stored in memory, and the bridge between them: Wrapper Classes. This guide is designed to provide 100% unique, SEO-friendly content that covers everything from basic declarations to advanced memory allocation.</p>
+<p style="line-height: 1.6; color: #34495e;">To write efficient Java applications, understanding how the language handles data is paramount. For your page <code>/Pages/java-data-types-questions.html</code>, we will explore the fundamental differences between data types, how they are stored in memory, and the bridge between them: Wrapper Classes. This guide is designed to provide 100% unique, SEO-friendly content that covers everything from basic declarations to advanced memory allocation.</p>
 
-<p>In Java, every variable must have a declared type. This strict typing helps prevent errors and allows the Java Virtual Machine (JVM) to manage memory effectively. Whether you are dealing with a simple integer or a complex object, knowing where that data lives in the <strong>Stack</strong> or <strong>Heap</strong> is the hallmark of a professional developer.</p>
+<p style="background-color: #f9f9f9; border-left: 5px solid #3498db; padding: 15px; font-style: italic;">In Java, every variable must have a declared type. This strict typing helps prevent errors and allows the Java Virtual Machine (JVM) to manage memory effectively. Whether you are dealing with a simple integer or a complex object, knowing where that data lives in the <strong>Stack</strong> or <strong>Heap</strong> is the hallmark of a professional developer.</p>
 
-<h2>1. Primitive vs. Non-Primitive Data Types</h2>
+<h2 style="color: #2c3e50; background: #ecf0f1; padding: 10px;">1. Primitive vs. Non-Primitive Data Types</h2>
 <p>Java categorizes data into two main groups: Primitive and Non-Primitive (Reference) types. The primary difference lies in what they store and how they behave in memory.</p>
 
-<h3>Primitive Data Types</h3>
-<p>Primitives are the predefined, basic data types built into the language. They represent single values and do not have methods or properties associated with them. There are 8 primitive data types in Java:</p>
+<h3 style="color: #e67e22;">Primitive Data Types</h3>
+<p>Primitives are the predefined, basic data types built into the language. They represent single values and do not have methods or properties associated with them.</p>
 
-<table>
-<tr>
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: left; font-family: sans-serif;">
+<tr style="background-color: #3498db; color: white;">
 <th>Type</th>
 <th>Size</th>
 <th>Description</th>
@@ -52,7 +52,7 @@
 <td>Stores whole numbers from -128 to 127</td>
 <td>0</td>
 </tr>
-<tr>
+<tr style="background-color: #f2f2f2;">
 <td><strong>short</strong></td>
 <td>2 bytes</td>
 <td>Stores whole numbers from -32,768 to 32,767</td>
@@ -64,7 +64,7 @@
 <td>Stores whole numbers from -2^31 to 2^31-1</td>
 <td>0</td>
 </tr>
-<tr>
+<tr style="background-color: #f2f2f2;">
 <td><strong>long</strong></td>
 <td>8 bytes</td>
 <td>Stores very large whole numbers</td>
@@ -76,7 +76,7 @@
 <td>Stores fractional numbers (6-7 decimal digits)</td>
 <td>0.0f</td>
 </tr>
-<tr>
+<tr style="background-color: #f2f2f2;">
 <td><strong>double</strong></td>
 <td>8 bytes</td>
 <td>Stores fractional numbers (15 decimal digits)</td>
@@ -88,7 +88,7 @@
 <td>Stores true or false values</td>
 <td>false</td>
 </tr>
-<tr>
+<tr style="background-color: #f2f2f2;">
 <td><strong>char</strong></td>
 <td>2 bytes</td>
 <td>Stores a single character/ASCII value</td>
@@ -96,79 +96,55 @@
 </tr>
 </table>
 
-<h3>Non-Primitive (Reference) Data Types</h3>
-<p>Non-primitive types, also known as reference types, refer to objects. Unlike primitives, these are created by the programmer (except for String, which is predefined but still a reference type). Examples include <strong>Strings, Arrays, Classes, and Interfaces</strong>.</p>
+<h3 style="color: #e67e22;">Non-Primitive (Reference) Data Types</h3>
+<p>Non-primitive types refer to objects. Examples include <strong>Strings, Arrays, Classes, and Interfaces</strong>.</p>
 
-<ul>
+<ul style="list-style-type: square; line-height: 1.8;">
 <li>They can be used to call methods to perform certain operations.</li>
-<li>They can be <code>null</code>, whereas primitives must have a value.</li>
-<li>A non-primitive type always starts with an uppercase letter (e.g., <code>String</code>), while primitives start with lowercase (e.g., <code>int</code>).</li>
+<li>They can be <span style="color: red; font-weight: bold;">null</span>, whereas primitives must have a value.</li>
+<li>A non-primitive type always starts with an uppercase letter.</li>
 </ul>
 
-<h2>2. Memory Management: Stack vs. Heap</h2>
-<p>Understanding where Java stores your data is crucial for debugging and performance tuning. The JVM divides memory into two main areas: Stack and Heap.</p>
+<h2 style="color: #2c3e50; background: #ecf0f1; padding: 10px;">2. Memory Management: Stack vs. Heap</h2>
+<p>Understanding where Java stores your data is crucial for performance. The JVM divides memory into two main areas: Stack and Heap.</p>
 
-<h3>Stack Memory</h3>
-<p>Stack memory is used for static memory allocation and the execution of a thread. It contains primitive values and references to objects that are stored in the heap.</p>
-<ul>
-<li><strong>Speed:</strong> Very fast access.</li>
-<li><strong>Management:</strong> LIFO (Last-In-First-Out) order. Memory is automatically allocated and deallocated when a method starts and ends.</li>
-<li><strong>Scope:</strong> Variables in the stack only exist as long as the method that created them is running.</li>
-</ul>
+<div style="display: flex; gap: 20px; margin-top: 20px;">
+<div style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fffaf0;">
+<h4 style="color: #d35400;">Stack Memory</h4>
+<p>Contains primitive values and references. It is <strong>fast</strong> and uses LIFO.</p>
+</div>
+<div style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f0f8ff;">
+<h4 style="color: #2980b9;">Heap Memory</h4>
+<p>Contains all objects. It is <strong>globally accessible</strong> and managed by the Garbage Collector.</p>
+</div>
+</div>
 
-<h3>Heap Memory</h3>
-<p>Heap memory is used for dynamic memory allocation. All objects (non-primitive types) are stored here.</p>
-<ul>
-<li><strong>Speed:</strong> Slower than stack access.</li>
-<li><strong>Management:</strong> Managed by the Garbage Collector. It stays in memory as long as there is a reference to it.</li>
-<li><strong>Scope:</strong> Objects in the heap are accessible globally by all parts of the application as long as a reference exists.</li>
-</ul>
+<h2 style="color: #2c3e50; background: #ecf0f1; padding: 10px;">3. Wrapper Classes: The Bridge</h2>
+<p>Wrapper Classes allow primitives to be used as objects. This is vital for Java Collections.</p>
 
-<p><strong>Example:</strong> If you write <code>int age = 25;</code>, the value 25 is stored directly on the <strong>Stack</strong>. If you write <code>String name = "Java";</code>, the reference <code>name</code> is stored on the Stack, but the actual object <code>"Java"</code> is stored in the <strong>Heap</strong>.</p>
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 20px; border-radius: 5px; overflow-x: auto; font-family: 'Courier New', Courier, monospace;">
+<span style="color: #55efc4;">// Autoboxing: Primitive to Wrapper</span>
+Integer obj = <span style="color: #fab1a0;">100</span>;
 
-<h2>3. Wrapper Classes: The Bridge</h2>
-<p>In Java, sometimes you need to treat a primitive like an object. This is common when using Collections (like <code>ArrayList</code>) because they cannot store primitives. For this reason, Java provides Wrapper Classes.</p>
-
-<p>Each primitive has a corresponding Wrapper Class:</p>
-<ul>
-<li><code>int</code> &rarr; <code>Integer</code></li>
-<li><code>char</code> &rarr; <code>Character</code></li>
-<li><code>double</code> &rarr; <code>Double</code></li>
-<li><code>boolean</code> &rarr; <code>Boolean</code></li>
-</ul>
-
-<h3>Autoboxing and Unboxing</h3>
-<p>Java handles the conversion between primitives and their wrappers automatically:</p>
-<ul>
-<li><strong>Autoboxing:</strong> The automatic conversion of a primitive type to its corresponding wrapper class (e.g., <code>int</code> to <code>Integer</code>).</li>
-<li><strong>Unboxing:</strong> The automatic conversion of a wrapper class back to its primitive type (e.g., <code>Integer</code> to <code>int</code>).</li>
-</ul>
-
-<pre>
-// Autoboxing example
-Integer obj = 100;
-
-// Unboxing example
-int num = obj;
+<span style="color: #55efc4;">// Unboxing: Wrapper to Primitive</span>
+<span style="color: #74b9ff;">int</span> num = obj;
 </pre>
 
-<h2>4. Frequently Asked Questions (FAQ)</h2>
+<h2 style="color: #2c3e50; background: #ecf0f1; padding: 10px;">4. Frequently Asked Questions (FAQ)</h2>
 
-<h3>Q1. Is String a primitive data type in Java?</h3>
-<p>No, <code>String</code> is a non-primitive (reference) data type. It is a class in Java that represents a sequence of characters. However, Java provides special support for it, such as string literals and the <code>+</code> operator for concatenation.</p>
+<div style="margin-bottom: 15px;">
+<strong style="color: #2c3e50;">Q1. Is String a primitive data type?</strong>
+<p style="margin-left: 20px;">No, <code>String</code> is a class and therefore a non-primitive type.</p>
+</div>
 
-<h3>Q2. What is the difference between 'double' and 'float'?</h3>
-<p>The main difference is precision. A <code>float</code> is a single-precision 32-bit IEEE 754 floating point, while a <code>double</code> is a double-precision 64-bit IEEE 754 floating point. In modern applications, <code>double</code> is usually preferred unless memory is a major constraint.</p>
+<div style="margin-bottom: 15px;">
+<strong style="color: #2c3e50;">Q2. What is the difference between 'double' and 'float'?</strong>
+<p style="margin-left: 20px;"><code>double</code> is 64-bit (more precise), while <code>float</code> is 32-bit (less precise).</p>
+</div>
 
-<h3>Q3. Why do we need the Stack if the Heap can store everything?</h3>
-<p>The Stack is necessary for keeping track of method calls and local variables. Because it follows a LIFO structure, it is incredibly fast and doesn't require complex garbage collection logic, making the program's execution much more efficient.</p>
-
-<h3>Q4. What happens when a StackOverflowError occurs?</h3>
-<p>This usually happens when there are too many nested method calls (like infinite recursion). The stack memory allocated for the thread runs out of space, causing the JVM to throw this error.</p>
-
-<h2>5. Summary Table: Quick Reference</h2>
-<table>
-<tr>
+<h2 style="color: #2c3e50; background: #ecf0f1; padding: 10px;">5. Summary Table</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+<tr style="background-color: #27ae60; color: white;">
 <th>Feature</th>
 <th>Primitive Types</th>
 <th>Non-Primitive Types</th>
@@ -178,25 +154,14 @@ int num = obj;
 <td>Stored in Stack</td>
 <td>Stored in Heap</td>
 </tr>
-<tr>
-<td><strong>Value</strong></td>
-<td>Contains the actual value</td>
-<td>Contains a reference (address)</td>
-</tr>
-<tr>
+<tr style="background-color: #f9f9f9;">
 <td><strong>Nullability</strong></td>
 <td>Cannot be null</td>
 <td>Can be null</td>
 </tr>
-<tr>
-<td><strong>Size</strong></td>
-<td>Fixed size (e.g., 4 bytes for int)</td>
-<td>Variable size</td>
-</tr>
 </table>
 
-<h2>Conclusion</h2>
-<p>Mastering Java data types and memory management is the foundation of writing high-performance code. By choosing the right primitive for the job and understanding when to use Wrapper classes, you can optimize your application's memory footprint. As you build your portfolio on <code>/Pages/java-data-types-questions.html</code>, keep these memory principles in mind to explain the "why" behind the code.</p>
+<p style="text-align: center; margin-top: 30px; font-weight: bold; color: #7f8c8d;">&copy; 2026 Java Syntax Education Guide</p>
     </main>
 
 <footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
