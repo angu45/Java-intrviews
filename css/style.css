@@ -5,12 +5,148 @@
   box-sizing: border-box;
 }
 
+//* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* BODY */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f5f5f5;
+  background: #FFF2C6;
   color: #333;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1100px;
+}
+
+/* HEADER */
+.header {
+  background: #8CA9FF;
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #FFF8DE;
+}
+
+nav a {
+  color: #FFF8DE;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom: 2px solid #FFF2C6;
+}
+
+/* HEADER ACTIONS */
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+#searchInput {
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+}
+
+#theme-toggle,
+#menu-btn {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: none;
+  background: #AAC4F5;
+  color: #000;
+  border-radius: 4px;
+}
+
+/* MOBILE MENU */
+#nav-menu {
+  display: flex;
+}
+
+#nav-menu.show {
+  display: block;
+}
+
+/* MAIN */
+main {
+  padding: 20px 0;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #AAC4F5;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #8CA9FF;
+  color: #fff;
+}
+
+/* QUESTIONS */
+.question {
+  background: #FFF8DE;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+.footer {
+  background: #8CA9FF;
+  color: #FFF8DE;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+.footer a {
+  color: #FFF2C6;
+  margin: 0 5px;
+}
+
+/* COPY BUTTON */
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  padding: 3px 8px;
+  background: #8CA9FF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
 }
 
 /* DARK MODE */
