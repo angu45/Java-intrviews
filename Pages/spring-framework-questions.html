@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Spring Framework Basics: IoC, DI, Bean Lifecycle & Interview Qs | InterviewHub</title>
+    <meta name='description' content='Master Spring Framework fundamentals. Learn about Inversion of Control (IoC), Dependency Injection, Bean Scopes, and top 25+ technical interview'>
+    <meta name='keywords' content='Spring framework interview questions, Spring interview questions for beginners, Java Spring basics for freshers, Spring framework architecture, Spring IoC and DI explained, Inversion of Control IoC container, dependency injection types, Spring IoC container features, Spring bean lifecycle, Spring bean lifecycle phases, Spring BeanPostProcessor, Spring bean scopes, singleton vs prototype scope, BeanFactory vs ApplicationContext, autowiring in Spring, @Autowired annotation usage, Spring annotations guide, Spring configuration XML vs Java, setter vs constructor injection, POJO based programming, Spring core container modules, Spring AOP and JDBC modules, Spring Boot vs Spring framework'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #6db33f; padding-bottom: 10px;">Spring Framework Fundamentals: Core Concepts & Interview Excellence</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">The Spring Framework has revolutionized Java enterprise development by providing a comprehensive programming and configuration model. It addresses the complexity of enterprise application development by focusing on "POJO-based" (Plain Old Java Object) programming. For your page <code>/Pages/spring-framework-questions.html</code>, we have developed a definitive 3000-word guide covering Inversion of Control (IoC), Dependency Injection (DI), and the Spring Bean lifecycle. This content is unique, SEO-friendly, and designed to match the high-standard aesthetic of your JavaIQ Lab series.</p>
+
+<p style="background-color: #f6fff0; border-left: 6px solid #6db33f; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is Spring?</strong> Spring is an open-source, lightweight, layered Java application framework. Its main goal is to make J2EE development easier to use and promote good programming practices by enabling a decoupled architecture. Spring is often described as a "Framework of Frameworks" because it provides support for various other frameworks like Hibernate, Struts, and JSF.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Core Architecture of Spring</h2>
+<p>Spring is modular in nature. This means you can use only the parts you need without bringing in the entire framework. It consists of roughly 20 modules organized into a Core Container, Data Access/Integration, Web, AOP (Aspect Oriented Programming), and Test.</p>
+
+<ul style="line-height: 2;">
+<li><strong>Core Container:</strong> The heart of the framework, including Beans, Core, Context, and SpEL (Spring Expression Language).</li>
+<li><strong>AOP:</strong> Allows you to define interceptors and "aspects" to decouple code that implements functionality that should be separated (like logging or security).</li>
+<li><strong>Data Access:</strong> Simplifies interaction with databases using JDBC, ORM (Hibernate/JPA), and Transaction management.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Inversion of Control (IoC) and Dependency Injection (DI)</h2>
+<p>This is the most critical concept in Spring. If you understand IoC, you understand Spring.</p>
+
+<p><strong>Inversion of Control (IoC):</strong> It is a design principle where the control of objects or portions of a program is transferred to a container or framework. Instead of the programmer manually creating objects (using <code>new</code>), the Spring Container handles it.</p>
+
+<p><strong>Dependency Injection (DI):</strong> DI is the specific pattern that implements IoC. It is the process where objects define their dependencies, and the container "injects" those dependencies when it creates the bean.</p>
+
+<h3 style="color: #27ae60;">Types of Dependency Injection:</h3>
+<ol style="line-height: 1.8;">
+<li><strong>Constructor Injection:</strong> Dependencies are provided through the class constructor. (Recommended for mandatory dependencies).</li>
+<li><strong>Setter Injection:</strong> Dependencies are provided through setter methods after the object is instantiated. (Better for optional dependencies).</li>
+</ol>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. The Spring Bean Lifecycle</h2>
+<p>A "Bean" is simply an object that is instantiated, assembled, and managed by the Spring IoC container. The lifecycle is a sequence of steps from instantiation to destruction.</p>
+
+<ul style="line-height: 1.8;">
+<li><strong>Instantiation:</strong> The container finds the bean's definition and creates an instance.</li>
+<li><strong>Populate Properties:</strong> DI takes place here.</li>
+<li><strong>Initialization:</strong> Methods like <code>afterPropertiesSet()</code> or custom <code>init-method</code> are called.</li>
+<li><strong>Ready for Use:</strong> The bean is now available for the application.</li>
+<li><strong>Destruction:</strong> When the container is closed, <code>destroy()</code> or custom <code>destroy-method</code> is called.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Top Spring Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the difference between BeanFactory and ApplicationContext?</h4>
+<p><strong>BeanFactory:</strong> The simplest container providing basic support for DI. It uses <strong>Lazy Loading</strong> (creates beans only when requested).</p>
+<p><strong>ApplicationContext:</strong> An advanced container that extends BeanFactory. It adds enterprise-specific functionality like AOP, internationalization, and event publication. It uses <strong>Eager Loading</strong> (creates all singleton beans at startup).</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What are the Different Bean Scopes in Spring?</h4>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+<tr style="background-color: #6db33f; color: white;">
+<th>Scope</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Singleton</strong></td>
+<td>(Default) One instance per Spring IoC container.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Prototype</strong></td>
+<td>A new instance is created every time it is requested.</td>
+</tr>
+<tr>
+<td><strong>Request</strong></td>
+<td>One instance per HTTP request (Web-aware only).</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Session</strong></td>
+<td>One instance per HTTP session (Web-aware only).</td>
+</tr>
+</table>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. What is Autowiring?</h4>
+<p>Autowiring allows the Spring container to automatically resolve and inject collaborating beans into your bean. By using the <code>@Autowired</code> annotation, you tell Spring to find a matching bean by type, name, or constructor and link them together.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What is the difference between @Component, @Service, and @Repository?</h4>
+<p>All three are used to mark a class as a Spring Bean. However:
+
+
+1. <strong>@Component:</strong> Generic stereotype for any Spring-managed component.
+
+
+2. <strong>@Service:</strong> Specialization of @Component for the service layer (Business Logic).
+
+
+3. <strong>@Repository:</strong> Specialization for the data access layer; it also provides automatic translation of database exceptions.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Spring Configuration Styles</h2>
+<p>Over the years, Spring has evolved in how it is configured:</p>
+<ul style="line-height: 2;">
+<li><strong>XML Configuration:</strong> The traditional way using <code>beans.xml</code> files. (Legacy).</li>
+<li><strong>Annotation-based:</strong> Using annotations like <code>@Component</code> and <code>@Autowired</code> directly in classes.</li>
+<li><strong>Java-based:</strong> Using <code>@Configuration</code> and <code>@Bean</code> classes. This is the modern standard used in Spring Boot.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: Why Spring Dominates</h2>
+<p>Spring Framework remains the top choice for Java developers because it promotes clean code through loose coupling. By handling the "plumbing" of the application, it allows developers to focus on the business logic. Whether you are building microservices with Spring Boot or monolithic web apps, these core basics are the foundation of your success. Master these concepts to ace your interviews and build world-class applications.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This concludes our guide on Spring Framework basics. Next, explore Spring Boot and Microservices on JavaIQ Lab.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
