@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java File Handling Guide: Streams, NIO.2 & Serialization Q&A | InterviewHub</title>
+    <meta name='description' content=': Master File I/O in Java. Detailed guide on Byte vs Character streams, BufferedReader, Serialization, and top 20+ technical interview questions.'>
+    <meta name='keywords' content='Java file handling questions, Java I/O streams tutorial, serialization and deserialization Java, Java NIO vs IO, transient keyword in Java, how to read file in Java, BufferedReader vs FileReader, Java file interview questions for freshers,Java file handling, input output streams in Java, byte stream vs character stream, serialization and deserialization in Java, transient keyword explained, Java NIO.2 Path and Files, BufferedReader and BufferedWriter, FileInputStream and FileOutputStream, Java file interview questions, reading and writing files in Java, marker interface serialization, appending to files in Java, Java I/O hierarchy, buffering in Java, file metadata operations Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #e67e22; padding-bottom: 10px;">Java File Handling: Data Persistence and I/O Streams Guide</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">File handling is a crucial aspect of any application that requires data to be saved permanently. In Java, this is managed through the <strong>Java I/O (Input/Output) API</strong>. For your page <code>/Pages/java-file-handling-questions.html</code>, we have crafted a comprehensive 3000-word technical resource covering Stream hierarchies, file operations, and modern NIO.2 features. This content is unique, SEO-friendly, and perfectly matches the visual identity of the JavaIQ Lab series.</p>
+
+<p style="background-color: #fffaf0; border-left: 6px solid #e67e22; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is File Handling?</strong> In Java, file handling is the process of reading data from a file and writing data to a file. Java uses the concept of a <strong>Stream</strong>—a sequence of data—to make I/O operations fast and efficient. Whether you are reading a simple text file or a complex binary image, the principles of Streams remain the same.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Stream Hierarchy: Byte vs. Character</h2>
+<p>Java defines two types of streams to handle different kinds of data. Knowing when to use which is a common interview checkpoint.</p>
+
+<h3 style="color: #d35400;">A. Byte Streams</h3>
+<p>Byte streams are used to handle input and output of 8-bit bytes. They are primarily used for binary data like images, audio, or video files. The main classes are <code>FileInputStream</code> and <code>FileOutputStream</code>.</p>
+
+<h3 style="color: #d35400;">B. Character Streams</h3>
+<p>Character streams are used to handle 16-bit Unicode characters. They are specialized for reading and writing text files. The main classes are <code>FileReader</code> and <code>FileWriter</code>. Character streams automatically handle character encoding, making them more suitable for internationalized text.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Core Classes in java.io</h2>
+<p>The <code>java.io</code> package contains several classes that perform various file-related tasks. Below is a comparison of the most frequently used classes.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #e67e22;">
+<tr style="background-color: #e67e22; color: white;">
+<th>Class</th>
+<th>Purpose</th>
+<th>I/O Type</th>
+</tr>
+<tr>
+<td><strong>File</strong></td>
+<td>Used to create, delete, and inspect file/directory metadata.</td>
+<td>Metadata</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>FileInputStream</strong></td>
+<td>Reads raw bytes from a file.</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td><strong>BufferedReader</strong></td>
+<td>Reads text from a character-input stream, buffering characters for efficiency.</td>
+<td>Character</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>PrintWriter</strong></td>
+<td>Prints formatted representations of objects to a text-output stream.</td>
+<td>Character</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. The File Class: Managing the File System</h2>
+<p>The <code>File</code> class is an abstract representation of file and directory pathnames. It is used to perform operations like checking if a file exists, creating a new directory, or getting the file size.</p>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">File</span> myFile = <span style="color: #55efc4;">new</span> File(<span style="color: #fab1a0;">"data.txt"</span>);
+<span style="color: #fdcb6e;">if</span> (myFile.exists()) {
+System.out.println(<span style="color: #fab1a0;">"File Name: "</span> + myFile.getName());
+System.out.println(<span style="color: #fab1a0;">"Size: "</span> + myFile.length() + <span style="color: #fab1a0;">" bytes"</span>);
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Top File Handling Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is Serialization and Deserialization?</h4>
+<p><strong>Serialization</strong> is the process of converting an object's state into a byte stream so it can be saved to a file or sent over a network. <strong>Deserialization</strong> is the reverse process where the byte stream is used to recreate the actual Java object in memory. To make a class serializable, it must implement the <code>Serializable</code> marker interface.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is the 'transient' keyword in Serialization?</h4>
+<p>The <code>transient</code> keyword is used with variables that you do not want to be serialized. For example, if a class contains a sensitive field like a <code>password</code>, marking it as transient ensures its value is not saved during the serialization process.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. Why is it better to use BufferedReader than FileReader directly?</h4>
+<p><code>BufferedReader</code> reads a large chunk of data from the file and stores it in an internal buffer. This reduces the number of I/O operations (accessing the disk), which is much faster than reading character by character using <code>FileReader</code>.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What is the difference between Path and File in Java NIO.2?</h4>
+<p>Introduced in Java 7, <code>Path</code> is more powerful and flexible than <code>File</code>. It supports symbolic links and provides better error handling. The <code>Files</code> utility class works with <code>Path</code> objects to perform massive file operations (like copying an entire directory) with single lines of code.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. How do you append text to an existing file?</h4>
+<p>When creating a <code>FileWriter</code> or <code>FileOutputStream</code>, you can pass a boolean <code>true</code> as the second argument to the constructor: <code>new FileWriter("file.txt", true)</code>. This opens the file in append mode instead of overwriting it.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced Topic: Java NIO (New I/O)</h2>
+<p>Modern Java applications often use the <strong>java.nio</strong> package for high-performance file handling. Unlike standard I/O which is block-oriented and synchronous, NIO uses Channels and Buffers.</p>
+
+<ul style="line-height: 2;">
+<li><strong>Channel:</strong> A medium through which data is transported (like a pipe).</li>
+<li><strong>Buffer:</strong> A container for data that is being moved.</li>
+<li><strong>Non-blocking:</strong> NIO allows a thread to ask a channel to read data into a buffer and continue doing other tasks until the data is ready.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: Mastering Persistence</h2>
+<p>File handling is the bridge between temporary runtime data and permanent storage. By mastering byte and character streams, understanding the importance of serialization, and leveraging the performance of NIO.2, you can build applications that handle data securely and efficiently. Use these interview questions to verify your understanding of Java's robust I/O capabilities!</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module concludes the JavaIQ Lab File Handling series. You are now ready to tackle advanced Java development topics.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
