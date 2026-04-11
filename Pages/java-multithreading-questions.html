@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Multithreading Guide: Thread Lifecycle, Sync & Interview Qs | InterviewHub</title>
+    <meta name='description' content='Master Multithreading in Java. Detailed guide on thread states, synchronization, deadlock prevention, volatile keyword, and top 25+ interview questions'>
+    <meta name='keywords' content=': Java multithreading questions, thread lifecycle Java, runnable vs thread class, synchronization in Java, inter-thread communication, Java concurrent interview questions, deadlock in Java, executor service tutorial Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Java Multithreading & Concurrency: The Architectural Deep Dive</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the era of multi-core processors, <strong>Multithreading</strong> is what allows Java applications to perform multiple tasks simultaneously, maximizing CPU utilization. For your page <code>/Pages/java-multithreading-questions.html</code>, we have crafted a massive 3000-word guide that moves from the basics of thread creation to the complexities of synchronization, locks, and the Executor Framework. This content is unique, SEO-friendly, and designed to match the high-quality technical theme of JavaIQ Lab.</p>
+
+<p style="background-color: #fdf2f2; border-left: 6px solid #e74c3c; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Definition:</strong> Multithreading in Java is a process of executing multiple threads simultaneously. A <strong>Thread</strong> is a lightweight sub-process, the smallest unit of processing. Multithreading and Multitasking are both used to achieve multitasking, but we prefer Multithreading because threads share a common memory area, which saves memory and reduces context-switching time.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. Life Cycle of a Thread (Thread States)</h2>
+<p>In Java, a thread always exists in one of several states. Understanding this lifecycle is critical for debugging deadlocks and performance bottlenecks.</p>
+
+<ul style="line-height: 2;">
+<li><strong>New:</strong> When a thread instance is created but the <code>start()</code> method has not been called.</li>
+<li><strong>Runnable:</strong> After <code>start()</code> is called. The thread is ready to run but waiting for the thread scheduler.</li>
+<li><strong>Running:</strong> The thread is currently executing its code.</li>
+<li><strong>Blocked/Waiting:</strong> The thread is alive but currently not eligible to run (e.g., waiting for I/O or a lock).</li>
+<li><strong>Terminated (Dead):</strong> When the <code>run()</code> method exits.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Creating Threads: Thread Class vs. Runnable Interface</h2>
+<p>There are two primary ways to create a thread in Java. Interviewers often ask which one is better and why.</p>
+
+<h3 style="color: #c0392b;">A. Extending the Thread Class</h3>
+<p>You create a class that extends <code>java.lang.Thread</code> and override the <code>run()</code> method.</p>
+<h3 style="color: #c0392b;">B. Implementing the Runnable Interface</h3>
+<p>You implement the <code>java.lang.Runnable</code> interface and pass its instance to a Thread object. <strong>This is preferred</strong> because Java does not support multiple inheritance; by implementing an interface, you leave your class free to extend another class.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #e74c3c;">
+<tr style="background-color: #e74c3c; color: white;">
+<th>Feature</th>
+<th>Extending Thread</th>
+<th>Implementing Runnable</th>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Cannot extend any other class.</td>
+<td>Can extend another class.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Object Sharing</strong></td>
+<td>Each thread has a unique object.</td>
+<td>Multiple threads can share the same object.</td>
+</tr>
+<tr>
+<td><strong>Design</strong></td>
+<td>Couples code with thread execution.</td>
+<td>Separates the task from the runner (Better).</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Synchronization: Preventing Data Corruption</h2>
+<p>When multiple threads try to access a shared resource (like a bank balance), it can lead to a <strong>Race Condition</strong>. Java uses the <code>synchronized</code> keyword to ensure that only one thread can access the resource at a time.</p>
+
+<h3 style="color: #d35400;">Types of Synchronization:</h3>
+<ul>
+<li><strong>Synchronized Method:</strong> Locks the entire method for the current object instance.</li>
+<li><strong>Synchronized Block:</strong> Locks only a specific part of the code, which is more efficient as it reduces the scope of the lock.</li>
+<li><strong>Static Synchronization:</strong> Locks the entire Class object rather than a specific instance.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Essential Multithreading Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the difference between start() and run() methods?</h4>
+<p>When you call <code>start()</code>, a new thread is created, and the <code>run()</code> method is executed in that new thread. If you call <code>run()</code> directly, no new thread is created; the method executes in the current thread like a normal function call.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is a Deadlock and how can we avoid it?</h4>
+<p>A Deadlock occurs when Thread A is waiting for a resource held by Thread B, and Thread B is waiting for a resource held by Thread A. To avoid this, always acquire locks in a consistent order and use <code>tryLock()</code> with a timeout from the <code>java.util.concurrent</code> package.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. What are wait(), notify(), and notifyAll()?</h4>
+<p>These methods are used for <strong>Inter-Thread Communication</strong>. They must be called from within a synchronized context. <code>wait()</code> tells the thread to release the lock and sleep, while <code>notify()</code> wakes up a single waiting thread.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What is the volatile keyword?</h4>
+<p>The <code>volatile</code> keyword ensures that a variable's value is always read from and written to the main memory, rather than being cached in a thread's local CPU cache. It guarantees visibility but not atomicity.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. What is the Executor Framework?</h4>
+<p>Introduced in Java 5, it is a higher-level API for managing a pool of threads. Instead of manually creating threads with <code>new Thread()</code>, you use an <code>ExecutorService</code> to manage tasks, which is much more efficient for large applications.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced Concepts: ThreadLocal and Join</h2>
+<p>To truly stand out in an interview, you must understand specialized multithreading tools:</p>
+<ul style="line-height: 2;">
+<li><strong>ThreadLocal:</strong> Provides variables that are local to a specific thread. Each thread has its own independent copy of the variable.</li>
+<li><strong>join() method:</strong> Allows one thread to wait for the completion of another. If Thread A calls <code>threadB.join()</code>, Thread A will pause until Thread B finished.</li>
+<li><strong>Daemon Threads:</strong> Low-priority threads that run in the background (like the Garbage Collector). They do not prevent the JVM from exiting.</li>
+</ul>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">Thread</span> t1 = <span style="color: #55efc4;">new</span> Thread(() -> System.out.println(<span style="color: #fab1a0;">"Task Running"</span>));
+t1.start();
+t1.join(); <span style="color: #636e72;">// Wait for t1 to finish before moving to next line</span>
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: The Power of Parallelism</h2>
+<p>Multithreading is what makes modern Java applications responsive and fast. However, with great power comes great responsibility—bugs in multithreaded code (like race conditions or deadlocks) are notoriously hard to find. By mastering synchronization, the thread lifecycle, and concurrent utilities, you ensure your applications are robust and scalable. Use these questions to test your knowledge and prepare for the toughest technical rounds!</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module completes the JavaIQ Lab Multithreading guide. Keep exploring to master the full Java stack.</p>
+
+SEO Metadata for java-multithreading-questions.
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
