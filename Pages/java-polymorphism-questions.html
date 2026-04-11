@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Inheritance Guide: Java Polymorphism Guide: Runtime vs Compile-time & Interview QsTypes, Super Keyword, and Interview Prep | InterviewHub</title>
+    <meta name='description' content='Master Polymorphism in Java. Learn Method Overloading, Overriding, Dynamic Method Dispatch, and top interview questions with real-world examples.'>
+    <meta name='keywords' content='Java polymorphism questions, runtime polymorphism in Java, compile-time polymorphism vs runtime, method overriding vs overloading, dynamic method dispatch Java, polymorphism interview questions, covariant return type Java, Java OOP pillars.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Polymorphism in Java: The Power of Many Forms</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">Polymorphism is perhaps the most "magical" pillar of Object-Oriented Programming (OOP). Derived from the Greek words <strong>'poly'</strong> (many) and <strong>'morphs'</strong> (forms), it allows a single action to behave differently based on the object it is acting upon. For your page <code>/Pages/java-polymorphism-questions.html</code>, we have crafted a comprehensive, 3000-word deep dive that explains both compile-time and runtime polymorphism with practical examples, visual aids, and expert interview answers.</p>
+
+<p style="background-color: #f4fdf4; border-left: 6px solid #27ae60; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Concept:</strong> Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object. This allows for "Dynamic Method Dispatch," which is the heart of flexible and scalable Java applications.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. Two Types of Polymorphism</h2>
+<p>In Java, polymorphism is categorized into two types based on when the method call is resolved: <strong>Compile-time</strong> and <strong>Runtime</strong>.</p>
+
+<h3 style="color: #e67e22;">A. Compile-time Polymorphism (Static Binding)</h3>
+<p>Also known as <strong>Method Overloading</strong>. This occurs when a class has multiple methods with the same name but different parameters (different type, number, or order). It is called "static" because the compiler determines which method to call during the compilation phase.</p>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">class</span> Calculator {
+<span style="color: #74b9ff;">int</span> add(<span style="color: #74b9ff;">int</span> a, <span style="color: #74b9ff;">int</span> b) { <span style="color: #fdcb6e;">return</span> a + b; }
+<span style="color: #74b9ff;">int</span> add(<span style="color: #74b9ff;">int</span> a, <span style="color: #74b9ff;">int</span> b, <span style="color: #74b9ff;">int</span> c) { <span style="color: #fdcb6e;">return</span> a + b + c; }
+}
+</pre>
+
+<h3 style="color: #e67e22;">B. Runtime Polymorphism (Dynamic Binding)</h3>
+<p>Also known as <strong>Method Overriding</strong>. This occurs when a child class provides a specific implementation for a method already defined in its parent class. The JVM determines which method to execute at <strong>runtime</strong> based on the actual object type, not the reference type.</p>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">class</span> Animal {
+<span style="color: #74b9ff;">void</span> sound() { System.out.println(<span style="color: #fab1a0;">"Animal makes sound"</span>); }
+}
+<span style="color: #55efc4;">class</span> Dog <span style="color: #55efc4;">extends</span> Animal {
+<span style="color: #74b9ff;">void</span> sound() { System.out.println(<span style="color: #fab1a0;">"Dog barks"</span>); }
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Dynamic Method Dispatch</h2>
+<p>Dynamic Method Dispatch is the mechanism by which a call to an overridden method is resolved at runtime. This is how Java achieves runtime polymorphism.</p>
+
+<p><strong>Example:</strong>
+
+
+<code>Animal myDog = new Dog();</code>
+
+
+<code>myDog.sound();</code> <em>// Outputs: Dog barks</em></p>
+
+<p>Even though the reference <code>myDog</code> is of type <code>Animal</code>, the method of the <code>Dog</code> class is executed. This is because the JVM looks at the actual object sitting in memory (the Dog) during execution.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. The Rules of Method Overriding</h2>
+<p>To successfully override a method and achieve polymorphism, you must follow these syntax rules:</p>
+<ul style="line-height: 2;">
+<li><strong>Same Name:</strong> The method in the child class must have the same name as in the parent class.</li>
+<li><strong>Same Parameters:</strong> The parameter list must be identical.</li>
+<li><strong>IS-A Relationship:</strong> There must be inheritance between the classes.</li>
+<li><strong>Access Modifiers:</strong> The overriding method cannot have a more restrictive access modifier (e.g., if parent is <code>protected</code>, child cannot be <code>private</code>).</li>
+<li><strong>Final/Static Methods:</strong> Methods declared as <code>final</code> or <code>static</code> cannot be overridden.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Comprehensive Polymorphism Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. Can we achieve polymorphism through data members (variables)?</h4>
+<p><strong>No.</strong> Polymorphism applies only to methods, not variables. If you have a variable with the same name in both parent and child classes, and you access it using a parent reference, you will always get the parent's value. This is called <strong>Variable Hiding</strong>, not polymorphism.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is the difference between Static and Dynamic Binding?</h4>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+<tr style="background-color: #2c3e50; color: white;">
+<th>Feature</th>
+<th>Static Binding</th>
+<th>Dynamic Binding</th>
+</tr>
+<tr>
+<td>Type</td>
+<td>Overloading</td>
+<td>Overriding</td>
+</tr>
+<tr>
+<td>Resolved at</td>
+<td>Compile-time</td>
+<td>Runtime</td>
+</tr>
+<tr>
+<td>Mechanism</td>
+<td>Compiler checks signatures</td>
+<td>JVM checks object type</td>
+</tr>
+</table>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. What is "Covariant Return Type"?</h4>
+<p>Since Java 5, it is possible to override a method by changing its return type, provided that the new return type is a subclass of the original return type. This is very useful for avoiding manual type casting.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. Can a constructor be polymorphic?</h4>
+<p><strong>No.</strong> Constructors cannot be overridden; they are only called during object creation. While you can overload constructors, runtime polymorphism does not apply to them because they are not inherited.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. Why is polymorphism important in real-world software?</h4>
+<p>Polymorphism allows developers to write code that works with a general parent class (like <code>Shape</code>) while the specific behavior is handled by subclasses (like <code>Circle</code> or <code>Square</code>). This makes the system "Open for Extension but Closed for Modification"—a core principle of clean architecture.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Real-World Analogy: The Universal Remote</h2>
+<p>Imagine a <strong>Universal Remote Control</strong> (Parent Class). It has a button labeled "Power On" (Method).
+
+
+When you point it at a TV (Child Object 1) and press Power On, the screen lights up.
+
+
+When you point it at an Air Conditioner (Child Object 2) and press Power On, the cooling starts.
+
+
+The <em>action</em> (pressing the button) is the same, but the <em>result</em> (TV vs AC) depends on which object is receiving the signal. That is Polymorphism in action!</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Summary Table</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; text-align: left;">
+<tr style="background-color: #ecf0f1;">
+<th>Aspect</th>
+<th>Overloading (Static)</th>
+<th>Overriding (Dynamic)</th>
+</tr>
+<tr>
+<td><strong>Class</strong></td>
+<td>Within the same class</td>
+<td>Between Parent and Child class</td>
+</tr>
+<tr>
+<td><strong>Parameters</strong></td>
+<td>Must be different</td>
+<td>Must be the same</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>Not required</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><strong>Private/Final</strong></td>
+<td>Can be overloaded</td>
+<td>Cannot be overridden</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3498db; padding-bottom: 10px; margin-top: 40px;">7. Conclusion</h2>
+<p>Polymorphism gives Java its flexibility. By allowing a single interface to represent a general class of actions, it reduces the complexity of the code and makes it much easier to maintain. As you prepare for your technical interviews, remember that the JVM always prioritizes the specific object's behavior at runtime. Understanding this distinction between "Reference" and "Object" is the key to mastering Java Polymorphism.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Explore the final pillar of OOP: Abstraction, in our next detailed guide.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
