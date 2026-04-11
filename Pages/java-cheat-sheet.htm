@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Cheat Sheet 2026 | Syntax, OOP, & Collections | InterviewHub</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="The ultimate Java Cheat Sheet for developers. Quick reference for syntax, OOP pillars, Collections Framework, Streams, and Exception handling. Optimized for interview prep.">
+    <meta name="keywords" content="Java Cheat Sheet, Java Syntax, OOP Reference, Java Collections Cheat Sheet, Java 8 Streams, InterviewHub, Coding Reference">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap');
+        
+        :root {
+            --brand-primary: #3b82f6;
+            --brand-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        code, pre {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .cheat-card {
+            break-inside: avoid;
+            transition: transform 0.2s ease;
+        }
+
+        .cheat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .copy-btn {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .code-block:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .sidebar-link.active {
+            color: var(--brand-primary);
+            border-left: 2px solid var(--brand-primary);
+            padding-left: 14px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="logo">
+                <a href="https://intrviews.vercel.app">
+                    <img src="Logo.png" alt="InterviewHub Logo" class="h-8">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="https://intrviews.vercel.app" class="text-slate-600 hover:text-blue-600">Home</a>
+                <a href="/java-interview-questions.html" class="text-slate-600 hover:text-blue-600">Java Guide</a>
+                <a href="/java-mcq-quiz.html" class="text-slate-600 hover:text-blue-600">Quiz</a>
+                <a href="/contact.html" class="text-slate-600 hover:text-blue-600">Contact</a>
+            </nav>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition">Get Started</button>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Sticky Sidebar Navigation -->
+        <aside class="lg:w-64 flex-shrink-0">
+            <div class="sticky top-24 space-y-1">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">Navigation</h3>
+                <a href="#basics" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Basic Syntax</a>
+                <a href="#oop" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">OOP Pillars</a>
+                <a href="#collections" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Collections</a>
+                <a href="#exceptions" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Exceptions</a>
+                <a href="#streams" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Streams & Lambda</a>
+                <a href="#io" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">File I/O</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <div class="mb-10">
+                <h1 class="text-4xl font-extrabold text-slate-900 mb-2">Java Cheat Sheet</h1>
+                <p class="text-slate-500 text-lg">A quick reference for Java developers, from core syntax to modern functional programming.</p>
+            </div>
+
+            <!-- Section: Basics -->
+            <section id="basics" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3 text-sm">01</span>
+                    Basic Syntax & Types
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Main Method -->
+                    <div class="cheat-card bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-slate-700 mb-3">Main Method Template</h4>
+                        <div class="code-block relative bg-slate-900 rounded-lg p-4 group">
+                            <button onclick="copyCode(this)" class="copy-btn absolute top-2 right-2 p-1 bg-slate-700 text-white rounded text-xs hover:bg-slate-600">Copy</button>
+                            <pre class="text-blue-300"><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Primitive Types -->
+                    <div class="cheat-card bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-slate-700 mb-3">Primitive Data Types</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">int</span> <span>4 bytes (-2B to 2B)</span></li>
+                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">double</span> <span>8 bytes (Decimals)</span></li>
+                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">boolean</span> <span>1 bit (true/false)</span></li>
+                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">char</span> <span>2 bytes (Unicode)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: OOP -->
+            <section id="oop" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3 text-sm">02</span>
+                    OOP Pillars
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="cheat-card bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-purple-600 mb-2">Inheritance</h4>
+                        <p class="text-sm text-slate-500 mb-4">Use <code class="bg-slate-100 px-1 rounded text-red-500">extends</code> for classes and <code class="bg-slate-100 px-1 rounded text-red-500">implements</code> for interfaces.</p>
+                        <pre class="bg-slate-50 p-3 rounded text-xs"><code>class Dog extends Animal {
+  @Override
+  void sound() { System.out.println("Bark"); }
+}</code></pre>
+                    </div>
+                    <div class="cheat-card bg-white p-5 rounded-xl shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-purple-600 mb-2">Encapsulation</h4>
+                        <p class="text-sm text-slate-500 mb-4">Private fields + Public getters/setters.</p>
+                        <pre class="bg-slate-50 p-3 rounded text-xs"><code>private String name;
+public String getName() { return name; }
+public void setName(String n) { name = n; }</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Collections -->
+            <section id="collections" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3 text-sm">03</span>
+                    Collections Framework
+                </h2>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-50 text-slate-500 uppercase text-xs">
+                            <tr>
+                                <th class="px-6 py-4">Structure</th>
+                                <th class="px-6 py-4">Implementation</th>
+                                <th class="px-6 py-4">Key Characteristics</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="px-6 py-4 font-bold">List</td>
+                                <td class="px-6 py-4 font-mono text-blue-600">ArrayList</td>
+                                <td class="px-6 py-4">Fast random access, duplicate allowed.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Set</td>
+                                <td class="px-6 py-4 font-mono text-blue-600">HashSet</td>
+                                <td class="px-6 py-4">Unique elements, no order.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Map</td>
+                                <td class="px-6 py-4 font-mono text-blue-600">HashMap</td>
+                                <td class="px-6 py-4">Key-Value pairs, unique keys.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Streams -->
+            <section id="streams" class="mb-12">
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="w-8 h-8 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mr-3 text-sm">04</span>
+                    Java 8+ Streams
+                </h2>
+                <div class="cheat-card bg-slate-900 p-6 rounded-xl shadow-xl">
+                    <div class="code-block relative">
+                        <button onclick="copyCode(this)" class="copy-btn absolute top-0 right-0 p-1 bg-slate-700 text-white rounded text-xs hover:bg-slate-600">Copy</button>
+                        <pre class="text-orange-300"><code>List&lt;String&gt; names = Arrays.asList("Java", "Python", "C++");
+
+List&lt;String&gt; filtered = names.stream()
+    .filter(s -> s.startsWith("J"))
+    .map(String::toUpperCase)
+    .sorted()
+    .collect(Collectors.toList());
+
+// Output: ["JAVA"]</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 border-b border-slate-800 pb-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">InterviewHub</h3>
+                    <p class="text-sm">Helping developers ace their technical interviews since 2026. Built with ❤️ for the community.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">Java Tutorials</a></li>
+                        <li><a href="#" class="hover:text-blue-400">OOP Guide</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Cheat Sheets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <p class="text-sm">Follow us for daily tips and logic puzzles.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <span class="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 cursor-pointer transition">𝕏</span>
+                        <span class="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 cursor-pointer transition">🔗</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-xs">
+                © 2026 InterviewHub | Created by Angad Deshmane | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function copyCode(btn) {
+            const code = btn.nextElementSibling.innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied!';
+                btn.classList.add('bg-green-600');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600');
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Active link highlighting on scroll
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
