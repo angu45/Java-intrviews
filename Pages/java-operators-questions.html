@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Operators Guide: Arithmetic, Logical, Bitwise & Ternary Explained | InterviewHub</title>
+    <meta name='description' content='Master all Java operators with examples. Learn about operator precedence, short-circuit logic, bitwise manipulation, and unary operators for Java interviews.'>
+    <meta name='keywords' content='Java operators, arithmetic operators in Java, logical operators Java, bitwise operators explained, ternary operator Java, operator precedence in Java, unary increment decrement, relational operators Java, assignment operators, Java programming basics, Java coding logic, short circuit operators, Java operators tutorial, Java interview questions on operators, binary operators Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Java Operators Comprehensive Guide: Master Logic, Arithmetic, and Bitwise Operations</h1>
+
+<p style="line-height: 1.8; color: #34495e;">In the world of Java programming, operators are the functional tools that allow us to perform calculations, make logical decisions, and manipulate data at a binary level. For your specialized page <code>/Pages/java-operators-questions.html</code>, we have crafted an exhaustive deep-dive into every operator type available in Java. Understanding these is the difference between writing basic code and developing high-performance, optimized algorithms.</p>
+
+<p style="background-color: #fff5f5; border-left: 5px solid #e74c3c; padding: 15px; font-style: italic; margin-top: 20px;">An operator in Java is a symbol that tells the compiler to perform a specific mathematical or logical manipulation. Java operators are categorized based on the number of operands they take (Unary, Binary, Ternary) and the type of operation they perform (Arithmetic, Relational, Logical, etc.).</p>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">1. Arithmetic Operators: The Foundation of Calculation</h2>
+<p>Arithmetic operators are used to perform basic mathematical operations like addition, subtraction, and multiplication. In Java, these are binary operators because they require two operands.</p>
+
+<table border="1" cellpadding="12" cellspacing="0" style="width: 100%; border-collapse: collapse; margin: 20px 0; font-family: sans-serif;">
+<tr style="background-color: #e74c3c; color: white;">
+<th>Operator</th>
+<th>Description</th>
+<th>Example (a=10, b=3)</th>
+<th>Result</th>
+</tr>
+<tr>
+<td><strong>+</strong> (Addition)</td>
+<td>Adds two values</td>
+<td>a + b</td>
+<td>13</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td><strong>-</strong> (Subtraction)</td>
+<td>Subtracts right operand from left</td>
+<td>a - b</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>*</strong> (Multiplication)</td>
+<td>Multiplies two values</td>
+<td>a * b</td>
+<td>30</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td><strong>/</strong> (Division)</td>
+<td>Divides left operand by right</td>
+<td>a / b</td>
+<td>3 (integer division)</td>
+</tr>
+<tr>
+<td><strong>%</strong> (Modulus)</td>
+<td>Returns the remainder of division</td>
+<td>a % b</td>
+<td>1</td>
+</tr>
+</table>
+
+<p><strong>Important Note on Division:</strong> In Java, if you divide two integers (e.g., <code>10 / 3</code>), the result is an integer (<code>3</code>). To get a decimal result, at least one operand must be a <code>float</code> or <code>double</code> (e.g., <code>10.0 / 3</code> results in <code>3.333...</code>).</p>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">2. Unary Operators: Working with Single Operands</h2>
+<p>Unary operators require only one operand. They are frequently used for incrementing/decrementing values or negating expressions.</p>
+
+<ul style="list-style-type: circle; line-height: 1.8;">
+<li><strong>++ (Increment):</strong> Increases value by 1. Available in <em>Prefix</em> (<code>++a</code>) and <em>Postfix</em> (<code>a++</code>) forms.</li>
+<li><strong>-- (Decrement):</strong> Decreases value by 1. Also available in Prefix and Postfix.</li>
+<li><strong>! (Logical NOT):</strong> Reverses the boolean value of an expression.</li>
+<li><strong>- (Unary Minus):</strong> Negates a positive value.</li>
+</ul>
+
+<pre style="background-color: #2d3436; color: #fab1a0; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace;">
+int x = 5;
+System.out.println(x++); // Prints 5, then x becomes 6 (Postfix)
+System.out.println(++x); // x becomes 7, then prints 7 (Prefix)
+</pre>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">3. Relational and Logical Operators: Decision Making</h2>
+<p>Relational operators are used to compare two values, returning a <code>boolean</code> (true or false). Logical operators are used to combine multiple boolean expressions.</p>
+
+<h3 style="color: #2980b9;">Relational Operators</h3>
+<p>These include <code>==</code> (Equal to), <code>!=</code> (Not equal to), <code>&gt;</code> (Greater than), <code>&lt;</code> (Less than), <code>&gt;=</code>, and <code>&lt;=</code>.</p>
+
+<h3 style="color: #2980b9;">Logical Operators (Short-Circuiting)</h3>
+<p>Java uses "short-circuit" logic for <code>&&</code> (AND) and <code>||</code> (OR). This means if the result is determined by the first operand, the second one is not even evaluated, which saves processing power.</p>
+<ul style="line-height: 1.6;">
+<li><strong>&& (Logical AND):</strong> True if both conditions are true.</li>
+<li><strong>|| (Logical OR):</strong> True if at least one condition is true.</li>
+</ul>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">4. Bitwise Operators: The Power of Binary</h2>
+<p>Bitwise operators work on the individual bits (0s and 1s) of a number. These are essential for low-level programming, encryption, and performance optimization.</p>
+
+<table>
+<tr style="background-color: #34495e; color: white;">
+<th>Operator</th>
+<th>Name</th>
+<th>Function</th>
+</tr>
+<tr>
+<td><strong>&</strong></td>
+<td>Bitwise AND</td>
+<td>Sets bit to 1 if both bits are 1</td>
+</tr>
+<tr>
+<td><strong>|</strong></td>
+<td>Bitwise OR</td>
+<td>Sets bit to 1 if one of the bits is 1</td>
+</tr>
+<tr>
+<td><strong>^</strong></td>
+<td>Bitwise XOR</td>
+<td>Sets bit to 1 if only one bit is 1</td>
+</tr>
+<tr>
+<td><strong>~</strong></td>
+<td>Bitwise Complement</td>
+<td>Inverts all bits</td>
+</tr>
+</table>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">5. Ternary Operator: The shorthand if-else</h2>
+<p>The Ternary operator (<code>? :</code>) is the only operator in Java that takes three operands. It is often used as a one-line replacement for <code>if-else</code> statements.</p>
+
+<p style="background: #fff; border: 1px dashed #7f8c8d; padding: 10px; display: inline-block;"><strong>Syntax:</strong> <code>variable = (condition) ? valueIfTrue : valueIfFalse;</code></p>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">6. Frequently Asked Questions (Interview Prep)</h2>
+
+<div style="margin-top: 20px; border: 1px solid #ddd; padding: 20px; border-radius: 10px;">
+<h4 style="color: #2c3e50;">Q1. What is the difference between = and ==?</h4>
+<p>The <code>=</code> is an <strong>Assignment Operator</strong> used to assign a value to a variable. The <code>==</code> is a <strong>Relational Operator</strong> used to compare if two values are equal.</p>
+
+<h4 style="color: #2c3e50;">Q2. What is "Short-Circuiting" in Logical Operators?</h4>
+<p>In <code>a && b</code>, if <code>a</code> is false, <code>b</code> is not checked because the result must be false. Similarly, in <code>a || b</code>, if <code>a</code> is true, <code>b</code> is not checked. This is short-circuiting.</p>
+
+<h4 style="color: #2c3e50;">Q3. Can we use Arithmetic operators on Strings?</h4>
+<p>Only the <code>+</code> operator can be used with Strings in Java. It is used for <strong>String Concatenation</strong> (joining two strings together).</p>
+
+<h4 style="color: #2c3e50;">Q4. What is Operator Precedence?</h4>
+<p>Precedence determines the order in which operators are evaluated. For example, multiplication (<code>*</code>) has higher precedence than addition (<code>+</code>), so <code>2 + 3 * 5</code> equals <code>17</code>, not <code>25</code>.</p>
+</div>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">7. Assignment and Compound Operators</h2>
+<p>Assignment operators are used to assign values to variables. Compound operators combine an arithmetic operation with an assignment.</p>
+<ul style="line-height: 1.8;">
+<li><code>+=</code> (Add and assign): <code>x += 5</code> is the same as <code>x = x + 5</code></li>
+<li><code>-=</code> (Subtract and assign): <code>x -= 3</code> is the same as <code>x = x - 3</code></li>
+<li><code>*=</code> (Multiply and assign)</li>
+<li><code>/=</code> (Divide and assign)</li>
+</ul>
+
+<h2 style="color: #c0392b; background: #fdf2f2; padding: 10px; border-radius: 4px;">Conclusion</h2>
+<p style="margin-bottom: 40px;">Operators form the logic of any Java program. By mastering arithmetic, relational, logical, and bitwise operators, you can write code that is both readable and computationally efficient. Whether you are building simple calculators or complex game engines, these tools are your primary means of data manipulation.</p>
+
+<p style="text-align: center; color: #95a5a6; font-size: 0.9em; border-top: 1px solid #eee; padding-top: 20px;">
+SEO Reference: /Pages/java-operators-questions.html | Java Operators Tutorial 2026
+</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
