@@ -1,6 +1,6 @@
-<!doctype html>
-<html lang="en" class="h-full">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
@@ -31,543 +31,308 @@
 <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
 
 <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-  <style>body { box-sizing: border-box; }</style>
- </head>
- <body>
-  <div class="app-wrapper" id="app"><!-- HEADER -->
-   <header class="surface-bg sticky top-0 z-50" style="border-bottom: 1px solid rgba(128,128,128,0.15); backdrop-filter: blur(12px); background: color-mix(in srgb, var(--surface) 85%, transparent);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-     <div class="flex items-center justify-between h-16"><!-- Logo --> <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 group"> <img src="Logo.png" alt="InterviewHub Logo" class="w-9 h-9 rounded-lg object-cover transition-transform group-hover:rotate-6" loading="lazy" onerror="console.error('Logo failed to load:', this.src); this.style.background='#E8563D'; this.alt='Logo unavailable';"> </a> <!-- Menu Button --> <button class="lg:hidden p-2 rounded-lg text-main ml-3" onclick="toggleMainMenu()" aria-label="Open categories menu" id="mainMenuBtn"> <i data-lucide="menu" style="width:22px;height:22px;"></i> </button> <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation"><a href="#" onclick="navigateTo('home'); return false;" class="nav-link text-main text-sm font-medium active" data-page="home">Home</a>
-       <div class="relative group"><button class="nav-link text-main text-sm font-medium flex items-center gap-1" onclick="toggleCategoryMenu()"> Categories <i data-lucide="chevron-down" style="width:14px;height:14px;"></i> </button>
-        <div id="categoryMenu" class="absolute top-full left-0 mt-2 w-48 surface-bg rounded-lg shadow-lg hidden group-hover:block z-40"><a href="#" onclick="navigateTo('basics'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">Basics &amp; Fundamentals</a> <a href="#" onclick="navigateTo('oop'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">OOP Mastery</a> <a href="#" onclick="navigateTo('advanced'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">Advanced Core Java</a> <a href="#" onclick="navigateTo('enterprise'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">Enterprise Java</a> <a href="#" onclick="navigateTo('logic'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">Logic &amp; Practice</a> <a href="#" onclick="navigateTo('career'); return false;" class="block px-4 py-2 text-sm text-main hover:accent-color">Career &amp; Growth</a>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">
+          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="/">Home</a>
+        <a href="">Java</a>
+        <a href="/Pages/oop-interview-questions.html">OOP</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+        <button id="menu-btn" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section container">
+    <div class="hero-content">
+      <h1>Cracking Your Next Java Interview <br><span class="highlight">Starts Here.</span></h1>
+      <p class="hero-subtext">
+        Bridge the gap between "knowing Java" and "getting the job." We provide structured, deep-dive answers to the most challenging industry questions.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <div class="intro-grid">
+      <div class="content-text">
+        <h2>Precision-Crafted Preparation</h2>
+        <p>
+          Welcome to <strong>InterviewHub</strong>. In a world where technical standards are constantly rising, simply knowing syntax isn't enough. Our platform is designed to transform your theoretical knowledge into interview-ready expertise.
+        </p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px;">
+        
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #198754; overflow: hidden;">
+            <div style="background: #eefdf5; padding: 15px; font-weight: bold; color: #198754; font-size: 18px;">🟢 Basic & Fundamentals</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/basic-java-interview-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Freshers Interview Prep</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Top 50 questions that MNC recruiters ask entry-level candidates.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/basic-java-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Essential Java Basics</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Deep dive into JRE, JDK, and how 'Write Once Run Anywhere' works.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-syntax-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Syntax & Structure</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Learn about access modifiers, keywords, and code organization.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-data-types-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Memory & Data Types</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Understand Stack vs Heap memory and Wrapper class logic.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/java-operators-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Operators in Java</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Bitwise, Logical, and Arithmetic operation edge cases.</p>
+                </div>
+            </div>
         </div>
-       </div><a href="#" onclick="navigateTo('resources'); return false;" class="nav-link text-main text-sm font-medium" data-page="resources">Resources</a> <a href="#" onclick="navigateTo('contact'); return false;" class="nav-link text-main text-sm font-medium" data-page="contact">Contact</a>
-      </nav><!-- Theme & Mobile Menu -->
-      <div class="flex items-center gap-3">
-       <div class="flex items-center gap-2"><i data-lucide="sun" style="width:16px;height:16px;" class="secondary-color"></i>
-        <div class="toggle-track" id="themeToggle" onclick="toggleTheme()" role="button" aria-label="Toggle dark mode" tabindex="0">
-         <div class="toggle-thumb"></div>
-        </div><i data-lucide="moon" style="width:16px;height:16px;" class="secondary-color"></i>
-       </div><button class="lg:hidden p-2 rounded-lg text-main" onclick="toggleMobileMenu()" aria-label="Open menu"> <i data-lucide="menu" style="width:22px;height:22px;" id="menuIcon"></i> </button>
-      </div>
-     </div><!-- Mobile Nav -->
-     <nav class="mobile-menu lg:hidden" id="mobileMenu" aria-label="Mobile navigation">
-      <div class="py-4 flex flex-col gap-3 border-t" style="border-color: rgba(128,128,128,0.15);"><a href="#" onclick="navigateTo('home'); return false;" class="nav-link text-main text-sm font-medium py-2" data-page="home">Home</a> <!-- Categories Section -->
-       <div class="py-2 border-t" style="border-color: rgba(128,128,128,0.15); pt-3">
-        <h3 class="text-xs font-bold text-main opacity-60 px-0 my-2 uppercase">Categories</h3><a href="#" onclick="navigateTo('basics'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="basics">🟢 Basics &amp; Fundamentals</a> <a href="#" onclick="navigateTo('oop'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="oop">🟡 OOP Mastery</a> <a href="#" onclick="navigateTo('advanced'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="advanced">🟠 Advanced Core Java</a> <a href="#" onclick="navigateTo('enterprise'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="enterprise">🔴 Enterprise Java</a> <a href="#" onclick="navigateTo('logic'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="logic">💻 Logic &amp; Practice</a> <a href="#" onclick="navigateTo('career'); return false;" class="nav-link text-main text-sm font-medium py-2 pl-3 block hover:accent-color" data-page="career">🚀 Career &amp; Growth</a>
-       </div><!-- Pages Section -->
-       <div class="border-t" style="border-color: rgba(128,128,128,0.15); pt-3">
-        <h3 class="text-xs font-bold text-main opacity-60 px-0 my-2 uppercase">Pages</h3><a href="#" onclick="navigateTo('resources'); return false;" class="nav-link text-main text-sm font-medium py-2 block" data-page="resources">Resources</a> <a href="#" onclick="navigateTo('contact'); return false;" class="nav-link text-main text-sm font-medium py-2 block" data-page="contact">Contact</a>
-       </div>
-      </div>
-     </nav>
-    </div>
-   </header><!-- HOME PAGE -->
-   <main id="page-home" class="page active">
-    <section class="relative py-20 sm:py-32 px-4 overflow-hidden">
-     <div class="hero-pattern"></div>
-     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="fade-up"><span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold secondary-bg text-white mb-6 tracking-wide">✦ Welcome to InterviewHub</span>
-      </div>
-      <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold text-main mb-5 leading-tight fade-up" id="heroTitle">Cracking Your Next Java Interview <br><span class="accent-color">Starts Here.</span></h1>
-      <p class="text-base sm:text-lg opacity-70 text-main max-w-2xl mx-auto mb-8 leading-relaxed fade-up" id="heroSubtitle">Bridge the gap between "knowing Java" and "getting the job." We provide structured, deep-dive answers to the most challenging industry questions.</p><a href="#" onclick="navigateTo('basics'); return false;" class="fade-up inline-flex items-center gap-2 px-6 py-3 accent-bg text-white rounded-full font-medium text-sm hover:opacity-90 transition-opacity" id="ctaBtn">Start Learning <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
-     </div>
-    </section><!-- Featured Categories -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
-     <div class="mb-12">
-      <h2 class="heading-font text-2xl font-bold text-main mb-2">Precision-Crafted Preparation</h2>
-      <p class="text-main opacity-70">In a world where technical standards are constantly rising, simply knowing syntax isn't enough. Our platform is designed to transform your theoretical knowledge into interview-ready expertise.</p>
-     </div>
-     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;"><!-- Basics Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #198754;">
-       <div class="category-title" style="background: #eefdf5; color: #198754;">
-        🟢 Basic &amp; Fundamentals
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('basics'); return false;">Freshers Interview Prep</a>
-        <p>Top 50 questions that MNC recruiters ask entry-level candidates.</p>
-       </div>
-       <div class="category-link"><a href="#">Essential Java Basics</a>
-        <p>Deep dive into JRE, JDK, and how 'Write Once Run Anywhere' works.</p>
-       </div>
-       <div class="category-link"><a href="#">Syntax &amp; Structure</a>
-        <p>Learn about access modifiers, keywords, and code organization.</p>
-       </div>
-       <div class="category-link"><a href="#">Memory &amp; Data Types</a>
-        <p>Understand Stack vs Heap memory and Wrapper class logic.</p>
-       </div>
-       <div class="category-link"><a href="#">Operators in Java</a>
-        <p>Bitwise, Logical, and Arithmetic operation edge cases.</p>
-       </div>
-      </div><!-- OOP Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #ffc107;">
-       <div class="category-title" style="background: #fffdeb; color: #856404;">
-        🟡 Mastering OOPs
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('oop'); return false;">Core OOP Pillars</a>
-        <p>In-depth analysis of Abstraction, Encapsulation, Inheritance, and Polymorphism.</p>
-       </div>
-       <div class="category-link"><a href="#">Encapsulation Secrets</a>
-        <p>Understanding Data Hiding and Tightly Encapsulated classes.</p>
-       </div>
-       <div class="category-link"><a href="#">Inheritance Logic</a>
-        <p>Single, Multi-level, and why Multiple inheritance is not allowed.</p>
-       </div>
-       <div class="category-link"><a href="#">Polymorphism Masterclass</a>
-        <p>Method Overloading vs Overriding and Dynamic Binding.</p>
-       </div>
-       <div class="category-link"><a href="#">Interface &amp; Abstraction</a>
-        <p>When to use abstract classes vs interfaces in real projects.</p>
-       </div>
-      </div><!-- Advanced Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #fd7e14;">
-       <div class="category-title" style="background: #fff5eb; color: #d9480f;">
-        🟠 Advanced Core Java
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('advanced'); return false;">Strings &amp; Memory</a>
-        <p>Explaining String Immutability and the String Constant Pool.</p>
-       </div>
-       <div class="category-link"><a href="#">Robust Exceptions</a>
-        <p>Try-with-resources, Multi-catch, and Custom exceptions.</p>
-       </div>
-       <div class="category-link"><a href="#">Concurrency Mastery</a>
-        <p>Lifecycle of a thread, Volatile, and Synchronization locks.</p>
-       </div>
-       <div class="category-link"><a href="#">Collections Deep-Dive</a>
-        <p>Internal working of HashMap, ArrayList, and Concurrent collections.</p>
-       </div>
-       <div class="category-link"><a href="#">File &amp; Stream I/O</a>
-        <p>Object Serialization and reading files using Java IO/NIO.</p>
-       </div>
-      </div><!-- Enterprise Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #dc3545;">
-       <div class="category-title" style="background: #fff5f5; color: #dc3545;">
-        🔴 Enterprise Java
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('enterprise'); return false;">JDBC Connectivity</a>
-        <p>Step-by-step connection logic and Prepared Statements.</p>
-       </div>
-       <div class="category-link"><a href="#">Servlet Processing</a>
-        <p>Handling GET/POST requests and Servlet Lifecycle.</p>
-       </div>
-       <div class="category-link"><a href="#">JSP Technology</a>
-        <p>Custom tags, Scriptlets, and Expression Language (EL).</p>
-       </div>
-       <div class="category-link"><a href="#">Spring Framework</a>
-        <p>Dependency Injection (DI) and Spring Boot annotations.</p>
-       </div>
-       <div class="category-link"><a href="#">Hibernate ORM</a>
-        <p>Object-Relational Mapping and HQL Query optimization.</p>
-       </div>
-      </div><!-- Logic & Practice Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #212529;">
-       <div class="category-title" style="background: #f8f9fa; color: #212529;">
-        💻 Logic &amp; Practice
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('logic'); return false;">Top Coding Problems</a>
-        <p>Commonly asked programs on Arrays, Strings, and Logic.</p>
-       </div>
-       <div class="category-link"><a href="#">Hands-on Lab</a>
-        <p>50+ exercise programs to sharpen your coding skills.</p>
-       </div>
-       <div class="category-link"><a href="#">Output Prediction</a>
-        <p>Tricky code snippets to test your execution knowledge.</p>
-       </div>
-       <div class="category-link"><a href="#">Logical Reasoning</a>
-        <p>Puzzles and brain teasers specific to Java developers.</p>
-       </div>
-      </div><!-- Career & Growth Card -->
-      <div class="card-surface category-card fade-up" style="border-left-color: #6f42c1;">
-       <div class="category-title" style="background: #f4f0fa; color: #6f42c1;">
-        🚀 Career &amp; Growth
-       </div>
-       <div class="category-link"><a href="#" onclick="navigateTo('career'); return false;">Java MCQ Quiz</a>
-        <p>Instant technical assessment with real-time scoring.</p>
-       </div>
-       <div class="category-link"><a href="#">Revision Notes (PDF)</a>
-        <p>Compact study material for quick pre-interview revision.</p>
-       </div>
-       <div class="category-link"><a href="#">The Java Cheat Sheet</a>
-        <p>Quick reference guide for syntax, Lambdas, and Streams.</p>
-       </div>
-       <div class="category-link"><a href="#">Technical Rounds Strategy</a>
-        <p>Pro tips on how to structure your answers during tech calls.</p>
-       </div>
-       <div class="category-link"><a href="#">HR Common Questions</a>
-        <p>Behavioral interview answers for salary and career goals.</p>
-       </div>
-       <div class="category-link"><a href="#">Resume Building</a>
-        <p>Build an ATS-friendly Java resume that gets shortlisted.</p>
-       </div>
-      </div>
-     </div><!-- Advice Box -->
-     <div class="advice-box">
-      <h3 class="text-main font-bold mb-2">💡 Pro-Tip for Success</h3>
-      <p class="text-main opacity-70">During an interview, don't just state the answer. Walk the interviewer through your thought process. Use <strong>InterviewHub</strong> as a roadmap to structure your logic clearly and concisely.</p>
-     </div><!-- Final CTA -->
-     <div class="final-cta">
-      <h2 class="heading-font text-2xl font-bold text-main mb-2">Ready to Level Up?</h2>
-      <p class="text-main opacity-70 mb-4">The tech landscape is evolving. Stay ahead with our frequently updated question bank, curated from real interview experiences at top-tier tech firms.</p>
-      <p class="text-main">Explore more at <a href="#" class="accent-color font-bold hover:underline">intrviews.vercel.app</a></p>
-     </div>
-    </section>
-   </main><!-- CATEGORY PAGES (Basics, OOP, Advanced, Enterprise, Logic, Career) -->
-   <main id="page-basics" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">🟢 Basic &amp; Fundamentals</h1>
-     <p class="opacity-70 text-main mb-8">Master the core concepts every Java developer needs to know</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Freshers Interview Prep</h3>
-       <p class="text-sm opacity-60 text-main">Top 50 questions that MNC recruiters ask entry-level candidates.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Essential Java Basics</h3>
-       <p class="text-sm opacity-60 text-main">Deep dive into JRE, JDK, and how 'Write Once Run Anywhere' works.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Syntax &amp; Structure</h3>
-       <p class="text-sm opacity-60 text-main">Learn about access modifiers, keywords, and code organization.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Memory &amp; Data Types</h3>
-       <p class="text-sm opacity-60 text-main">Understand Stack vs Heap memory and Wrapper class logic.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Operators in Java</h3>
-       <p class="text-sm opacity-60 text-main">Bitwise, Logical, and Arithmetic operation edge cases.</p>
-      </div>
-     </div>
-    </section>
-   </main>
-   <main id="page-oop" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">🟡 Mastering OOPs</h1>
-     <p class="opacity-70 text-main mb-8">Understand the pillars of Object-Oriented Programming</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Core OOP Pillars</h3>
-       <p class="text-sm opacity-60 text-main">In-depth analysis of Abstraction, Encapsulation, Inheritance, and Polymorphism.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Encapsulation Secrets</h3>
-       <p class="text-sm opacity-60 text-main">Understanding Data Hiding and Tightly Encapsulated classes.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Inheritance Logic</h3>
-       <p class="text-sm opacity-60 text-main">Single, Multi-level, and why Multiple inheritance is not allowed.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Polymorphism Masterclass</h3>
-       <p class="text-sm opacity-60 text-main">Method Overloading vs Overriding and Dynamic Binding.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Interface &amp; Abstraction</h3>
-       <p class="text-sm opacity-60 text-main">When to use abstract classes vs interfaces in real projects.</p>
-      </div>
-     </div>
-    </section>
-   </main>
-   <main id="page-advanced" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">🟠 Advanced Core Java</h1>
-     <p class="opacity-70 text-main mb-8">Dive deep into advanced Java concepts</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Strings &amp; Memory</h3>
-       <p class="text-sm opacity-60 text-main">Explaining String Immutability and the String Constant Pool.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Robust Exceptions</h3>
-       <p class="text-sm opacity-60 text-main">Try-with-resources, Multi-catch, and Custom exceptions.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Concurrency Mastery</h3>
-       <p class="text-sm opacity-60 text-main">Lifecycle of a thread, Volatile, and Synchronization locks.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Collections Deep-Dive</h3>
-       <p class="text-sm opacity-60 text-main">Internal working of HashMap, ArrayList, and Concurrent collections.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">File &amp; Stream I/O</h3>
-       <p class="text-sm opacity-60 text-main">Object Serialization and reading files using Java IO/NIO.</p>
-      </div>
-     </div>
-    </section>
-   </main>
-   <main id="page-enterprise" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">🔴 Enterprise Java</h1>
-     <p class="opacity-70 text-main mb-8">Master enterprise-level Java frameworks and technologies</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">JDBC Connectivity</h3>
-       <p class="text-sm opacity-60 text-main">Step-by-step connection logic and Prepared Statements.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Servlet Processing</h3>
-       <p class="text-sm opacity-60 text-main">Handling GET/POST requests and Servlet Lifecycle.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">JSP Technology</h3>
-       <p class="text-sm opacity-60 text-main">Custom tags, Scriptlets, and Expression Language (EL).</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Spring Framework</h3>
-       <p class="text-sm opacity-60 text-main">Dependency Injection (DI) and Spring Boot annotations.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Hibernate ORM</h3>
-       <p class="text-sm opacity-60 text-main">Object-Relational Mapping and HQL Query optimization.</p>
-      </div>
-     </div>
-    </section>
-   </main>
-   <main id="page-logic" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">💻 Logic &amp; Practice</h1>
-     <p class="opacity-70 text-main mb-8">Sharpen your problem-solving skills with practical exercises</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Top Coding Problems</h3>
-       <p class="text-sm opacity-60 text-main">Commonly asked programs on Arrays, Strings, and Logic.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Hands-on Lab</h3>
-       <p class="text-sm opacity-60 text-main">50+ exercise programs to sharpen your coding skills.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Output Prediction</h3>
-       <p class="text-sm opacity-60 text-main">Tricky code snippets to test your execution knowledge.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Logical Reasoning</h3>
-       <p class="text-sm opacity-60 text-main">Puzzles and brain teasers specific to Java developers.</p>
-      </div>
-     </div>
-    </section>
-   </main>
-   <main id="page-career" class="page">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-3">🚀 Career &amp; Growth</h1>
-     <p class="opacity-70 text-main mb-8">Accelerate your career with interview tips and resources</p>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Java MCQ Quiz</h3>
-       <p class="text-sm opacity-60 text-main">Instant technical assessment with real-time scoring.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Revision Notes (PDF)</h3>
-       <p class="text-sm opacity-60 text-main">Compact study material for quick pre-interview revision.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">The Java Cheat Sheet</h3>
-       <p class="text-sm opacity-60 text-main">Quick reference guide for syntax, Lambdas, and Streams.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Technical Rounds Strategy</h3>
-       <p class="text-sm opacity-60 text-main">Pro tips on how to structure your answers during tech calls.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">HR Common Questions</h3>
-       <p class="text-sm opacity-60 text-main">Behavioral interview answers for salary and career goals.</p>
-      </div>
-      <div class="card-surface rounded-2xl p-6">
-       <h3 class="heading-font text-lg font-bold text-main mb-2">Resume Building</h3>
-       <p class="text-sm opacity-60 text-main">Build an ATS-friendly Java resume that gets shortlisted.</p>
-      </div>
-     </div>
-    </section>
-   </main><!-- RESOURCES PAGE -->
-   <main id="page-resources" class="page">
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-6">Resources</h1>
-     <div class="card-surface rounded-2xl p-8">
-      <h2 class="heading-font text-xl font-bold text-main mb-4">Essential Learning Materials</h2>
-      <ul class="space-y-3 text-main opacity-70">
-       <li>✓ Comprehensive Java Interview Question Bank</li>
-       <li>✓ OOP Design Patterns &amp; Best Practices</li>
-       <li>✓ Real-world Coding Challenges</li>
-       <li>✓ Performance Optimization Techniques</li>
-       <li>✓ System Design Fundamentals</li>
-       <li>✓ Database &amp; Query Optimization</li>
-      </ul>
-     </div>
-    </section>
-   </main><!-- CONTACT PAGE -->
-   <main id="page-contact" class="page">
-    <section class="max-w-2xl mx-auto px-4 sm:px-6 py-16">
-     <h1 class="heading-font text-3xl sm:text-4xl font-bold text-main mb-6">Get in Touch</h1>
-     <form class="card-surface rounded-2xl p-6 sm:p-10 space-y-5" onsubmit="handleContact(event)">
-      <div><label for="contactName" class="block text-sm font-medium text-main mb-1.5">Name</label> <input type="text" id="contactName" class="w-full px-4 py-3 rounded-xl border text-sm text-main" style="border-color: rgba(128,128,128,0.2); background: var(--surface);" placeholder="Your name" required>
-      </div>
-      <div><label for="contactEmail" class="block text-sm font-medium text-main mb-1.5">Email</label> <input type="email" id="contactEmail" class="w-full px-4 py-3 rounded-xl border text-sm text-main" style="border-color: rgba(128,128,128,0.2); background: var(--surface);" placeholder="your@email.com" required>
-      </div>
-      <div><label for="contactMsg" class="block text-sm font-medium text-main mb-1.5">Message</label> <textarea id="contactMsg" rows="4" class="w-full px-4 py-3 rounded-xl border text-sm text-main resize-none" style="border-color: rgba(128,128,128,0.2); background: var(--surface);" placeholder="Write your message..." required></textarea>
-      </div><button type="submit" class="w-full py-3 accent-bg text-white rounded-xl font-medium text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> <i data-lucide="send" style="width:16px;height:16px;"></i> Send Message </button>
-      <div id="contactSuccess" class="hidden text-center py-3 rounded-xl secondary-bg text-white text-sm font-medium">
-       ✓ Message sent successfully!
-      </div>
-     </form>
-    </section>
-   </main><!-- FOOTER -->
-   <footer class="surface-bg mt-auto" style="border-top: 1px solid rgba(128,128,128,0.15);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-     <div class="grid sm:grid-cols-3 gap-8 mb-8">
-      <div>
-       <div class="flex items-center gap-2 mb-4">
-        <div class="w-7 h-7 rounded-md accent-bg flex items-center justify-center text-white font-bold text-xs">
-         I
-        </div><span class="heading-font text-sm font-bold text-main" id="footerBrand">InterviewHub</span>
-       </div>
-       <p class="text-xs opacity-50 text-main">The definitive guide to technical interview success. Your journey to a dream tech role begins with preparation.</p>
-      </div>
-      <div>
-       <h4 class="font-bold text-sm text-main mb-3">Navigate</h4>
-       <ul class="space-y-2 text-xs opacity-60 text-main">
-        <li><a href="#" onclick="navigateTo('home'); return false;" class="hover:accent-color">Home</a></li>
-        <li><a href="#" onclick="navigateTo('basics'); return false;" class="hover:accent-color">Java Roadmap</a></li>
-        <li><a href="#" onclick="navigateTo('oop'); return false;" class="hover:accent-color">OOP Principles</a></li>
-        <li><a href="#" onclick="navigateTo('advanced'); return false;" class="hover:accent-color">Collections Deep-Dive</a></li>
-       </ul>
-      </div>
-      <div>
-       <h4 class="font-bold text-sm text-main mb-3">Resources</h4>
-       <ul class="space-y-2 text-xs opacity-60 text-main">
-        <li><a href="#" class="hover:accent-color">Master Question Bank</a></li>
-        <li><a href="#" class="hover:accent-color">Cheat Sheets</a></li>
-        <li><a href="#" class="hover:accent-color">Coding Patterns</a></li>
-        <li><a href="#" class="hover:accent-color">Resume Tips</a></li>
-       </ul>
-      </div>
-     </div>
-     <div class="border-t" style="border-color: rgba(128,128,128,0.15); pt-8">
-      <p class="text-xs opacity-50 text-main text-center" id="footerText">© 2025 InterviewHub | Built for Developers by Developers</p>
-     </div>
-    </div>
-   </footer>
-  </div>
-  <script>
-    let isDark = false;
 
-    function toggleTheme() {
-      isDark = !isDark;
-      document.documentElement.classList.toggle('dark-mode', isDark);
-      document.body.classList.toggle('dark-mode', isDark);
-    }
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #ffc107; overflow: hidden;">
+            <div style="background: #fffdeb; padding: 15px; font-weight: bold; color: #856404; font-size: 18px;">🟡 Mastering OOPs</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-oops-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Core OOP Pillars</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">In-depth analysis of Abstraction, Encapsulation, Inheritance, and Polymorphism.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-encapsulation-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Encapsulation Secrets</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Understanding Data Hiding and Tightly Encapsulated classes.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-inheritance-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Inheritance Logic</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Single, Multi-level, and why Multiple inheritance is not allowed.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-polymorphism-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Polymorphism Masterclass</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Method Overloading vs Overriding and Dynamic Binding.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/java-abstraction-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Interface & Abstraction</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">When to use abstract classes vs interfaces in real projects.</p>
+                </div>
+            </div>
+        </div>
 
-    document.getElementById('themeToggle').addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #fd7e14; overflow: hidden;">
+            <div style="background: #fff5eb; padding: 15px; font-weight: bold; color: #d9480f; font-size: 18px;">🟠 Advanced Core Java</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-string-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Strings & Memory</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Explaining String Immutability and the String Constant Pool.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-exception-handling-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Robust Exceptions</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Try-with-resources, Multi-catch, and Custom exceptions.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-multithreading-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Concurrency Mastery</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Lifecycle of a thread, Volatile, and Synchronization locks.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-collections-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Collections Deep-Dive</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Internal working of HashMap, ArrayList, and Concurrent collections.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/java-file-handling-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">File & Stream I/O</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Object Serialization and reading files using Java IO/NIO.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #dc3545; overflow: hidden;">
+            <div style="background: #fff5f5; padding: 15px; font-weight: bold; color: #dc3545; font-size: 18px;">🔴 Enterprise Java</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-jdbc-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">JDBC Connectivity</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Step-by-step connection logic and Prepared Statements.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-servlet-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Servlet Processing</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Handling GET/POST requests and Servlet Lifecycle.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-jsp-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">JSP Technology</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Custom tags, Scriptlets, and Expression Language (EL).</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/spring-framework-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Spring Framework</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Dependency Injection (DI) and Spring Boot annotations.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/hibernate-interview-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Hibernate ORM</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Object-Relational Mapping and HQL Query optimization.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #212529; overflow: hidden;">
+            <div style="background: #f8f9fa; padding: 15px; font-weight: bold; color: #212529; font-size: 18px;">💻 Logic & Practice</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-coding-interview-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Top Coding Problems</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Commonly asked programs on Arrays, Strings, and Logic.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-practice-programs.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Hands-on Lab</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">50+ exercise programs to sharpen your coding skills.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-output-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Output Prediction</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Tricky code snippets to test your execution knowledge.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/java-logical-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Logical Reasoning</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Puzzles and brain teasers specific to Java developers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #6f42c1; overflow: hidden;">
+            <div style="background: #f4f0fa; padding: 15px; font-weight: bold; color: #6f42c1; font-size: 18px;">🚀 Career & Growth</div>
+            <div style="padding: 10px 20px;">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-mcq-quiz.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Java MCQ Quiz</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Instant technical assessment with real-time scoring.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-notes-pdf.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Revision Notes (PDF)</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Compact study material for quick pre-interview revision.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/java-cheat-sheet.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">The Java Cheat Sheet</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Quick reference guide for syntax, Lambdas, and Streams.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/interview-tips.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Technical Rounds Strategy</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Pro tips on how to structure your answers during tech calls.</p>
+                </div>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <a href="/Pages/hr-interview-questions.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">HR Common Questions</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Behavioral interview answers for salary and career goals.</p>
+                </div>
+                <div style="padding: 12px 0;">
+                    <a href="/Pages/java-developer-resume-tips.html" style="color: #0d6efd; text-decoration: none; font-weight: 600;">Resume Building</a>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #666;">Build an ATS-friendly Java resume that gets shortlisted.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="advice-box" style="margin-top: 40px;">
+      <h3>💡 Pro-Tip for Success</h3>
+      <p>
+        During an interview, don't just state the answer. Walk the interviewer through your thought process. Use <strong>InterviewHub</strong> as a roadmap to structure your logic clearly and concisely.
+      </p>
+    </div>
+
+    <div class="final-cta">
+      <h2>Ready to Level Up?</h2>
+      <p>
+        The tech landscape is evolving. Stay ahead with our frequently updated question bank, curated from real interview experiences at top-tier tech firms.
+      </p>
+      <p>Explore more at <a href="https://intrviews.vercel.app" class="link-styled">intrviews.vercel.app</a></p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h3>InterviewHub</h3>
+          <p>The definitive guide to technical interview success. Your journey to a dream tech role begins with preparation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="/">Home</a>
+          <a href="/pages/java-freshers-interview-questions.html">Java Roadmap</a>
+          <a href="/pages/java-oops-questions.html">OOP Principles</a>
+          <a href="/pages/java-collections-questions.html">Collections Deep-Dive</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/pages/java-mcq-quiz.html">Master Question Bank</a>
+          <a href="/pages/java-cheat-sheet.html">Cheat Sheets</a>
+          <a href="/pages/java-coding-interview-questions.html">Coding Patterns</a>
+          <a href="/pages/java-developer-resume-tips.html">Resume Tips</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 InterviewHub | Built for Developers by Developers</p>
+        <p><small>https://intrviews.vercel.app/</small></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // --- १. मोबाईल मेनू टोगल ---
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        // बटन आयकॉन बदलण्यासाठी (पर्यायी)
+        menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
     });
 
-    function toggleCategoryMenu() {
-      const menu = document.getElementById('categoryMenu');
-      menu.classList.toggle('hidden');
+    // --- २. डार्क मोड टोगल ---
+    // आधी सेव्ह केलेली थीम तपासा
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.textContent = '☀️';
     }
 
-    function navigateTo(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + page).classList.add('active');
-      document.getElementById('mobileMenu').classList.remove('open');
-      document.getElementById('app').scrollTop = 0;
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.dataset.page === page));
-    }
-
-    function toggleMainMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-
-    function handleContact(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;"></i> Send Message';
-        document.getElementById('contactSuccess').classList.remove('hidden');
-        e.target.reset();
-        lucide.createIcons();
-        setTimeout(() => document.getElementById('contactSuccess').classList.add('hidden'), 3000);
-      }, 800);
-    }
-
-    const defaultConfig = {
-      site_title: 'InterviewHub',
-      hero_title: 'Cracking Your Next Java Interview Starts Here.',
-      hero_subtitle: 'Bridge the gap between "knowing Java" and "getting the job." We provide structured, deep-dive answers to the most challenging industry questions.',
-      cta_text: 'Start Learning',
-      footer_text: '© 2025 InterviewHub | Built for Developers by Developers',
-      background_color: '#FAF8F3',
-      surface_color: '#FFFFFF',
-      text_color: '#1F1F1F',
-      primary_color: '#C8553D',
-      secondary_color: '#588B8B',
-      font_family: 'Merriweather',
-      font_size: 16
-    };
-
-    function applyConfig(config) {
-      const c = { ...defaultConfig, ...config };
-      document.documentElement.style.setProperty('--bg', c.background_color);
-      document.documentElement.style.setProperty('--surface', c.surface_color);
-      document.documentElement.style.setProperty('--text', c.text_color);
-      document.documentElement.style.setProperty('--primary', c.primary_color);
-      document.documentElement.style.setProperty('--secondary', c.secondary_color);
-      document.getElementById('headerTitle').textContent = c.site_title;
-      document.getElementById('heroTitle').innerHTML = c.hero_title + '<br><span class="accent-color">Starts Here.</span>';
-      document.getElementById('heroSubtitle').textContent = c.hero_subtitle;
-      document.getElementById('ctaBtn').textContent = c.cta_text;
-      document.getElementById('footerBrand').textContent = c.site_title;
-      document.getElementById('footerText').textContent = c.footer_text;
-      const fontStack = `${c.font_family}, serif`;
-      document.querySelectorAll('.heading-font').forEach(el => el.style.fontFamily = fontStack);
-      const base = c.font_size;
-      document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${base * 2.5}px`);
-      document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${base * 1.8}px`);
-      document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${base * 1.3}px`);
-    }
-
-    function makeRecolorable(key) {
-      return {
-        get: () => (window.elementSdk.config && window.elementSdk.config[key]) || defaultConfig[key],
-        set: (v) => { window.elementSdk.setConfig({ [key]: v }); }
-      };
-    }
-
-    window.elementSdk.init({
-      defaultConfig,
-      onConfigChange: async (config) => { applyConfig(config); },
-      mapToCapabilities: (config) => ({
-        recolorables: [
-          makeRecolorable('background_color'),
-          makeRecolorable('surface_color'),
-          makeRecolorable('text_color'),
-          makeRecolorable('primary_color'),
-          makeRecolorable('secondary_color')
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => (config && config.font_family) || defaultConfig.font_family,
-          set: (v) => { window.elementSdk.setConfig({ font_family: v }); }
-        },
-        fontSizeable: {
-          get: () => (config && config.font_size) || defaultConfig.font_size,
-          set: (v) => { window.elementSdk.setConfig({ font_size: v }); }
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        
+        let theme = 'light';
+        if (body.classList.contains('dark-theme')) {
+            theme = 'dark';
+            themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
         }
-      }),
-      mapToEditPanelValues: (config) => new Map([
-        ['site_title', (config && config.site_title) || defaultConfig.site_title],
-        ['hero_title', (config && config.hero_title) || defaultConfig.hero_title],
-        ['hero_subtitle', (config && config.hero_subtitle) || defaultConfig.hero_subtitle],
-        ['cta_text', (config && config.cta_text) || defaultConfig.cta_text],
-        ['footer_text', (config && config.footer_text) || defaultConfig.footer_text]
-      ])
+        
+        // युजरची चॉईस ब्राउझरमध्ये सेव्ह करा
+        localStorage.setItem('theme', theme);
     });
 
-    lucide.createIcons();
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9eab1497f0001c71',t:'MTc3NTkyMTkyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    // स्क्रीन मोठी झाल्यावर मेनू बंद करणे (स्वच्छतेसाठी)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            nav.classList.remove('active');
+            menuBtn.textContent = '☰';
+        }
+    });
+});
+</script>
+
+</body>
 </html>
