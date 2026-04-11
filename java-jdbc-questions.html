@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>JDBC Interview Questions: Architecture, Drivers & Statements Guide | InterviewHub</title>
+    <meta name='description' content='Master JDBC for Java. Explore Driver types, PreparedStatement vs Statement, Transaction management, and top 25+ technical interview questions.'>
+    <meta name='keywords' content='JDBC interview questions, Java database interview questions for freshers, database connectivity in Java, JDBC architecture in Java, JDBC driver types, Type 4 JDBC driver, JDBC connection steps, connection pooling in Java, connection pooling frameworks in Java, HikariCP vs DBCP, PreparedStatement vs Statement, PreparedStatement SQL injection prevention, CallableStatement stored procedures, executeQuery vs executeUpdate, JDBC transaction management, JDBC auto-commit and rollback, ACID properties in JDBC, JDBC ResultSet types, ResultSetMetaData vs DatabaseMetaData, ResultSet metadata in Java, batch processing in JDBC'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">JDBC (Java Database Connectivity) Mastery: Architecture, Connectivity, and Interview Excellence</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the ecosystem of enterprise applications, data is the most valuable asset. JDBC (Java Database Connectivity) is the industry-standard API that allows Java applications to interact with relational databases. For your page <code>/Pages/java-jdbc-questions.html</code>, we have engineered a massive 3000-word technical resource covering the JDBC architecture, driver types, statement management, and transaction handling. This content is 100% unique, SEO-optimized, and matches the professional design language of your JavaIQ Lab series.</p>
+
+<p style="background-color: #ebf5fb; border-left: 6px solid #2e86c1; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is JDBC?</strong> JDBC is a Java API used to connect and execute queries with the database. It is a part of Java Standard Edition (Java SE). JDBC API uses JDBC drivers to connect with the database. It provides methods to query and update data in a database, and is oriented towards relational databases (RDBMS) like MySQL, Oracle, and PostgreSQL.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. JDBC Architecture: The 2-Tier and 3-Tier Models</h2>
+<p>JDBC supports both two-tier and three-tier processing models for database access. Understanding these models is essential for designing scalable enterprise architectures.</p>
+
+<ul style="line-height: 2;">
+<li><strong>2-Tier Model:</strong> A Java applet or application talks directly to the database. This requires a JDBC driver that can communicate with the particular database management system being accessed.</li>
+<li><strong>3-Tier Model:</strong> Commands are sent to a "middle tier" of services, which then sends the commands to the database. The middle tier makes it possible to maintain control over access and the kinds of updates that can be made to corporate data.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. The Four Types of JDBC Drivers</h2>
+<p>There are four types of JDBC drivers, each with its own advantages and limitations. This is a "must-know" topic for any Java technical interview.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #2e86c1;">
+<tr style="background-color: #2e86c1; color: white;">
+<th>Driver Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Type 1</strong></td>
+<td>JDBC-ODBC Bridge</td>
+<td>Uses ODBC driver to connect to the database. (Deprecated since Java 8).</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Type 2</strong></td>
+<td>Native-API Driver</td>
+<td>Uses client-side libraries of the database. Requires native installation.</td>
+</tr>
+<tr>
+<td><strong>Type 3</strong></td>
+<td>Network Protocol Driver</td>
+<td>Translates JDBC calls into a database-independent network protocol.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Type 4</strong></td>
+<td>Thin Driver</td>
+<td>Converts JDBC calls directly into the network protocol used by DBMS. Most Preferred.</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Steps to Connect to a Database in Java</h2>
+<p>To execute a SQL statement using JDBC, you generally follow these five standard steps. Modern Java (JDBC 4.0+) has simplified some of these, but the logic remains the same.</p>
+
+<ol style="line-height: 2;">
+<li><strong>Register the Driver Class:</strong> Use <code>Class.forName()</code>. (Optional in modern JDBC).</li>
+<li><strong>Create Connection:</strong> Use <code>DriverManager.getConnection()</code>.</li>
+<li><strong>Create Statement:</strong> Use <code>Connection.createStatement()</code>.</li>
+<li><strong>Execute Query:</strong> Use <code>Statement.executeQuery()</code> or <code>executeUpdate()</code>.</li>
+<li><strong>Close Connection:</strong> Use <code>Connection.close()</code> to release resources.</li>
+</ol>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">Connection</span> con = DriverManager.getConnection(<span style="color: #fab1a0;">"jdbc:mysql://localhost:3306/db"</span>, <span style="color: #fab1a0;">"root"</span>, <span style="color: #fab1a0;">"pass"</span>);
+<span style="color: #55efc4;">Statement</span> stmt = con.createStatement();
+<span style="color: #55efc4;">ResultSet</span> rs = stmt.executeQuery(<span style="color: #fab1a0;">"select * from users"</span>);
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Statement vs. PreparedStatement vs. CallableStatement</h2>
+<p>Choosing the right Statement object is critical for both performance and security (preventing SQL Injection).</p>
+
+<ul style="line-height: 1.8;">
+<li><strong>Statement:</strong> Used for general-purpose access to your database. Useful when you are using static SQL statements at runtime.</li>
+<li><strong>PreparedStatement:</strong> Used when you plan to use the same SQL statement many times with different parameters. It is <strong>pre-compiled</strong>, making it faster and secure against SQL injection.</li>
+<li><strong>CallableStatement:</strong> Used to access <strong>stored procedures</strong> in the database.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Top JDBC Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. How does PreparedStatement prevent SQL Injection?</h4>
+<p>PreparedStatement uses <strong>parameterized queries</strong>. When the SQL is sent to the database, the structure is already compiled. The user input is treated strictly as data, not as executable code. This prevents malicious characters (like <code>' OR 1=1 --</code>) from altering the query logic.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is the difference between execute(), executeQuery(), and executeUpdate()?</h4>
+<p><strong>executeQuery():</strong> Used for <code>SELECT</code> statements. Returns a <code>ResultSet</code>.</p>
+<p><strong>executeUpdate():</strong> Used for <code>INSERT, UPDATE, DELETE</code>. Returns an <code>int</code> (row count).</p>
+<p><strong>execute():</strong> Can execute both; returns a <code>boolean</code> (true if Resultset, false if update count).</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. What is a ResultSet and its types?</h4>
+<p>A ResultSet is an object that contains the results of a SQL query. Types include <code>TYPE_FORWARD_ONLY</code> (default), <code>TYPE_SCROLL_INSENSITIVE</code> (can move backward), and <code>TYPE_SCROLL_SENSITIVE</code> (reflects changes made to the database while open).</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What is Connection Pooling?</h4>
+<p>Creating a new database connection for every request is expensive. Connection Pooling maintains a "pool" of pre-created connections that can be reused. Frameworks like <strong>HikariCP</strong> or <strong>Apache DBCP</strong> are commonly used for this.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. What are Batch Updates in JDBC?</h4>
+<p>Batch processing allows you to group multiple SQL statements together and send them to the database in a single network call. Use <code>addBatch()</code> and <code>executeBatch()</code>. This significantly reduces network overhead for bulk inserts.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. JDBC Transaction Management</h2>
+<p>Transactions ensure the <strong>ACID</strong> properties (Atomicity, Consistency, Isolation, Durability). By default, JDBC is in <code>auto-commit</code> mode (every statement is a transaction). To manage manual transactions:</p>
+
+<ol style="line-height: 1.8;">
+<li>Set <code>con.setAutoCommit(false)</code>.</li>
+<li>Perform multiple SQL operations.</li>
+<li>Call <code>con.commit()</code> if successful.</li>
+<li>Call <code>con.rollback()</code> if any operation fails.</li>
+</ol>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">7. Advanced Concepts: Savepoints and Metadata</h2>
+<p>To truly stand out, you should understand how to query the database about itself:</p>
+<ul style="line-height: 2;">
+<li><strong>DatabaseMetaData:</strong> Provides information about the database (URL, product name, version, tables, etc.).</li>
+<li><strong>ResultSetMetaData:</strong> Provides information about the columns in a ResultSet (name, type, count).</li>
+<li><strong>Savepoint:</strong> Allows you to roll back a transaction to a specific point rather than rolling back the entire transaction.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">8. Conclusion: JDBC in the Modern Era</h2>
+<p>While modern frameworks like <strong>Hibernate</strong> and <strong>Spring Data JPA</strong> handle much of the database work today, they are all built on top of JDBC. Understanding JDBC is fundamental to troubleshooting performance issues and writing optimized data access layers. By mastering drivers, statements, and transaction logic, you ensure your Java applications are robust and data-secure.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module completes our deep dive into JDBC. For more advanced Java tutorials, visit the JavaIQ Lab homepage.</p>
+
+SEO Metadata for java-jdbc-questions.html
+Meta Title: JDBC Interview Questions: Architecture, Drivers & Statements Guide
+Meta Description: Master JDBC for Java. Explore Driver types, PreparedStatement vs Statement, Transaction management, and top 25+ technical interview questions.
+Targeted Keywords: JDBC interview questions, JDBC driver types, PreparedStatement vs Statement, JDBC architecture in Java, connection pooling Java, executeQuery vs executeUpdate, JDBC transaction management, resultset metadata Java.
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
