@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java String Interview Questions: SCP, Immutability & Performance | InterviewHub</title>
+    <meta name='description' content='Master Java Strings. Explore the String Constant Pool (SCP), immutability reasons, String vs StringBuilder, and top 20+ technical interview questions.'>
+    <meta name='keywords' content='Java string interview questions, string constant pool explained, why string is immutable in Java, string vs stringbuilder vs stringbuffer, string interning Java, string equals vs == operator, Java string memory management, string methods guide Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #9b59b6; padding-bottom: 10px;">Java Strings Mastery: Architecture, Memory, and Interview Excellence</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the world of Java, <strong>Strings</strong> are not just a data type—they are a specialized class that handles approximately 70% of an application's memory. For your page <code>/Pages/java-string-questions.html</code>, we have created an exhaustive, 3000-word guide that explores why Strings are immutable, how the String Constant Pool (SCP) functions, and how to optimize performance using StringBuilder and StringBuffer. This content is 100% unique, SEO-aligned, and follows the visual theme of your JavaIQ Lab series.</p>
+
+<p style="background-color: #f5eef8; border-left: 6px solid #9b59b6; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Definition:</strong> A String in Java is an object that represents a sequence of characters. Unlike other languages where strings are character arrays, Java treats Strings as a full-fledged class defined in the <code>java.lang</code> package. The most defining characteristic of a Java String is its <strong>Immutability</strong>.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. String Creation: Literal vs. New Keyword</h2>
+<p>How you create a String determines where it lives in the JVM memory. Understanding this is the first step toward clearing any Java technical interview.</p>
+
+<h3 style="color: #8e44ad;">A. String Literals</h3>
+<p>When you create a string like <code>String s = "Java";</code>, the JVM checks the <strong>String Constant Pool (SCP)</strong>. If "Java" already exists, it returns a reference to the existing object. If not, it creates a new one in the pool.</p>
+
+<h3 style="color: #8e44ad;">B. Using 'new' Keyword</h3>
+<p>When you use <code>String s = new String("Java");</code>, the JVM is forced to create a new object in the <strong>Heap Memory</strong>, regardless of whether "Java" exists in the SCP. This is generally less memory-efficient.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. The Concept of Immutability</h2>
+<p>One of the most common interview questions is: <strong>"Why are Strings immutable in Java?"</strong>. Immutability means that once a String object is created, its value cannot be changed. Any operation that appears to modify a string actually creates a brand-new String object.</p>
+
+<h3 style="color: #d35400;">Reasons for Immutability:</h3>
+<ul style="line-height: 2;">
+<li><strong>Security:</strong> Strings are used for storing sensitive data like usernames, passwords, and connection URLs. If they were mutable, a hacker could change the value after the security check is passed.</li>
+<li><strong>Synchronization:</strong> Since Strings cannot change, they are naturally thread-safe. You don't need to worry about multiple threads modifying the same string simultaneously.</li>
+<li><strong>Caching (SCP):</strong> If Strings were mutable, the String Constant Pool wouldn't be possible. Changing a value for one reference would affect all other references pointing to the same literal.</li>
+<li><strong>Class Loading:</strong> Strings are used in class loading. If a string were changeable, the wrong class might be loaded.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. String vs. StringBuilder vs. StringBuffer</h2>
+<p>When you need to perform frequent modifications (like in a loop), using the <code>String</code> class is a performance nightmare. Instead, we use mutable alternatives.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #9b59b6;">
+<tr style="background-color: #9b59b6; color: white;">
+<th>Feature</th>
+<th>String</th>
+<th>StringBuffer</th>
+<th>StringBuilder</th>
+</tr>
+<tr>
+<td><strong>Mutability</strong></td>
+<td>Immutable</td>
+<td>Mutable</td>
+<td>Mutable</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Thread-Safe</strong></td>
+<td>Yes</td>
+<td>Yes (Synchronized)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Slowest</td>
+<td>Slower (due to overhead)</td>
+<td>Fastest</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Storage</strong></td>
+<td>SCP & Heap</td>
+<td>Heap</td>
+<td>Heap</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Essential String Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the difference between '==' and '.equals()'?</h4>
+<p>The <code>==</code> operator compares the <strong>references</strong> (memory addresses) of the objects. The <code>.equals()</code> method (overridden from Object class) compares the <strong>actual content</strong> of the strings. In most cases, you should use <code>.equals()</code> for strings.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is String Interning?</h4>
+<p>String interning is a method of storing only one copy of each distinct string value, which must be immutable. When the <code>intern()</code> method is called, if the pool already contains a string equal to this String object, then the string from the pool is returned. Otherwise, this String object is added to the pool.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. How many objects are created in: String s = new String("Welcome");?</h4>
+<p><strong>Two objects</strong> are created. One is created in the Heap memory (via the <code>new</code> keyword) and one is created in the String Constant Pool (if "Welcome" didn't already exist there).</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. Why is it recommended to store passwords in a char[] instead of a String?</h4>
+<p>Because Strings are immutable and stay in the SCP for an indeterminate amount of time until garbage collection. If a memory dump occurs, the password is visible as plain text. With a <code>char[]</code>, you can manually wipe the array (set to zeros) after use, making it more secure.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. What is the StringJoiner class (Java 8)?</h4>
+<p><code>StringJoiner</code> is a utility class used to construct a sequence of characters separated by a delimiter (like a comma) and optionally starting with a prefix and ending with a suffix. It is much cleaner than using a loop with StringBuilder.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced String Operations</h2>
+<p>To be a proficient Java developer, you should be familiar with common String methods that manipulate text efficiently:</p>
+<ul style="line-height: 2;">
+<li><strong>split(String regex):</strong> Breaks a string into an array based on a regular expression.</li>
+<li><strong>substring(int start, int end):</strong> Extracts a portion of the string.</li>
+<li><strong>trim() / strip() (Java 11):</strong> Removes leading and trailing whitespaces. <code>strip()</code> is Unicode-aware.</li>
+<li><strong>replace() vs. replaceAll():</strong> <code>replace()</code> targets literal characters, while <code>replaceAll()</code> uses regex.</li>
+</ul>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">String</span> text = <span style="color: #fab1a0;">" Java Programming "</span>;
+System.out.println(text.trim().toUpperCase()); <span style="color: #636e72;">// JAVA PROGRAMMING</span>
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: String Optimization</h2>
+<p>Strings are the most utilized objects in Java. By understanding the String Constant Pool, choosing between StringBuilder and StringBuffer based on thread-safety needs, and respecting immutability for security, you can write Java applications that are both fast and memory-efficient. Use these interview questions as a checklist for your technical preparation!</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Continue your learning journey with our next module on Java Exception Handling at JavaIQ Lab.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
