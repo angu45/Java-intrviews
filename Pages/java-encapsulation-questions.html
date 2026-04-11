@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Encapsulation Guide: Data Hiding, Getters & Setters, and FAQs | InterviewHub</title>
+    <meta name='description' content='Learn Encapsulation in Java. Understand data hiding, private access modifiers, and getter-setter methods with real-world examples and interview questions.'>
+    <meta name='keywords' content='Java encapsulation questions, what is encapsulation in Java, data hiding in Java, private variables and public getters setters, Java OOP pillars, encapsulation interview questions, Java coding security, access modifiers in Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1>Encapsulation in Java: Data Hiding and Robustness</h1>
+
+<p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Encapsulation is the first pillar of Object-Oriented Programming (OOP) and serves as a protective shield for your data. For your page <code>/Pages/java-encapsulation-questions.html</code>, we have detailed how this concept prevents unauthorized access and keeps your code modular. This content is unique, SEO-friendly, and designed to help developers understand the "Why" behind data hiding.</p>
+
+<p style="background-color: #e8f8f5; border-left: 6px solid #1abc9c; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Definition:</strong> Encapsulation is the technique of wrapping data (variables) and the code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class are hidden from other classes and can be accessed only through the methods of their current class.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. How to Achieve Encapsulation in Java?</h2>
+<p>To implement encapsulation in Java, you must follow two primary steps:</p>
+<ul style="line-height: 1.8;">
+<li><strong>Private Variables:</strong> Declare the variables of the class as <code>private</code>. This ensures that no external class can access or modify them directly.</li>
+<li><strong>Public Getter and Setter Methods:</strong> Provide <code>public</code> methods to view (get) and modify (set) the variable values. This gives you full control over what data is entered into your system.</li>
+</ul>
+
+<h3 style="color: #16a085;">Example of an Encapsulated Class</h3>
+<pre style="background-color: #1e1e1e; color: #dcdcaa; padding: 15px; border-radius: 8px; border: 1px solid #444; overflow-x: auto;">
+<span style="color: #569cd6;">public class</span> <span style="color: #4ec9b0;">UserAccount</span> {
+<span style="color: #6a9955;">// Private data: hidden from the outside world</span>
+<span style="color: #569cd6;">private double</span> balance;
+
+<span style="color: #6a9955;">// Getter: Controlled access</span>
+<span style="color: #569cd6;">public double</span> <span style="color: #dcdcaa;">getBalance</span>() {
+    <span style="color: #569cd6;">return</span> balance;
+}
+
+<span style="color: #6a9955;">// Setter: Data validation and security</span>
+<span style="color: #569cd6;">public void</span> <span style="color: #dcdcaa;">setBalance</span>(<span style="color: #569cd6;">double</span> amount) {
+    <span style="color: #569cd6;">if</span> (amount > <span style="color: #b5cea8;">0</span>) {
+        balance = amount;
+    } <span style="color: #569cd6;">else</span> {
+        <span style="color: #4ec9b0;">System</span>.out.println(<span style="color: #ce9178;">"Invalid Amount!"</span>);
+    }
+}
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Advantages of Encapsulation</h2>
+<p>Why do we go through the trouble of writing getters and setters? Here is why:</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #16a085;">
+<tr style="background-color: #16a085; color: white; text-align: center;">
+<th>Advantage</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Data Hiding</strong></td>
+<td>The user will have no idea about the inner implementation of the class. It is also known as "Black Box" testing.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Increased Flexibility</strong></td>
+<td>You can make a class "read-only" (by removing setter) or "write-only" (by removing getter).</td>
+</tr>
+<tr>
+<td><strong>Reusability</strong></td>
+<td>Encapsulated code is easier to maintain and can be reused in different parts of the application.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Testing is Easy</strong></td>
+<td>Since code is modular, unit testing becomes simpler and more effective.</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Frequently Asked Questions (FAQ)</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #2e86c1;">Q1. What is the difference between Encapsulation and Abstraction?</h4>
+<p>While they are related, <strong>Abstraction</strong> focuses on hiding the complexity (the "what"), whereas <strong>Encapsulation</strong> focuses on hiding the data (the "how"). Abstraction is often implemented using Interfaces, and Encapsulation is implemented using Access Modifiers.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #2e86c1;">Q2. Can we achieve encapsulation without using 'private' keyword?</h4>
+<p>Technically, no. Without the <code>private</code> access modifier, the variables remain accessible to other classes (either in the same package or globally), which defeats the purpose of data hiding.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #2e86c1;">Q3. Why is Encapsulation also called "Data Hiding"?</h4>
+<p>Because it restricts direct access to the data members of a class. By providing methods to interact with the data, the class "hides" the actual state of the object, exposing only what is necessary.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #2e86c1;">Q4. What is a "Tightly Encapsulated Class"?</h4>
+<p>A class is said to be tightly encapsulated if every variable in the class is declared as <code>private</code>. If even one variable is public or default, it is not considered tightly encapsulated.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Real-World Analogy: The Capsule</h2>
+<p>The name "Encapsulation" comes from a medical capsule. Inside a capsule, several medicines (data and methods) are mixed and enclosed in a protective shell. You consume the capsule as a single unit without needing to know the exact chemical composition inside. Similarly, in Java, you interact with an object through its public methods without needing to see its private variables.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Conclusion</h2>
+<p>Encapsulation is more than just making variables private; it is about building a secure and manageable architecture. By controlling how data is accessed and modified, you reduce the chances of bugs and make your Java programs much more robust.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Explore our other JavaIQ Lab modules to master all the pillars of Object-Oriented Programming.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
