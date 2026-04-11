@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewHub Quizzes | Challenge Your Java Skills</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Take our interactive Java and OOP quizzes to test your technical interview readiness. 45 comprehensive questions for developers.">
+    <meta name="keywords" content="Java Quiz, OOP Quiz, Servlet Quiz, InterviewHub, Coding Challenge, Java IQ Test">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+
+    <!-- Tailwind CSS for modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        .quiz-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+
+        .option-correct {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+            color: #065f46 !important;
+        }
+
+        .option-wrong {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+            color: #991b1b !important;
+        }
+
+        .progress-bar {
+            transition: width 0.4s ease;
+        }
+
+        /* Header/Footer Styles to match existing site */
+        .header-shadow { box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white header-shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="https://intrviews.vercel.app">
+                    <img src="Logo.png" alt="InterviewHub Logo" class="h-8 md:h-10">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-gray-600">
+                <a href="https://intrviews.vercel.app" class="hover:text-blue-600">Home</a>
+                <a href="/java-interview-questions.html" class="hover:text-blue-600">Java</a>
+                <a href="/oop-interview-questions.html" class="hover:text-blue-600">OOP</a>
+                <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <span class="text-xl">🌙</span>
+                <span class="md:hidden text-2xl">☰</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        
+        <!-- Selection Screen -->
+        <div id="selection-screen" class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Challenge Your IQ Lab 🧠</h1>
+                <p class="text-gray-600">Tumcha technical knowledge test kara ani interview sathi tayar vha.</p>
+            </div>
+
+            <div class="grid md:grid-rows-3 gap-6">
+                <!-- Quiz 1 -->
+                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(0)">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-100 p-4 rounded-xl text-blue-600 text-2xl">☕</div>
+                        <div>
+                            <h3 class="font-bold text-xl text-gray-800">Quiz 1: Java Fundamentals</h3>
+                            <p class="text-gray-500 text-sm">Basics, JVM, Syntax, Loops, Data Types</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 md:mt-0 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                </div>
+
+                <!-- Quiz 2 -->
+                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(1)">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-100 p-4 rounded-xl text-purple-600 text-2xl">🏗️</div>
+                        <div>
+                            <h3 class="font-bold text-xl text-gray-800">Quiz 2: Master OOP Concepts</h3>
+                            <p class="text-gray-500 text-sm">Inheritance, Polymorphism, Abstraction, Encapsulation</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 md:mt-0 bg-purple-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                </div>
+
+                <!-- Quiz 3 -->
+                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(2)">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-green-100 p-4 rounded-xl text-green-600 text-2xl">🚀</div>
+                        <div>
+                            <h3 class="font-bold text-xl text-gray-800">Quiz 3: Advanced Java & Web</h3>
+                            <p class="text-gray-500 text-sm">Collections, Servlets, JDBC, Multi-threading</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 md:mt-0 bg-green-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <!-- Progress Bar -->
+            <div class="bg-gray-100 h-2 w-full">
+                <div id="progress" class="bg-blue-600 h-2 progress-bar" style="width: 0%"></div>
+            </div>
+            
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <span id="question-counter" class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Question 1 of 15</span>
+                    <button onclick="quitQuiz()" class="text-gray-400 hover:text-red-500 transition-colors">✕ Close</button>
+                </div>
+
+                <h2 id="question-text" class="text-xl md:text-2xl font-bold text-gray-800 mb-8 leading-tight">
+                    Loading question...
+                </h2>
+
+                <div id="options-container" class="space-y-4 mb-8">
+                    <!-- Options injected here -->
+                </div>
+
+                <div id="feedback" class="hidden p-4 rounded-xl mb-6 text-sm font-medium">
+                </div>
+
+                <button id="next-btn" disabled onclick="nextQuestion()" class="w-full py-4 rounded-xl font-bold text-white bg-gray-300 transition-all cursor-not-allowed">
+                    Check Answer
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="hidden max-w-md mx-auto text-center py-12 bg-white rounded-3xl shadow-2xl p-10">
+            <div class="text-6xl mb-6">🏆</div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Quiz Finished!</h2>
+            <p id="result-message" class="text-gray-600 mb-8">Excellent effort, Developer!</p>
+            
+            <div class="bg-blue-50 rounded-2xl p-6 mb-8">
+                <span class="block text-gray-500 text-sm uppercase font-bold mb-1">Your Score</span>
+                <span id="final-score" class="text-5xl font-black text-blue-600">0/15</span>
+            </div>
+
+            <div class="flex flex-col space-y-4">
+                <button onclick="restartQuiz()" class="bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-200">Try Again</button>
+                <button onclick="location.reload()" class="bg-gray-100 text-gray-700 py-4 rounded-xl font-bold">Back to Home</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="text-xl font-bold text-gray-900">InterviewHub</h3>
+                    <p class="text-gray-500 max-w-xs">The definitive guide to technical interview success.</p>
+                </div>
+                <div class="flex space-x-12">
+                    <div>
+                        <h4 class="font-bold text-gray-900 mb-4">Navigate</h4>
+                        <div class="flex flex-col space-y-2 text-gray-500 text-sm">
+                            <a href="https://intrviews.vercel.app">Home</a>
+                            <a href="/pages/java-basics.html">Java Tutorials</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t mt-10 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2026 InterviewHub | Built for Developers by Angad Deshmane</p>
+                <p class="mt-2 text-xs">https://intrviews.vercel.app/</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const quizzes = [
+            {
+                title: "Java Fundamentals",
+                questions: [
+                    { q: "Java kashavar adharit bhasha ahe?", options: ["Compiler", "Interpreter", "Both JVM based", "None"], correct: 2 },
+                    { q: "JDK cha full form kay ahe?", options: ["Java Data Kit", "Java Development Kit", "Java Design Kit", "Joint Dev Kit"], correct: 1 },
+                    { q: "Main method konti barobar ahe?", options: ["public static void main()", "public void main()", "public static void main(String[] args)", "static main()"], correct: 2 },
+                    { q: "JVM konta kam karto?", options: ["Code compile karne", "Bytecode run karne", "Code design karne", "Database connect karne"], correct: 1 },
+                    { q: "Pratyek statement nantar kay vapartat?", options: [":", ";", ".", ","], correct: 1 },
+                    { q: "Java madhe primitive types kiti ahet?", options: ["5", "8", "10", "12"], correct: 1 },
+                    { q: "int variable chi default value kay aste?", options: ["0", "null", "undefined", "1"], correct: 0 },
+                    { q: "String konta type ahe?", options: ["Primitive", "Reference/Class", "Char", "None"], correct: 1 },
+                    { q: "Final keyword kashasathi vapartat?", options: ["Method delete sathi", "Variable constant sathi", "Class extend sathi", "Loop sathi"], correct: 1 },
+                    { q: "Boolean variable chi default value?", options: ["true", "false", "0", "null"], correct: 1 },
+                    { q: "Local variable kuthe declare kartat?", options: ["Class madhe", "Method madhe", "Package madhe", "Global"], correct: 1 },
+                    { q: "Bytecode file cha extension kay asto?", options: [".java", ".class", ".exe", ".txt"], correct: 1 },
+                    { q: "Konta loop kamit kamit ekda execute hoto?", options: ["while", "for", "do-while", "if"], correct: 2 },
+                    { q: "Java madhe pointers ahet ka?", options: ["Ho", "Nahi", "Fakta objects sathi", "Depend on OS"], correct: 1 },
+                    { q: "Garbage collector cha kam kay?", options: ["Code clear karne", "Memory free karne", "Error shodhane", "None"], correct: 1 }
+                ]
+            },
+            {
+                title: "Master OOP Concepts",
+                questions: [
+                    { q: "Data Hiding kashamule hote?", options: ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"], correct: 1 },
+                    { q: "Method Overloading kay dakhvte?", options: ["Runtime Poly", "Compile-time Poly", "Inheritance", "Abstraction"], correct: 1 },
+                    { q: "Super keyword cha upyog kay?", options: ["Loop end karne", "Parent class refer karne", "Object create karne", "Static method banavne"], correct: 1 },
+                    { q: "Abstraction mhanje kay?", options: ["Data show karne", "Complexity hide karne", "Duplicate code", "None"], correct: 1 },
+                    { q: "Konti class instantiate karta yet nahi?", options: ["Public", "Final", "Abstract", "Protected"], correct: 2 },
+                    { q: "Inheritance sathi konta keyword vapartat?", options: ["implements", "extends", "inherits", "super"], correct: 1 },
+                    { q: "Multiple inheritance classes dware possible ahe ka?", options: ["Ho", "Nahi", "Limited", "Fakta Interfaces madhe"], correct: 1 },
+                    { q: "Interface madhe methods default kashya astat?", options: ["Private", "Abstract", "Final", "Protected"], correct: 1 },
+                    { q: "Runtime Polymorphism kashamule hote?", options: ["Overloading", "Overriding", "Encapsulation", "Static binding"], correct: 1 },
+                    { q: "Object kontya operator ne create kartat?", options: ["new", "create", "alloc", "add"], correct: 0 },
+                    { q: "Constructors cha return type kay?", options: ["void", "int", "None", "Class name"], correct: 2 },
+                    { q: "This keyword kashasathi vapartat?", options: ["Current instance", "Next instance", "Global class", "Parent class"], correct: 0 },
+                    { q: "Tight coupling mhanje kay?", options: ["Good design", "Bad design (Hard to change)", "Scalable", "Abstraction"], correct: 1 },
+                    { q: "Protected modifier cha scope?", options: ["Same class", "Same package & subclasses", "Anywhere", "Global"], correct: 1 },
+                    { q: "Encapsulation mhanje kay wrapping of?", options: ["Only methods", "Only data", "Data and methods together", "Class and Objects"], correct: 2 }
+                ]
+            },
+            {
+                title: "Advanced Java & Web",
+                questions: [
+                    { q: "Servlet lifecycle chi pahili method konti?", options: ["service()", "destroy()", "init()", "doGet()"], correct: 2 },
+                    { q: "HTTP konta protocol ahe?", options: ["Stateful", "Stateless", "Bi-directional", "None"], correct: 1 },
+                    { q: "Servlet container mhanje kay?", options: ["Database", "Web Server (e.g. Tomcat)", "Compiler", "Browser"], correct: 1 },
+                    { q: "JDBC madhe Type 4 driver konta ahe?", options: ["Native-API", "Network Protocol", "Thin Driver", "Bridge"], correct: 2 },
+                    { q: "HashMap madhe keys duplicate asu shaktat ka?", options: ["Ho", "Nahi", "Depend on size", "Fakta values sathi"], correct: 1 },
+                    { q: "ArrayList vs LinkedList search fast kashat ahe?", options: ["LinkedList", "ArrayList", "Equal", "Depends on RAM"], correct: 1 },
+                    { q: "Checked exception konti ahe?", options: ["IOException", "NullPointer", "Arithmetic", "ClassCast"], correct: 0 },
+                    { q: "Try block nantar konta block compulsory nahi?", options: ["catch", "finally", "donihi", "Donihi garjeche ahet"], correct: 2 },
+                    { q: "Thread run sathi konti method call kartat?", options: ["run()", "start()", "execute()", "init()"], correct: 1 },
+                    { q: "Wait() method kontya class chi ahe?", options: ["Thread", "Object", "System", "Runnable"], correct: 1 },
+                    { q: "Deadlock mhanje kay?", options: ["Program end hone", "Threads ekmekanchi waat pahane", "Memory full hone", "None"], correct: 1 },
+                    { q: "PreparedStatement SQL injection pasun vachavte ka?", options: ["Ho", "Nahi", "Limited", "Depends on DB"], correct: 0 },
+                    { q: "JSP file internally kashat convert hote?", options: ["HTML", "Servlet", "Class", "XML"], correct: 1 },
+                    { q: "Singleton pattern mhanje kay?", options: ["Multiple objects", "Only one object per app", "Static objects", "Thread unsafe"], correct: 1 },
+                    { q: "Transient keyword cha upyog serialization madhe?", options: ["Fields save karne", "Fields skip karne", "Encryption", "None"], correct: 1 }
+                ]
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let isAnswered = false;
+
+        function startQuiz(index) {
+            currentQuizIndex = index;
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('selection-screen').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            isAnswered = false;
+            const quiz = quizzes[currentQuizIndex];
+            const q = quiz.questions[currentQuestionIndex];
+            
+            document.getElementById('question-counter').innerText = `Question ${currentQuestionIndex + 1} of 15`;
+            document.getElementById('question-text').innerText = q.q;
+            document.getElementById('progress').style.width = `${((currentQuestionIndex + 1) / 15) * 100}%`;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full text-left p-4 rounded-xl font-semibold text-gray-700 bg-white hover:bg-gray-50';
+                btn.innerText = opt;
+                btn.onclick = () => selectOption(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.innerText = "Check Answer";
+            nextBtn.disabled = true;
+            nextBtn.classList.replace('bg-blue-600', 'bg-gray-300');
+            nextBtn.classList.add('cursor-not-allowed');
+            
+            document.getElementById('feedback').classList.add('hidden');
+        }
+
+        function selectOption(idx, btn) {
+            if (isAnswered) return;
+            
+            const quiz = quizzes[currentQuizIndex];
+            const q = quiz.questions[currentQuestionIndex];
+            const options = document.querySelectorAll('.option-btn');
+            
+            isAnswered = true;
+            const isCorrect = idx === q.correct;
+            
+            if (isCorrect) {
+                btn.classList.add('option-correct');
+                score++;
+                showFeedback("✅ Shabbas! Correct answer ahe.", "bg-green-100 text-green-800");
+            } else {
+                btn.classList.add('option-wrong');
+                options[q.correct].classList.add('option-correct');
+                showFeedback("❌ Chukicha! Correct answer highlighted ahe.", "bg-red-100 text-red-800");
+            }
+
+            options.forEach(b => b.disabled = true);
+            
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.disabled = false;
+            nextBtn.innerText = currentQuestionIndex === 14 ? "See Results" : "Next Question";
+            nextBtn.classList.replace('bg-gray-300', 'bg-blue-600');
+            nextBtn.classList.remove('cursor-not-allowed');
+        }
+
+        function showFeedback(text, classes) {
+            const fb = document.getElementById('feedback');
+            fb.innerText = text;
+            fb.className = `p-4 rounded-xl mb-6 text-sm font-medium ${classes}`;
+            fb.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < 15) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultScreen = document.getElementById('result-screen');
+            resultScreen.classList.remove('hidden');
+            
+            document.getElementById('final-score').innerText = `${score}/15`;
+            
+            let msg = "";
+            if (score === 15) msg = "🔥 Phenomenal! You are a Java Master!";
+            else if (score >= 10) msg = "👏 Great job! Your fundamentals are strong.";
+            else msg = "📚 Thoda aanki abhyas kara, tumhi nakki jamval!";
+            
+            document.getElementById('result-message').innerText = msg;
+        }
+
+        function restartQuiz() {
+            document.getElementById('result-screen').classList.add('hidden');
+            startQuiz(currentQuizIndex);
+        }
+
+        function quitQuiz() {
+            if (confirm("Kharach quiz madhun baher jayche ahe ka? Tumchi progress save honar nahi.")) {
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
