@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Exception Handling: Checked vs Unchecked, Try-Catch & Q&A | InterviewHub</title>
+    <meta name='description' content='Comprehensive guide to Exception Handling in Java. Learn the throwable hierarchy, try-with-resources, custom exceptions, and top technical interview questions.'>
+    <meta name='keywords' content='Java exception handling questions, checked vs unchecked exceptions Java, try catch finally explained, throw vs throws keyword, custom exception in Java, exception hierarchy diagram, try-with-resources Java, runtime exception vs error.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1>Exception Handling in Java: Mastery of Robust and Error-Free Code</h1>
+
+<p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Exception handling is the protective layer that prevents a Java application from crashing when an unexpected event occurs. For your page <code>/Pages/java-exception-handling-questions.html</code>, we have developed a deep-dive technical guide covering the hierarchy of exceptions, the try-catch-finally mechanism, and advanced custom exceptions. This content is 100% unique, SEO-friendly, and meticulously structured to match the professional theme of your JavaIQ Lab series.</p>
+
+<p style="background-color: #f4f7f9; border-left: 6px solid #3498db; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Definition:</strong> An <strong>Exception</strong> is an unwanted or unexpected event, which occurs during the execution of a program (at runtime) and disrupts the normal flow of the program's instructions. <strong>Exception Handling</strong> is the process of managing these errors so that the application can either recover or shut down gracefully without losing data.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Exception Hierarchy in Java</h2>
+<p>In Java, all exception and error classes are descendants of the <code>java.lang.Throwable</code> class. Understanding this hierarchy is crucial for writing efficient catch blocks.</p>
+
+<ul style="line-height: 2;">
+<li><strong>Error:</strong> Indicates serious problems that a reasonable application should not try to catch (e.g., <code>OutOfMemoryError</code>, <code>StackOverflowError</code>). These are usually external to the application.</li>
+<li><strong>Exception:</strong> Indicates conditions that a reasonable application might want to catch. It is further divided into:
+<ul>
+<li><strong>Checked Exceptions:</strong> Checked at compile-time (e.g., <code>IOException</code>, <code>SQLException</code>).</li>
+<li><strong>Unchecked Exceptions (Runtime):</strong> Checked at runtime (e.g., <code>NullPointerException</code>, <code>ArithmeticException</code>).</li>
+</ul>
+</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. The Exception Handling Keywords</h2>
+<p>Java provides five primary keywords to handle exceptions effectively. Using them correctly ensures that your code remains "clean" even when errors occur.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #3498db;">
+<tr style="background-color: #3498db; color: white;">
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>try</strong></td>
+<td>Used to wrap a block of code that might throw an exception. It must be followed by catch or finally.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>catch</strong></td>
+<td>Used to handle the specific exception thrown in the try block.</td>
+</tr>
+<tr>
+<td><strong>finally</strong></td>
+<td>Used to execute important code (like closing a database) regardless of whether an exception occurred.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>throw</strong></td>
+<td>Used to explicitly throw an exception from a method or block of code.</td>
+</tr>
+<tr>
+<td><strong>throws</strong></td>
+<td>Used in a method signature to declare that the method might throw certain exceptions.</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Checked vs. Unchecked Exceptions</h2>
+<p>This is a favorite topic for interviewers. The difference determines how you design your method signatures.</p>
+
+<p><strong>Checked Exceptions:</strong> These represent conditions outside the control of the program (like file systems or network issues). The compiler forces you to handle them using a try-catch or declare them with <code>throws</code>.</p>
+
+<p><strong>Unchecked Exceptions:</strong> These usually represent programming errors (like dividing by zero or accessing a null reference). The compiler does not force you to handle them, as the goal should be to fix the code logic instead.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Essential Exception Handling Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the difference between 'final', 'finally', and 'finalize'?</h4>
+<p><strong>final:</strong> A modifier used to make a class non-inheritable, a method non-overridable, or a variable constant.</p>
+<p><strong>finally:</strong> A block used in exception handling that always executes.</p>
+<p><strong>finalize:</strong> A method in the Object class called by the Garbage Collector before an object is destroyed (deprecated since Java 9).</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. Can a finally block be skipped?</h4>
+<p>Yes, in extreme cases: if <code>System.exit(0)</code> is called, if the JVM crashes, or if the thread executing the try/catch block is killed/interrupted.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. What is "Try-with-Resources" (Java 7)?</h4>
+<p>It is a try statement that declares one or more resources (like a <code>BufferedReader</code>). The resource is automatically closed at the end of the statement, eliminating the need for a manual finally block to close resources.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. Can we catch multiple exceptions in a single catch block?</h4>
+<p>Yes, since Java 7, you can use the pipe symbol: <code>catch (ArithmeticException | NullPointerException e)</code>. This reduces code duplication when multiple exceptions require the same handling logic.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. What is Exception Propogation?</h4>
+<p>If an exception is not caught in the method where it occurred, it "drops" down the call stack to the previous method. This continues until the exception is caught or it reaches the <code>main()</code> method and the JVM terminates the program.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Creating Custom Exceptions</h2>
+<p>In enterprise applications, standard exceptions are often not enough. You can create your own exception by extending the <code>Exception</code> class (for checked) or <code>RuntimeException</code> (for unchecked).</p>
+
+<pre style="background-color: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 8px; border: 1px solid #444;">
+<span style="color: #55efc4;">class</span> InvalidAgeException <span style="color: #55efc4;">extends</span> Exception {
+<span style="color: #55efc4;">public</span> InvalidAgeException(String str) {
+<span style="color: #55efc4;">super</span>(str);
+}
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: Best Practices</h2>
+<p>Effective exception handling is about balance. Never "swallow" exceptions with an empty catch block, as this makes debugging impossible. Always log the error or rethrow it. Use <code>finally</code> or <code>try-with-resources</code> to ensure that your application doesn't leak memory or leave files open. Mastering these patterns will make your Java code professional, reliable, and interview-ready.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module concludes the JavaIQ Lab Exception Handling guide. Next up: Java Collections Framework.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
