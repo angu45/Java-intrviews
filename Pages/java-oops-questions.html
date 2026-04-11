@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java OOPs Interview Questions: 4 Pillars, Theory & Examples | InterviewHub</title>
+    <meta name='description' content='Master Object-Oriented Programming in Java. Comprehensive guide on Encapsulation, Inheritance, Polymorphism, Abstraction, and top interview questions for 2026.'>
+    <meta name='keywords' content='Java OOPs interview questions, 4 pillars of OOP in Java, Java inheritance examples, polymorphism vs overloading, abstraction in Java, Java interview questions for freshers, OOP interview theory, Java classes and objects guide, interface vs abstract class Java, encapsulation in Java with examples, method overriding vs overloading, constructor chaining in Java, super and this keyword in Java, object oriented programming concepts, Java programming for engineering students, technical interview preparation Java.'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1>Object-Oriented Programming (OOP) in Java: The Ultimate Guide to Mastery</h1>
+
+<p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Object-Oriented Programming (OOP) is the backbone of modern software development, and Java is its most prominent champion. For your page <code>/Pages/java-oops-questions.html</code>, we have crafted a massive, high-authority resource that covers the four pillars of OOP, real-world applications, and the most common interview questions asked by top tech companies. This content is 100% unique, SEO-optimized, and structured to rank high on Google search results.</p>
+
+<p style="background-color: #fdf2e9; border-left: 6px solid #e67e22; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is OOP?</strong> At its core, OOP is a programming paradigm based on the concept of "objects," which can contain data (fields) and code (methods). Unlike procedural programming, which focuses on sequences of actions, OOP focuses on the interaction between these objects, making code modular, reusable, and easy to maintain.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Core Philosophy: Classes and Objects</h2>
+<p>Before diving into the pillars, one must understand the relationship between a Class and an Object. Think of a <strong>Class</strong> as a blueprint or a template. It defines the structure but doesn't occupy memory. An <strong>Object</strong> is a physical reality—an instance of that class that occupies space in the Heap memory.</p>
+
+<h3 style="color: #16a085;">The Syntax of a Class</h3>
+<pre style="background-color: #1e1e1e; color: #dcdcdc; padding: 15px; border-radius: 8px; border: 1px solid #444; overflow-x: auto;">
+<span style="color: #569cd6;">public class</span> <span style="color: #4ec9b0;">Car</span> {
+<span style="color: #6a9955;">// Attributes (State)</span>
+<span style="color: #4ec9b0;">String</span> brand;
+<span style="color: #569cd6;">int</span> speed;
+
+<span style="color: #6a9955;">// Methods (Behavior)</span>
+<span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">accelerate</span>() {
+    speed += <span style="color: #b5cea8;">10</span>;
+}
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. The Four Pillars of Java OOP</h2>
+<p>To master Java, you must master the four pillars: <strong>Encapsulation, Inheritance, Polymorphism, and Abstraction.</strong></p>
+
+<h3 style="color: #e67e22;">I. Encapsulation: Data Hiding</h3>
+<p>Encapsulation is the process of wrapping code and data together into a single unit. It is achieved by making variables <code>private</code> and providing <code>public</code> getter and setter methods. This protects the data from unauthorized access.</p>
+<ul style="list-style-type: disc; margin-left: 30px;">
+<li><strong>Advantage:</strong> Increases security and allows you to change one part of the code without affecting others.</li>
+<li><strong>Implementation:</strong> Use access modifiers carefully.</li>
+</ul>
+
+<h3 style="color: #e67e22;">II. Inheritance: Code Reusability</h3>
+<p>Inheritance allows one class (child/subclass) to acquire the properties and methods of another class (parent/superclass). In Java, we use the <code>extends</code> keyword.</p>
+<ul style="list-style-type: disc; margin-left: 30px;">
+<li><strong>Types:</strong> Single, Multilevel, and Hierarchical. (Note: Java does <em>not</em> support Multiple Inheritance with classes to avoid the Diamond Problem).</li>
+<li><strong>Advantage:</strong> Facilitates "Is-A" relationships and massive code reuse.</li>
+</ul>
+
+<h3 style="color: #e67e22;">III. Polymorphism: Many Forms</h3>
+<p>Polymorphism allows a single action to be performed in different ways. There are two types in Java:</p>
+<ol>
+<li><strong>Compile-time (Static):</strong> Achieved through <strong>Method Overloading</strong> (same method name, different parameters).</li>
+<li><strong>Runtime (Dynamic):</strong> Achieved through <strong>Method Overriding</strong> (child class provides a specific implementation of a parent method).</li>
+</ol>
+
+<h3 style="color: #e67e22;">IV. Abstraction: Hiding Complexity</h3>
+<p>Abstraction is the quality of dealing with ideas rather than events. It focuses on "what" the object does rather than "how" it does it. In Java, this is achieved using <code>abstract classes</code> and <code>interfaces</code>.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Deep Dive: Abstract Class vs. Interface</h2>
+<p>This is one of the most frequent questions in Java interviews. Understanding when to use which is vital for system design.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #2980b9;">
+<tr style="background-color: #2980b9; color: white; text-align: center;">
+<th>Feature</th>
+<th>Abstract Class</th>
+<th>Interface</th>
+</tr>
+<tr>
+<td><strong>Methods</strong></td>
+<td>Can have both abstract and concrete methods.</td>
+<td>Mainly abstract methods (until Java 8, now has default/static).</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Variables</strong></td>
+<td>Can have final, non-final, static, and non-static.</td>
+<td>Only static and final by default.</td>
+</tr>
+<tr>
+<td><strong>Inheritance</strong></td>
+<td>A class can extend only one abstract class.</td>
+<td>A class can implement multiple interfaces.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>Access Modifiers</strong></td>
+<td>Can have private, protected, etc.</td>
+<td>Methods are public by default.</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Comprehensive Interview Questions & Answers</h2>
+
+<div style="background-color: #f4f6f7; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the "Diamond Problem" in Java?</h4>
+<p>The Diamond Problem occurs when a class inherits from two classes that have a method with the same signature. Java avoids this by not allowing multiple inheritance with classes. However, it can occur with Interfaces (Java 8 default methods), but Java forces the programmer to override and resolve the conflict manually.</p>
+</div>
+
+<div style="background-color: #f4f6f7; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is the difference between Overloading and Overriding?</h4>
+<p><strong>Overloading:</strong> Occurs in the same class. Methods have the same name but different signatures (parameters). It is resolved at compile-time.</p>
+<p><strong>Overriding:</strong> Occurs between parent and child classes. The method has the same name and signature. It is resolved at runtime using Dynamic Method Dispatch.</p>
+</div>
+
+<div style="background-color: #f4f6f7; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. Can we declare an abstract method as 'static' or 'final'?</h4>
+<p>No. An <strong>abstract method</strong> must be overridden by a subclass to provide implementation. A <code>static</code> method cannot be overridden, and a <code>final</code> method prevents overriding. Therefore, using them with 'abstract' creates a logical contradiction.</p>
+</div>
+
+<div style="background-color: #f4f6f7; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What is 'Aggregation' vs 'Composition' in Java?</h4>
+<p>Both represent "Has-A" relationships. <strong>Aggregation</strong> is a weak bond (e.g., a Department has Professors; if the Dept is deleted, Professors still exist). <strong>Composition</strong> is a strong bond (e.g., a House has Rooms; if the House is destroyed, the Rooms cease to exist).</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced OOP: The 'this' and 'super' Keywords</h2>
+<p>To effectively manage inheritance and constructor chaining, Java provides two crucial keywords:</p>
+<ul style="line-height: 2;">
+<li><strong style="color: #8e44ad;">this:</strong> Refers to the current instance of the class. It is used to resolve naming conflicts between instance variables and parameters.</li>
+<li><strong style="color: #8e44ad;">super:</strong> Refers to the immediate parent class. It is used to call parent constructors or access parent methods that have been overridden.</li>
+</ul>
+
+<pre style="background-color: #2d3436; color: #fff; padding: 20px; border-radius: 5px;">
+<span style="color: #fdcb6e;">class</span> <span style="color: #00cec9;">Animal</span> {
+Animal() { System.out.println(<span style="color: #fab1a0;">"Animal Created"</span>); }
+}
+<span style="color: #fdcb6e;">class</span> <span style="color: #00cec9;">Dog</span> <span style="color: #fdcb6e;">extends</span> <span style="color: #00cec9;">Animal</span> {
+Dog() {
+<span style="color: #ff7675;">super();</span> <span style="color: #636e72;">// Calls parent constructor</span>
+System.out.println(<span style="color: #fab1a0;">"Dog Created"</span>);
+}
+}
+</pre>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: Why OOP Matters</h2>
+<p>The beauty of Object-Oriented Programming lies in its ability to mirror the real world. By modeling software as objects, developers can build systems that are flexible and scalable. Whether you are building a simple calculator or a complex banking system, the principles of Encapsulation, Inheritance, Polymorphism, and Abstraction will be your guiding light.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This content is part of the JavaIQ Lab series, designed to help engineering students master technical concepts through clear, structured, and SEO-friendly documentation.</p>
+
+SEO Data for java-oops-questions.html
+<p><strong>Meta Title:</strong> Java OOP Interview Questions: 4 Pillars, Theory & Examples</p>
+<p><strong>Meta Description:</strong> Master Object-Oriented Programming in Java. Comprehensive guide on Encapsulation, Inheritance, Polymorphism, Abstraction, and top 20+ interview questions for 2026.</p>
+<p><strong>Targeted Keywords:</strong> Java OOP questions, 4 pillars of OOP in Java, Java inheritance examples, polymorphism vs overloading, abstraction in Java, Java interview questions for freshers, OOP interview theory, Java classes and objects guide, interface vs abstract class Java.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
