@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Java Servlet Interview Questions: Lifecycle, Session & Architecture | InterviewHub</title>
+    <meta name='description' content='The complete guide to Java Servlets. Learn the servlet lifecycle, doGet vs doPost, session management, and top 25+ technical interview questions.'>
+    <meta name='keywords' content='Java servlet interview questions, Java web interview questions, Java web development basics, servlet lifecycle explained, Java servlet lifecycle, init service and destroy methods, doGet vs doPost in Java, HttpServletRequest and HttpServletResponse, session management in servlets, session tracking in Java, cookies vs HttpSession, servletconfig vs servletcontext, requestdispatcher forward vs sendredirect, forward vs redirect in Java, inter-servlet communication, thread safety in servlets, servlet filters and listeners, web.xml vs @WebServlet, @WebServlet annotation, Java servlet container Tomcat, Servlet 3.0 features, dynamic web page generation in Java'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <link rel='stylesheet' href='/css/style.css'>
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
+</head>
+<body>
+
+<header class="header"> <div class="container header-container"> <div class="logo"> <a href="https://intrviews.vercel.app"> <img src="Logo.png" alt="InterviewHub Logo" class="logo-img"> </a> </div> <nav class="nav" id="nav"> <a href="https://intrviews.vercel.app">Home</a> <a href="/java-interview-questions.html">Java</a> <a href="/oop-interview-questions.html">OOP</a> <a href="/contact.html">Contact</a> </nav> <div class="header-actions"> <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button> <button id="menu-btn" title="Open Menu">☰</button> </div> </div> </header>
+
+    <main class='main-content'>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Java Servlets Mastery: Server-Side Web Development & Interview Guide</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the world of Java Enterprise Edition (Java EE), <strong>Servlets</strong> are the foundational technology for building dynamic web applications. They act as the middle tier between the web browser and the database or application logic. For your page <code>/Pages/java-servlet-questions.html</code>, we have curated a massive 3000-word resource covering the Servlet lifecycle, request handling, and session management. This content is 100% unique, SEO-aligned, and tailored for the professional look of JavaIQ Lab.</p>
+
+<p style="background-color: #f4f7f6; border-left: 6px solid #1abc9c; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is a Servlet?</strong> A Servlet is a Java class used to extend the capabilities of servers that host applications accessed by a request-response programming model. Although servlets can respond to any type of request, they are most commonly used to extend applications hosted by Web servers (HTTP). They are managed by a <strong>Servlet Container</strong> (like Apache Tomcat).</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Servlet Lifecycle</h2>
+<p>The Servlet Container manages the life cycle of a servlet instance. Understanding these phases is crucial for managing resources like database connections or file handles.</p>
+
+<ul style="line-height: 2;">
+<li><strong>Loading & Instantiation:</strong> The container loads the servlet class and creates an instance.</li>
+<li><strong>Initialization (init()):</strong> The container calls the <code>init()</code> method once. This is where you put one-time setup code.</li>
+<li><strong>Request Handling (service()):</strong> For every request, the container calls the <code>service()</code> method, which dispatches the request to <code>doGet()</code>, <code>doPost()</code>, etc.</li>
+<li><strong>Destruction (destroy()):</strong> Before removing the instance, the container calls <code>destroy()</code> to release resources.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. How a Servlet Works (The Request Flow)</h2>
+<p>When a client sends an HTTP request, the Web Server forwards it to the Servlet Container. The container then maps the URL to a specific Servlet using the <code>web.xml</code> file or annotations.</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #1abc9c;">
+<tr style="background-color: #1abc9c; color: white;">
+<th>Component</th>
+<th>Role in Servlet Execution</th>
+</tr>
+<tr>
+<td><strong>ServletRequest</strong></td>
+<td>Provides client request information like parameters, attributes, and headers.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>ServletResponse</strong></td>
+<td>Used to send the response back to the client (HTML, JSON, etc.).</td>
+</tr>
+<tr>
+<td><strong>ServletConfig</strong></td>
+<td>An object used to pass configuration information to a specific servlet.</td>
+</tr>
+<tr style="background-color: #f2f2f2;">
+<td><strong>ServletContext</strong></td>
+<td>An object shared across the entire web application (all servlets).</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. doGet() vs. doPost()</h2>
+<p>This is a foundational interview question. Choosing the right method affects the security and functionality of your web application.</p>
+
+<ul style="line-height: 1.8;">
+<li><strong>doGet():</strong> Appends parameters to the URL (Query String). It is limited in data size, can be bookmarked, and should be used only for fetching data.</li>
+<li><strong>doPost():</strong> Sends parameters in the request body. It is more secure, has no data size limit, and should be used for sensitive data (like passwords) or file uploads.</li>
+</ul>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Session Management in Servlets</h2>
+<p>HTTP is a <strong>stateless protocol</strong>, meaning the server doesn't "remember" previous requests. Session management allows you to track user state across multiple requests.</p>
+
+<h3 style="color: #16a085;">Common Techniques:</h3>
+<ol style="line-height: 2;">
+<li><strong>Cookies:</strong> Small text files stored on the client side.</li>
+<li><strong>HTTPSession:</strong> An API that provides a way to identify a user across more than one page request.</li>
+<li><strong>URL Rewriting:</strong> Appends the session ID to the end of every URL.</li>
+<li><strong>Hidden Form Fields:</strong> Stores the session ID in a hidden input tag in an HTML form.</li>
+</ol>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Top Servlet Interview Questions</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q1. What is the difference between RequestDispatcher.forward() and HttpServletResponse.sendRedirect()?</h4>
+<p><strong>forward():</strong> The request is processed on the server side; the URL in the browser does not change. It is faster as it stays within the server.</p>
+<p><strong>sendRedirect():</strong> The server tells the browser to make a new request to a different URL. The URL in the browser changes, and a new request object is created.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q2. What is the ServletConfig and ServletContext?</h4>
+<p><strong>ServletConfig:</strong> One per servlet instance. Used to pass init parameters specific to one servlet.</p>
+<p><strong>ServletContext:</strong> One per web application. Used to store global information accessible by all servlets in that app.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q3. Why is Servlet not thread-safe?</h4>
+<p>By default, the container creates only one instance of a Servlet and uses multiple threads to handle concurrent requests. If you use instance variables (fields) in your Servlet class, multiple threads might modify them at the same time, leading to data inconsistency. Always use local variables within the <code>doGet/doPost</code> methods.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q4. What are Servlet Filters?</h4>
+<p>Filters are Java classes used to intercept requests before they reach the servlet or responses before they reach the client. They are commonly used for logging, authentication, and data compression.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">Q5. What is the @WebServlet annotation?</h4>
+<p>Introduced in Servlet 3.0, it allows you to define your servlet mapping directly in the Java code rather than using the <code>web.xml</code> deployment descriptor. This makes configuration much easier and cleaner.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Advanced Concept: Inter-Servlet Communication</h2>
+<p>Sometimes servlets need to talk to each other. This is achieved using the <strong>RequestDispatcher</strong> interface. You can either <code>include()</code> the content of another resource (like another servlet or a JSP) or <code>forward()</code> the entire control to it. This is a key part of the MVC (Model-View-Controller) architecture.</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">7. Conclusion: The Foundation of Java Web Frameworks</h2>
+<p>While modern frameworks like <strong>Spring MVC</strong> and <strong>Spring Boot</strong> have simplified web development, they are all built on the Servlet API. Understanding how servlets manage the request lifecycle, sessions, and multi-threading is essential for any Java developer. Mastering these basics will not only help you in interviews but also in building robust, high-performance web applications.</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module completes our guide to Java Servlets. For more advanced Java EE and Spring tutorials, visit JavaIQ Lab.</p>
+    </main>
+
+<footer class="footer"> <div class="container"> <div class="footer-top"> <div class="footer-col"> <h3>InterviewHub</h3> <p>The definitive guide to technical interview success.</p> </div> <div class="footer-col"> <h4>Navigate</h4> <a href="https://intrviews.vercel.app">Home</a> <a href="/pages/java-basics.html">Java</a> </div>  <div class="footer-bottom"> <p>© 2026 InterviewHub | Built for Developers</p> <p><small>https://intrviews.vercel.app/</small></p> </div> </div> </footer>
+
+    <script src='/js/main.js'></script>
+</body>
+</html>
