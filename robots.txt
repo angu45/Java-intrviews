@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://intrviews.vercel.app/sitemap.xml
+
+# Block admin / useless folders (optional safety)
+Disallow: /css/
+Disallow: /js/
+Disallow: /Pages/Assets/
+
+# Allow important pages
+Allow: /Pages/
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /disclaimer.html
+Allow: /index.html
