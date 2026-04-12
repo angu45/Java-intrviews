@@ -1,12 +1,79 @@
 <!doctype html>
 <html lang="en" class="h-full">
 <head>
+  <!-- Google Analytics (NEW) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQRT7QNZXX');
+  </script>
+
+  <!-- Adsense -->
+  <meta name="google-adsense-account" content="ca-pub-7444755444888327">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7444755444888327"
+   crossorigin="anonymous"></script>
+
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="FoZYvyTzMHH3p_20R2_irgDM1de6z4RubFDva5O3lkc">
+
+  <!-- Basic -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title (AS IT IS) -->
   <title>Contact Us - InterviewHub</title>
+
+  <!-- SEO -->
+  <meta name="title" content="Contact Us - InterviewHub">
+  <meta name="description" content="Contact InterviewHub for any queries related to Java interview questions, coding practice, or technical preparation. We are here to help you.">
+  <meta name="keywords" content="contact interviewhub, java interview help, coding help, technical support, interview questions help">
+  <meta name="author" content="InterviewHub">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://intrviews.vercel.app/contact.html">
+
+  <!-- Open Graph (WhatsApp Share) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://intrviews.vercel.app/contact.html">
+  <meta property="og:title" content="Contact InterviewHub">
+  <meta property="og:description" content="Get in touch with InterviewHub for Java interview preparation and coding support.">
+  <meta property="og:image" content="https://i.ibb.co/kgRnJLtW/1000176146-removebg-preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact InterviewHub">
+  <meta name="twitter:description" content="Reach out to us for Java interview help and coding guidance.">
+  <meta name="twitter:image" content="https://i.ibb.co/4RTqDGvH/apple-touch-icon-180x180-1.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/0RcjyBQF/1000176575-removebg-preview.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/0RcjyBQF/1000176575-removebg-preview.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/0RcjyBQF/1000176575-removebg-preview.png">
+
+  <!-- Tailwind (AS IT IS) -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- EmailJS (AS IT IS) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Fonts (AS IT IS) -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Schema SEO Booster -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact InterviewHub",
+    "url": "https://intrviews.vercel.app/contact.html",
+    "description": "Contact page for InterviewHub users to get support and assistance."
+  }
+  </script>
+
+  <!-- EXISTING CSS (AS IT IS) -->
   <style>
     :root {
       --bg: #0f172a;
@@ -19,8 +86,6 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; font-family: var(--font); background: var(--bg); color: var(--text); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Header Styles */
     .header { background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
     .header-container { padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
     .logo-img { height: 38px; }
@@ -28,8 +93,6 @@
     .nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 15px; transition: color .2s; }
     .nav a:hover { color: var(--primary); }
     .header-actions button { background: none; border: 1px solid rgba(255,255,255,0.1); color: var(--text); font-size: 18px; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
-
-    /* Footer Styles */
     .footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 20px 24px; margin-top: 60px; }
     .footer-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 36px; }
     .footer-col h4 { color: var(--primary); font-size: 15px; font-weight: 600; margin-bottom: 12px; }
@@ -37,13 +100,11 @@
     .footer-col a:hover { color: var(--primary); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; color: #64748b; }
     .footer-bottom a { color: #94a3b8; text-decoration: none; margin: 0 5px; }
-
-    /* Toast */
     .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); padding: 12px 28px; border-radius: 10px; font-weight: 600; opacity: 0; transition: all .4s; z-index: 300; }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
     @media(max-width:768px) { .nav { display: none; } }
   </style>
+
 </head>
 <body>
 
