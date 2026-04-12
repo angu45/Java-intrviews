@@ -3,21 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InterviewHub Quizzes | Challenge Your Java Skills</title>
-    
-    <!-- SEO & Metadata -->
-    <meta name="description" content="Take our interactive Java and OOP quizzes to test your technical interview readiness. 45 comprehensive questions for developers.">
-    <meta name="keywords" content="Java Quiz, OOP Quiz, Servlet Quiz, InterviewHub, Coding Challenge, Java IQ Test">
-    
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
 
-    <!-- Tailwind CSS for modern UI -->
+    <!-- Primary SEO -->
+    <title>Java IQ Lab Quiz 2026 | Test Java Skills Online | InterviewHub</title>
+    <meta name="description" content="Play interactive Java quiz with timer & instant feedback. 45+ MCQs on Java, OOP, JDBC & Web. Perfect for freshers & interview preparation.">
+    <meta name="keywords" content="Java quiz online, Java MCQ questions, Java interview quiz, OOP quiz Java, Java test with answers, Java practice questions, Java IQ test, coding quiz Java">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
+
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:title" content="Java IQ Lab Quiz 🧠 | Test Your Skills">
+    <meta property="og:description" content="Take Java, OOP & Advanced quizzes with timer. Get instant feedback and improve your interview readiness.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">
+    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java IQ Lab Quiz 2026">
+    <meta name="twitter:description" content="Practice Java MCQs with timer & boost interview confidence.">
+    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Preconnect (Performance Boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
@@ -30,47 +61,39 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-        }
+        body { font-family: 'Inter', sans-serif; transition: background 0.3s, color 0.3s; }
+        
+        /* Dark Mode Utility Classes */
+        body.dark-mode { background-color: #0f172a !important; color: #f8fafc; }
+        .dark-mode .bg-white { background-color: #1e293b !important; color: #f1f5f9; }
+        .dark-mode .text-gray-900, .dark-mode .text-gray-800 { color: #f1f5f9 !important; }
+        .dark-mode .border-gray-100, .dark-mode .border-gray-200 { border-color: #334155 !important; }
 
-        .quiz-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        /* Header Styles */
+        .header { background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; transition: all 0.3s; }
+        .dark-mode .header { background: #1e293b; border-bottom-color: #334155; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo-img { height: 40px; }
+        
+        .nav a { color: #4b5563; font-weight: 600; transition: color 0.2s; margin-right: 1.5rem; }
+        .dark-mode .nav a { color: #cbd5e1; }
+        .nav a:hover { color: #3b82f6; }
 
-        .option-btn {
-            transition: all 0.2s ease;
-            border: 2px solid #e5e7eb;
-        }
+        /* Micro-Animations */
+        .option-btn { transition: all 0.2s ease; border: 2px solid #f3f4f6; position: relative; overflow: hidden; }
+        .option-btn:active { transform: scale(0.98); }
+        .option-btn:hover:not(:disabled) { border-color: #3b82f6; background-color: #eff6ff; }
+        .dark-mode .option-btn { background: #334155; border-color: #475569; color: #f1f5f9; }
 
-        .option-btn:hover:not(:disabled) {
-            border-color: #3b82f6;
-            background-color: #eff6ff;
-        }
-
-        .option-correct {
-            background-color: #d1fae5 !important;
-            border-color: #10b981 !important;
-            color: #065f46 !important;
-        }
-
-        .option-wrong {
-            background-color: #fee2e2 !important;
-            border-color: #ef4444 !important;
-            color: #991b1b !important;
-        }
-
-        .progress-bar {
-            transition: width 0.4s ease;
-        }
-
-        /* Header/Footer Styles to match existing site */
-        .header-shadow { box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .option-correct { background-color: #d1fae5 !important; border-color: #10b981 !important; color: #065f46 !important; }
+        .option-wrong { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
+        
+        .progress-bar { transition: width 0.4s linear; }
+        #timer-display.low-time { color: #ef4444; animation: pulse 1s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-
+<body class="min-h-screen flex flex-col bg-gray-50">
   <header class="header">
     <div class="container header-container">
       <div class="logo">
@@ -92,104 +115,93 @@
       </div>
     </div>
   </header>
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8">
+
+    <main class="flex-grow container mx-auto px-4 py-10">
         
-        <!-- Selection Screen -->
-        <div id="selection-screen" class="max-w-4xl mx-auto">
+        <div id="selection-screen" class="max-w-4xl mx-auto animate-fade-in">
             <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Challenge Your IQ Lab 🧠</h1>
-                <p class="text-gray-600">Tumcha technical knowledge test kara ani interview sathi tayar vha.</p>
+                <h1 class="text-4xl font-black text-gray-900 mb-4 tracking-tight">Challenge Your IQ Lab 🧠</h1>
+                <p class="text-gray-500 text-lg">निवडा तुमचा विषय आणि तपासा तुमचे टेक्निकल ज्ञान. <span id="last-score-badge" class="hidden ml-2 px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full font-bold"></span></p>
             </div>
 
-            <div class="grid md:grid-rows-3 gap-6">
-                <!-- Quiz 1 -->
-                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(0)">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-blue-100 p-4 rounded-xl text-blue-600 text-2xl">☕</div>
+            <div class="grid gap-6">
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:shadow-xl transition-all group" onclick="startQuiz(0)">
+                    <div class="flex items-center space-x-5">
+                        <div class="bg-blue-100 p-4 rounded-2xl text-2xl group-hover:scale-110 transition">☕</div>
                         <div>
-                            <h3 class="font-bold text-xl text-gray-800">Quiz 1: Java Fundamentals</h3>
-                            <p class="text-gray-500 text-sm">Basics, JVM, Syntax, Loops, Data Types</p>
+                            <h3 class="font-bold text-xl">Java Fundamentals</h3>
+                            <p class="text-gray-400 text-sm">Basics, JVM, Loops, Data Types</p>
                         </div>
                     </div>
-                    <button class="mt-4 md:mt-0 bg-blue-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                    <button class="mt-4 md:mt-0 bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold">Start Quiz</button>
                 </div>
 
-                <!-- Quiz 2 -->
-                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(1)">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-purple-100 p-4 rounded-xl text-purple-600 text-2xl">🏗️</div>
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:shadow-xl transition-all group" onclick="startQuiz(1)">
+                    <div class="flex items-center space-x-5">
+                        <div class="bg-purple-100 p-4 rounded-2xl text-2xl group-hover:scale-110 transition">🏗️</div>
                         <div>
-                            <h3 class="font-bold text-xl text-gray-800">Quiz 2: Master OOP Concepts</h3>
-                            <p class="text-gray-500 text-sm">Inheritance, Polymorphism, Abstraction, Encapsulation</p>
+                            <h3 class="font-bold text-xl">Master OOP Concepts</h3>
+                            <p class="text-gray-400 text-sm">Inheritance, Polymorphism, Abstraction</p>
                         </div>
                     </div>
-                    <button class="mt-4 md:mt-0 bg-purple-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                    <button class="mt-4 md:mt-0 bg-purple-600 text-white px-8 py-3 rounded-2xl font-bold">Start Quiz</button>
                 </div>
 
-                <!-- Quiz 3 -->
-                <div class="quiz-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-between hover:shadow-md cursor-pointer" onclick="startQuiz(2)">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-green-100 p-4 rounded-xl text-green-600 text-2xl">🚀</div>
+                <div class="bg-white p-6 rounded-3xl border border-gray-100 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:shadow-xl transition-all group" onclick="startQuiz(2)">
+                    <div class="flex items-center space-x-5">
+                        <div class="bg-green-100 p-4 rounded-2xl text-2xl group-hover:scale-110 transition">🚀</div>
                         <div>
-                            <h3 class="font-bold text-xl text-gray-800">Quiz 3: Advanced Java & Web</h3>
-                            <p class="text-gray-500 text-sm">Collections, Servlets, JDBC, Multi-threading</p>
+                            <h3 class="font-bold text-xl">Advanced Java & Web</h3>
+                            <p class="text-gray-400 text-sm">Collections, Servlets, JDBC, Threads</p>
                         </div>
                     </div>
-                    <button class="mt-4 md:mt-0 bg-green-600 text-white px-6 py-2 rounded-full font-semibold">Start (15 Qs)</button>
+                    <button class="mt-4 md:mt-0 bg-green-600 text-white px-8 py-3 rounded-2xl font-bold">Start Quiz</button>
                 </div>
             </div>
         </div>
 
-        <!-- Quiz Container -->
-        <div id="quiz-container" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-            <!-- Progress Bar -->
+        <div id="quiz-container" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
             <div class="bg-gray-100 h-2 w-full">
                 <div id="progress" class="bg-blue-600 h-2 progress-bar" style="width: 0%"></div>
             </div>
             
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-6">
-                    <span id="question-counter" class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Question 1 of 15</span>
-                    <button onclick="quitQuiz()" class="text-gray-400 hover:text-red-500 transition-colors">✕ Close</button>
+            <div class="p-8 md:p-12">
+                <div class="flex justify-between items-center mb-8">
+                    <span id="question-counter" class="text-xs font-black text-blue-600 uppercase tracking-widest">Question 1/15</span>
+                    <div id="timer-box" class="flex items-center gap-2 font-bold text-gray-700">
+                        ⏱️ <span id="timer-display">15</span>s
+                    </div>
                 </div>
 
-                <h2 id="question-text" class="text-xl md:text-2xl font-bold text-gray-800 mb-8 leading-tight">
-                    Loading question...
-                </h2>
+                <h2 id="question-text" class="text-2xl font-bold mb-10 leading-snug">Loading...</h2>
 
-                <div id="options-container" class="space-y-4 mb-8">
-                    <!-- Options injected here -->
-                </div>
+                <div id="options-container" class="space-y-4 mb-8"></div>
 
-                <div id="feedback" class="hidden p-4 rounded-xl mb-6 text-sm font-medium">
-                </div>
+                <div id="feedback" class="hidden p-5 rounded-2xl mb-8 text-sm font-bold text-center"></div>
 
-                <button id="next-btn" disabled onclick="nextQuestion()" class="w-full py-4 rounded-xl font-bold text-white bg-gray-300 transition-all cursor-not-allowed">
-                    Check Answer
+                <button id="next-btn" disabled onclick="nextQuestion()" class="w-full py-4 rounded-2xl font-black text-white bg-gray-200 transition-all uppercase tracking-widest">
+                    Next Question
                 </button>
             </div>
         </div>
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="hidden max-w-md mx-auto text-center py-12 bg-white rounded-3xl shadow-2xl p-10">
-            <div class="text-6xl mb-6">🏆</div>
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Quiz Finished!</h2>
-            <p id="result-message" class="text-gray-600 mb-8">Excellent effort, Developer!</p>
+        <div id="result-screen" class="hidden max-w-md mx-auto text-center py-16 bg-white rounded-3xl shadow-2xl px-10 border">
+            <div class="text-7xl mb-6">🏆</div>
+            <h2 class="text-3xl font-black mb-2">Quiz Finished!</h2>
+            <p id="result-message" class="text-gray-500 mb-10 font-medium"></p>
             
-            <div class="bg-blue-50 rounded-2xl p-6 mb-8">
-                <span class="block text-gray-500 text-sm uppercase font-bold mb-1">Your Score</span>
-                <span id="final-score" class="text-5xl font-black text-blue-600">0/15</span>
+            <div class="bg-blue-50 dark:bg-slate-700 rounded-3xl p-8 mb-10">
+                <span class="block text-blue-400 text-xs uppercase font-black tracking-widest mb-2">Your Score</span>
+                <span id="final-score" class="text-6xl font-black text-blue-600">0/15</span>
             </div>
 
             <div class="flex flex-col space-y-4">
-                <button onclick="restartQuiz()" class="bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-200">Try Again</button>
-                <button onclick="location.reload()" class="bg-gray-100 text-gray-700 py-4 rounded-xl font-bold">Back to Home</button>
+                <button onclick="restartQuiz()" class="bg-blue-600 text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700">Play Again</button>
+                <button onclick="location.reload()" class="bg-gray-100 text-gray-700 py-4 rounded-2xl font-bold hover:bg-gray-200">Back to Home</button>
             </div>
         </div>
 
     </main>
-
 <footer class="footer">
   <div class="container">
 
@@ -317,6 +329,24 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let isAnswered = false;
+        let timer;
+        let timeLeft = 15;
+
+        // Theme Toggle Logic
+        const themeBtn = document.getElementById("theme-toggle");
+        themeBtn.onclick = () => {
+            document.body.classList.toggle("dark-mode");
+            themeBtn.innerText = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        };
+
+        // Initialize Score Display
+        window.onload = () => {
+            const lastScore = localStorage.getItem("lastScore");
+            if(lastScore) {
+                document.getElementById("last-score-badge").innerText = `Last Score: ${lastScore}/15`;
+                document.getElementById("last-score-badge").classList.remove("hidden");
+            }
+        };
 
         function startQuiz(index) {
             currentQuizIndex = index;
@@ -327,12 +357,29 @@
             loadQuestion();
         }
 
+        function startTimer() {
+            clearInterval(timer);
+            timeLeft = 15;
+            document.getElementById('timer-display').innerText = timeLeft;
+            document.getElementById('timer-display').classList.remove('low-time');
+
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer-display').innerText = timeLeft;
+                if(timeLeft <= 5) document.getElementById('timer-display').classList.add('low-time');
+                if(timeLeft <= 0) {
+                    clearInterval(timer);
+                    autoSkip();
+                }
+            }, 1000);
+        }
+
         function loadQuestion() {
             isAnswered = false;
             const quiz = quizzes[currentQuizIndex];
             const q = quiz.questions[currentQuestionIndex];
             
-            document.getElementById('question-counter').innerText = `Question ${currentQuestionIndex + 1} of 15`;
+            document.getElementById('question-counter').innerText = `Question ${currentQuestionIndex + 1}/15`;
             document.getElementById('question-text').innerText = q.q;
             document.getElementById('progress').style.width = `${((currentQuestionIndex + 1) / 15) * 100}%`;
             
@@ -341,77 +388,84 @@
             
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = 'option-btn w-full text-left p-4 rounded-xl font-semibold text-gray-700 bg-white hover:bg-gray-50';
+                btn.className = 'option-btn w-full text-left p-5 rounded-2xl font-semibold shadow-sm';
                 btn.innerText = opt;
                 btn.onclick = () => selectOption(idx, btn);
                 optionsContainer.appendChild(btn);
             });
 
-            const nextBtn = document.getElementById('next-btn');
-            nextBtn.innerText = "Check Answer";
-            nextBtn.disabled = true;
-            nextBtn.classList.replace('bg-blue-600', 'bg-gray-300');
-            nextBtn.classList.add('cursor-not-allowed');
-            
+            document.getElementById('next-btn').disabled = true;
+            document.getElementById('next-btn').classList.replace('bg-blue-600', 'bg-gray-200');
             document.getElementById('feedback').classList.add('hidden');
+            startTimer();
         }
 
         function selectOption(idx, btn) {
             if (isAnswered) return;
+            clearInterval(timer);
+            isAnswered = true;
             
-            const quiz = quizzes[currentQuizIndex];
-            const q = quiz.questions[currentQuestionIndex];
+            const q = quizzes[currentQuizIndex].questions[currentQuestionIndex];
             const options = document.querySelectorAll('.option-btn');
             
-            isAnswered = true;
-            const isCorrect = idx === q.correct;
-            
-            if (isCorrect) {
+            if (idx === q.correct) {
                 btn.classList.add('option-correct');
                 score++;
-                showFeedback("✅ Shabbas! Correct answer ahe.", "bg-green-100 text-green-800");
+                showFeedback("✅ Correct Answer!", "bg-green-100 text-green-800");
             } else {
                 btn.classList.add('option-wrong');
                 options[q.correct].classList.add('option-correct');
-                showFeedback("❌ Chukicha! Correct answer highlighted ahe.", "bg-red-100 text-red-800");
+                showFeedback("❌ Oops! Wrong Answer.", "bg-red-100 text-red-800");
             }
 
-            options.forEach(b => b.disabled = true);
+            options.forEach(b => {
+                b.disabled = true;
+                b.style.pointerEvents = "none";
+            });
+
+            document.getElementById('next-btn').disabled = false;
+            document.getElementById('next-btn').classList.replace('bg-gray-200', 'bg-blue-600');
             
-            const nextBtn = document.getElementById('next-btn');
-            nextBtn.disabled = false;
-            nextBtn.innerText = currentQuestionIndex === 14 ? "See Results" : "Next Question";
-            nextBtn.classList.replace('bg-gray-300', 'bg-blue-600');
-            nextBtn.classList.remove('cursor-not-allowed');
+            // Auto Flow logic
+            setTimeout(() => { nextQuestion(); }, 1500);
+        }
+
+        function autoSkip() {
+            isAnswered = true;
+            showFeedback("⏰ Time Up! Skipping...", "bg-gray-100 text-gray-800");
+            const q = quizzes[currentQuizIndex].questions[currentQuestionIndex];
+            document.querySelectorAll('.option-btn')[q.correct].classList.add('option-correct');
+            setTimeout(() => { nextQuestion(); }, 1500);
         }
 
         function showFeedback(text, classes) {
             const fb = document.getElementById('feedback');
             fb.innerText = text;
-            fb.className = `p-4 rounded-xl mb-6 text-sm font-medium ${classes}`;
+            fb.className = `p-4 rounded-2xl mb-8 text-sm font-bold text-center ${classes}`;
             fb.classList.remove('hidden');
         }
 
         function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < 15) {
-                loadQuestion();
-            } else {
+            if(currentQuestionIndex === 14) {
                 showResults();
+                return;
             }
+            currentQuestionIndex++;
+            loadQuestion();
         }
 
         function showResults() {
+            clearInterval(timer);
             document.getElementById('quiz-container').classList.add('hidden');
-            const resultScreen = document.getElementById('result-screen');
-            resultScreen.classList.remove('hidden');
-            
+            document.getElementById('result-screen').classList.remove('hidden');
             document.getElementById('final-score').innerText = `${score}/15`;
+            localStorage.setItem("lastScore", score);
             
             let msg = "";
-            if (score === 15) msg = "🔥 Phenomenal! You are a Java Master!";
-            else if (score >= 10) msg = "👏 Great job! Your fundamentals are strong.";
-            else msg = "📚 Thoda aanki abhyas kara, tumhi nakki jamval!";
+            if (score === 15) msg = "🔥 Perfect! You're a Java Legend!";
+            else if (score >= 12) msg = "🚀 Brilliant! You're Interview Ready.";
+            else if (score >= 8) msg = "👏 Good effort! Practice makes perfect.";
+            else msg = "📚 Keep studying, you'll get there!";
             
             document.getElementById('result-message').innerText = msg;
         }
@@ -422,9 +476,7 @@
         }
 
         function quitQuiz() {
-            if (confirm("Kharach quiz madhun baher jayche ahe ka? Tumchi progress save honar nahi.")) {
-                location.reload();
-            }
+            if (confirm("Quit quiz? Your progress will be lost.")) location.reload();
         }
     </script>
 </body>
