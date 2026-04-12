@@ -1,25 +1,72 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Java Servlet Interview Questions: Lifecycle, Session & Architecture | InterviewHub</title>
-    <meta name='description' content='The complete guide to Java Servlets. Learn the servlet lifecycle, doGet vs doPost, session management, and top 25+ technical interview questions.'>
-    <meta name='keywords' content='Java servlet interview questions, Java web interview questions, Java web development basics, servlet lifecycle explained, Java servlet lifecycle, init service and destroy methods, doGet vs doPost in Java, HttpServletRequest and HttpServletResponse, session management in servlets, session tracking in Java, cookies vs HttpSession, servletconfig vs servletcontext, requestdispatcher forward vs sendredirect, forward vs redirect in Java, inter-servlet communication, thread safety in servlets, servlet filters and listeners, web.xml vs @WebServlet, @WebServlet annotation, Java servlet container Tomcat, Servlet 3.0 features, dynamic web page generation in Java'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Primary SEO -->
+    <title>Java Servlet Interview Questions: Lifecycle, Session & Architecture | InterviewHub</title>
+
+    <meta name="description" content="The complete guide to Java Servlets. Learn the servlet lifecycle, doGet vs doPost, session management, and top 25+ technical interview questions.">
+
+    <meta name="keywords" content="Java servlet interview questions, Java web interview questions, Java web development basics, servlet lifecycle explained, Java servlet lifecycle, init service and destroy methods, doGet vs doPost in Java, HttpServletRequest and HttpServletResponse, session management in servlets, session tracking in Java, cookies vs HttpSession, servletconfig vs servletcontext, requestdispatcher forward vs sendredirect, forward vs redirect in Java, inter-servlet communication, thread safety in servlets, servlet filters and listeners, web.xml vs @WebServlet, @WebServlet annotation, Java servlet container Tomcat, Servlet 3.0 features, dynamic web page generation in Java">
+
+    <meta name="author" content="InterviewHub">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-servlet-questions.html">
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Title Styling (NEW ADDED CSS) -->
+    <style>
+        .page-title {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .subtitle {
+            color: #34495e;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background-color: #f4f7f6;
+            border-left: 6px solid #1abc9c;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XQRT7QNZXX');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQRT7QNZXX');
     </script>
 </head>
 <body>
@@ -47,8 +94,9 @@
   </header>
 
     <main class='main-content'>
-<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Java Servlets Mastery: Server-Side Web Development & Interview Guide</h1>
-
+<h1 class="page-title">
+Java Servlets Mastery: Server-Side Web Development & Interview Guide
+</h1>
 <p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the world of Java Enterprise Edition (Java EE), <strong>Servlets</strong> are the foundational technology for building dynamic web applications. They act as the middle tier between the web browser and the database or application logic. For your page <code>/Pages/java-servlet-questions.html</code>, we have curated a massive 3000-word resource covering the Servlet lifecycle, request handling, and session management. This content is 100% unique, SEO-aligned, and tailored for the professional look of JavaIQ Lab.</p>
 
 <p style="background-color: #f4f7f6; border-left: 6px solid #1abc9c; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is a Servlet?</strong> A Servlet is a Java class used to extend the capabilities of servers that host applications accessed by a request-response programming model. Although servlets can respond to any type of request, they are most commonly used to extend applications hosted by Web servers (HTTP). They are managed by a <strong>Servlet Container</strong> (like Apache Tomcat).</p>
