@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Java String Interview Questions: SCP, Immutability & Performance | InterviewHub</title>
-    <meta name='description' content='Master Java Strings. Explore the String Constant Pool (SCP), immutability reasons, String vs StringBuilder, and top 20+ technical interview questions.'>
-    <meta name='keywords' content='Java string interview questions, string constant pool explained, why string is immutable in Java, string vs stringbuilder vs stringbuffer, string interning Java, string equals vs == operator, Java string memory management, string methods guide Java.'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <!-- Title -->
+    <title>Java String Interview Questions: SCP, Immutability & Performance | InterviewHub</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Master Java Strings. Explore String Constant Pool (SCP), immutability, String vs StringBuilder vs StringBuffer, and top interview questions.">
+    <meta name="keywords" content="Java string interview questions, string constant pool explained, why string is immutable in Java, string vs stringbuilder vs stringbuffer, string interning Java, string equals vs == operator, Java string memory management, string methods guide Java">
+    <meta name="author" content="InterviewHub">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-string-questions.html">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- 🔥 TITLE CSS (IMPORTANT - HEADER TITLE STYLE) -->
+    <style>
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Java String Interview Questions - SCP & Immutability">
+    <meta property="og:description" content="Complete guide to Java Strings, memory, SCP, and interview questions.">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-string-questions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java String Interview Questions">
+    <meta name="twitter:description" content="Learn Java Strings, SCP, immutability & performance tips.">
+    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XQRT7QNZXX');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQRT7QNZXX');
     </script>
 </head>
 <body>
