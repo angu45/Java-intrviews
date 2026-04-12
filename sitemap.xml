@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://intrviews.vercel.app/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://intrviews.vercel.app/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/disclaimer.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/privacy-policy.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Main Interview Pages -->
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/basic-java-interview-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/basic-java-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/hibernate-interview-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/hr-interview-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/interview-preparation-tips.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-abstraction-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-cheat-sheet.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-coding-interview-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-collections-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-data-types-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-encapsulation-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-exception-handling-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-file-handling-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-inheritance-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-jdbc-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-jsp-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-logical-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-mcq-quiz.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-multithreading-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-oops-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-operators-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-output-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-polymorphism-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-practice-programs.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-servlet-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-string-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/java-syntax-questions.html</loc>
+  </url>
+
+  <url>
+    <loc>https://intrviews.vercel.app/Pages/spring-framework-questions.html</loc>
+  </url>
+
+</urlset>
