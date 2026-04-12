@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>JDBC Interview Questions: Architecture, Drivers & Statements Guide | InterviewHub</title>
-    <meta name='description' content='Master JDBC for Java. Explore Driver types, PreparedStatement vs Statement, Transaction management, and top 25+ technical interview questions.'>
-    <meta name='keywords' content='JDBC interview questions, Java database interview questions for freshers, database connectivity in Java, JDBC architecture in Java, JDBC driver types, Type 4 JDBC driver, JDBC connection steps, connection pooling in Java, connection pooling frameworks in Java, HikariCP vs DBCP, PreparedStatement vs Statement, PreparedStatement SQL injection prevention, CallableStatement stored procedures, executeQuery vs executeUpdate, JDBC transaction management, JDBC auto-commit and rollback, ACID properties in JDBC, JDBC ResultSet types, ResultSetMetaData vs DatabaseMetaData, ResultSet metadata in Java, batch processing in JDBC'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Primary SEO -->
+    <title>JDBC Tutorial (Easy to Advanced) | Interview Questions, Drivers, PreparedStatement Guide</title>
+
+    <meta name="description" content="Master JDBC in Java with easy explanations and real examples. Learn JDBC architecture, driver types, PreparedStatement vs Statement, transaction management, connection pooling, and top interview questions for freshers and developers.">
+
+    <meta name="keywords" content="
+    JDBC interview questions,
+    Java database interview questions for freshers,
+    database connectivity in Java,
+    JDBC architecture in Java,
+    JDBC driver types,
+    Type 4 JDBC driver,
+    JDBC connection steps,
+    connection pooling in Java,
+    connection pooling frameworks in Java,
+    HikariCP vs DBCP,
+    PreparedStatement vs Statement,
+    PreparedStatement SQL injection prevention,
+    CallableStatement stored procedures,
+    executeQuery vs executeUpdate,
+    JDBC transaction management,
+    JDBC auto-commit and rollback,
+    ACID properties in JDBC,
+    JDBC ResultSet types,
+    ResultSetMetaData vs DatabaseMetaData,
+    ResultSet metadata in Java,
+    batch processing in JDBC,
+    JDBC tutorial for beginners,
+    easy JDBC explanation,
+    JDBC examples Java,
+    simple JDBC program,
+    JDBC interview questions with answers,
+    JDBC MCQ questions
+    ">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-jdbc-questions.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="JDBC Interview Questions & Tutorial | Java Database Connectivity Guide">
+    <meta property="og:description" content="Learn JDBC step by step with examples, architecture, drivers, and interview questions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-jdbc-questions.html">
+    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Twitter SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JDBC Tutorial for Beginners & Interviews">
+    <meta name="twitter:description" content="Easy JDBC guide with driver types, PreparedStatement, and interview Q&A.">
+    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
