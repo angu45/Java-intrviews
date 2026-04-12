@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Exception Handling: Checked vs Unchecked, Try-Catch & Q&A | InterviewHub</title>
-    <meta name='description' content='Comprehensive guide to Exception Handling in Java. Learn the throwable hierarchy, try-with-resources, custom exceptions, and top technical interview questions.'>
-    <meta name='keywords' content='Java exception handling questions, checked vs unchecked exceptions Java, try catch finally explained, throw vs throws keyword, custom exception in Java, exception hierarchy diagram, try-with-resources Java, runtime exception vs error.'>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <!-- SEO -->
+    <meta name="description" content="Master Java exception handling with checked vs unchecked exceptions, try-catch-finally, custom exceptions, and interview questions. Beginner to advanced guide.">
+    
+    <!-- UPDATED KEYWORDS (OLD + NEW ADDED) -->
+    <meta name="keywords" content="Java exception handling questions, checked vs unchecked exceptions Java, try catch finally explained, throw vs throws keyword, custom exception in Java, exception hierarchy diagram, try-with-resources Java, runtime exception vs error, exception handling in Java for beginners, Java exception tutorial, easy Java exception examples, Java error handling basics, Java try catch example programs, Java exception interview questions for freshers">
+
+    <meta name="author" content="InterviewHub">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-exception-handling-questions.html">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Java Exception Handling Guide | InterviewHub">
+    <meta property="og:description" content="Learn exception handling in Java with try-catch, checked vs unchecked exceptions, and interview questions.">
+    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-exception-handling-questions.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java Exception Handling | InterviewHub">
+    <meta name="twitter:description" content="Complete Java exception handling guide for beginners and interviews.">
+    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Performance -->
+    <link rel="preload" as="image" href="/Logo.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XQRT7QNZXX');
     </script>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Java Exception Handling Guide",
+      "description": "Complete Java exception handling tutorial including try-catch, custom exceptions, and interview questions.",
+      "author": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://intrviews.vercel.app/Logo.png"
+        }
+      },
+      "mainEntityOfPage": "https://intrviews.vercel.app/Pages/java-exception-handling-questions.html"
+    }
+    </script>
+
 </head>
 <body>
 
