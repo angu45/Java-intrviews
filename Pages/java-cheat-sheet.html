@@ -3,333 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Cheat Sheet 2026 | Syntax, OOP, & Collections | InterviewHub</title>
+    <title>Java Cheat Sheet 2026 | Ultimate Guide for Interviews & Developers</title>
     
-    <meta name="description" content="The ultimate Java Cheat Sheet for developers. Quick reference for syntax, OOP pillars, Collections Framework, Streams, and Exception handling. Optimized for interview prep.">
-    <meta name="keywords" content="Java Cheat Sheet, Java Syntax, OOP Reference, Java Collections Cheat Sheet, Java 8 Streams, InterviewHub, Coding Reference">
+    <meta name="description" content="Master Java in minutes with our 2026 Ultimate Cheat Sheet. Deep dive into OOP, Collections, Streams, Multithreading, and Interview Prep. 100% SEO optimized and developer-friendly.">
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">
+    <meta name="author" content="Angad Deshmane">
     
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <meta property="og:title" content="Java Cheat Sheet 2026 | Quick Revision for Interviews">
+    <meta property="og:description" content="The most complete Java reference guide. Core syntax to high-level Streams API.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">
+    <meta property="og:image" content="https://intrviews.vercel.app/Pages/Assets/java-og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Java Cheat Sheet 2026: The Ultimate Developer Reference",
+      "description": "A comprehensive Java cheat sheet covering basics, OOP pillars, collections framework, and modern Java 8+ features for interview preparation.",
+      "image": "https://intrviews.vercel.app/Pages/Assets/java-og-image.png",
+      "author": {
+        "@type": "Person",
+        "name": "Angad Deshmane"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://intrviews.vercel.app/Logo.png"
+        }
+      },
+      "datePublished": "2026-01-10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://intrviews.vercel.app/Pages/java-cheat-sheet.html"
+      }
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel='stylesheet' href='/css/style.css'>
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XQRT7QNZXX');
-    </script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap');
-        
-        :root {
-            --brand-primary: #3b82f6;
-            --brand-dark: #1e293b;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        /* Fixed: Adding max-width and overflow control to pre/code */
-        code, pre {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            white-space: pre-wrap; /* Text wrap sathi */
-            word-break: break-all; /* Break long words */
-        }
-
-        .cheat-card {
-            break-inside: avoid;
-            transition: transform 0.2s ease;
-        }
-
-        .cheat-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .copy-btn {
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .code-block:hover .copy-btn {
-            opacity: 1;
-        }
-
-        .sidebar-link.active {
-            color: var(--brand-primary);
-            border-left: 2px solid var(--brand-primary);
-            padding-left: 14px;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        code, pre { font-family: 'Fira Code', monospace; font-size: 0.85rem; }
+        pre { white-space: pre-wrap; word-break: break-all; overflow-x: auto; padding: 1rem; border-radius: 8px; }
+        .sidebar-link.active { color: #3b82f6; border-left: 4px solid #3b82f6; padding-left: 1rem; font-weight: 700; background: #f0f7ff; }
+        .section-title { @apply text-3xl font-extrabold mb-8 text-slate-800 border-l-8 pl-4; }
+        .cheat-card { @apply bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1; }
+        .keyword { @apply font-bold text-blue-600 bg-blue-50 px-1 rounded; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
 
-      <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="https://intrviews.vercel.app">
-          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
-        </a>
-      </div>
+    <header class="header bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+            <div class="logo">
+                <a href="https://intrviews.vercel.app"><img src="Logo.png" alt="InterviewHub Logo" class="h-10"></a>
+            </div>
+            <nav class="hidden lg:flex space-x-10 font-semibold text-slate-600">
+                <a href="https://intrviews.vercel.app" class="hover:text-blue-600 transition">Home</a>
+                <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html" class="hover:text-blue-600 transition">Java Roadmap</a>
+                <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html" class="hover:text-blue-600 transition">Coding</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="copyAllCode()" class="hidden md:block px-5 py-2.5 bg-blue-600 text-white rounded-xl text-sm font-bold hover:bg-blue-700 shadow-lg transition">📂 Copy All Snippets</button>
+            </div>
+        </div>
+    </header>
 
-      <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
-        <button id="menu-btn" title="Open Menu">☰</button>
-      </div>
-    </div>
-  </header>
-
-    <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+    <div class="max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row gap-12">
         
-        <aside class="lg:w-64 flex-shrink-0">
-            <div class="sticky top-24 space-y-1">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">Navigation</h3>
-                <a href="#basics" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Basic Syntax</a>
-                <a href="#oop" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">OOP Pillars</a>
-                <a href="#collections" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Collections</a>
-                <a href="#exceptions" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Exceptions</a>
-                <a href="#streams" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">Streams & Lambda</a>
-                <a href="#io" class="sidebar-link block px-4 py-2 text-sm text-slate-600 hover:bg-white rounded-lg transition">File I/O</a>
+        <aside class="lg:w-72 flex-shrink-0">
+            <div class="sticky top-28 space-y-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Table of Contents</h3>
+                <nav class="space-y-1">
+                    <a href="#intro" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">Introduction</a>
+                    <a href="#basics" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">01. Java Basics</a>
+                    <a href="#oop" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">02. OOP Pillars</a>
+                    <a href="#collections" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">03. Collections Framework</a>
+                    <a href="#streams" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">04. Java 8 Streams</a>
+                    <a href="#exceptions" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">05. Exception Handling</a>
+                    <a href="#revision" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition font-bold">Quick Revision</a>
+                    <a href="#faq" class="sidebar-link block px-3 py-2 text-sm text-slate-600 rounded-lg transition">FAQs</a>
+                </nav>
             </div>
         </aside>
 
-        <main class="flex-grow min-w-0"> <div class="mb-10">
-                <h1 class="text-4xl font-extrabold text-slate-900 mb-2">Java Cheat Sheet</h1>
-                <p class="text-slate-500 text-lg">A quick reference for Java developers, from core syntax to modern functional programming.</p>
-            </div>
+        <main class="flex-grow min-w-0">
+            <section id="intro" class="mb-16">
+                <h1 class="text-5xl font-black text-slate-900 mb-6 tracking-tight">The Ultimate Java Cheat Sheet <span class="text-blue-600">(2026 Edition)</span></h1>
+                <p class="text-xl text-slate-600 mb-8">Whether you are a fresher preparing for your first interview or a senior developer looking for a quick syntax refresh, this comprehensive Java cheat sheet covers everything from JVM basics to modern Streams API.</p>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-10">
+                    <h4 class="font-bold text-blue-900 mb-2">🚀 Why this Guide?</h4>
+                    <p class="text-blue-800 text-sm italic">This guide is optimized for speed. We avoid fluff and focus on production-grade code and interview-heavy concepts. Bookmark this page for your final-day revision!</p>
+                </div>
 
-            <section id="basics" class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3 text-sm">01</span>
-                    Basic Syntax & Types
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="cheat-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                        <h4 class="font-bold text-slate-400 mb-3">Main Method Template</h4>
-                        <div class="code-block relative bg-slate-800 rounded-lg p-4 group overflow-x-auto">
-                            <button onclick="copyCode(this)" class="copy-btn absolute top-2 right-2 p-1 bg-slate-700 text-white rounded text-xs hover:bg-slate-600">Copy</button>
-                            
-<pre class="text-blue-200"><code class="language-java">public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello World");
-  }
-}</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="cheat-card bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-slate-400 mb-3">Primitive Data Types</h4>
-                        <ul class="text-sm space-y-2">
-                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">int</span> <span>4 bytes (-2B to 2B)</span></li>
-                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">double</span> <span>8 bytes (Decimals)</span></li>
-                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">boolean</span> <span>1 bit (true/false)</span></li>
-                            <li class="flex justify-between border-b pb-1"><span class="font-mono text-blue-600">char</span> <span>2 bytes (Unicode)</span></li>
-                        </ul>
-                    </div>
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <a href="/Pages/java-oop-interview-questions.html" class="px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-bold hover:bg-slate-50 transition">#OOPPrinciples</a>
+                    <a href="/Pages/java-collections-questions.html" class="px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-bold hover:bg-slate-50 transition">#Collections</a>
+                    <a href="/Pages/java-multithreading-questions.html" class="px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-bold hover:bg-slate-50 transition">#Concurrency</a>
                 </div>
             </section>
 
-            <section id="oop" class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3 text-sm">02</span>
-                    OOP Pillars
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="cheat-card bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-purple-600 mb-2">Inheritance</h4>
-                        <p class="text-sm text-slate-500 mb-4">Use <code class="bg-slate-100 px-1 rounded text-red-500">extends</code> for classes and <code class="bg-slate-100 px-1 rounded text-red-500">implements</code> for interfaces.</p>
-                        <div class="overflow-x-auto">
-                            <pre class="bg-slate-50 p-3 rounded text-xs"><code>class Dog extends Animal {
-  @Override
-  void sound() { System.out.println("Bark"); }
+            <section id="basics" class="mb-20 scroll-mt-24">
+                <h2 class="section-title border-blue-500">01. Java Basics & Core Syntax</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="cheat-card">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2">📂 Main Structure</h4>
+                        <div class="bg-slate-900 rounded-xl">
+                            <pre class="text-blue-300"><code>public class Main {
+    public static void main(String[] args) {
+        // Your code starts here
+        System.out.println("Hello World");
+    }
 }</code></pre>
                         </div>
+                        <p class="mt-4 text-sm text-slate-500">The <span class="keyword">static</span> keyword allows the method to run without creating an object of the class.</p>
                     </div>
-                    <div class="cheat-card bg-white p-5 rounded-xl shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-purple-600 mb-2">Encapsulation</h4>
-                        <p class="text-sm text-slate-500 mb-4">Private fields + Public getters/setters.</p>
-                        <div class="overflow-x-auto">
-                            <pre class="bg-slate-50 p-3 rounded text-xs"><code>private String name;
-public String getName() { return name; }
-public void setName(String n) { name = n; }</code></pre>
+
+                    <div class="cheat-card">
+                        <h4 class="font-bold text-slate-800 mb-4">💎 Primitive Data Types</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b pb-2 text-sm"><span class="font-mono font-bold">byte / short / int</span> <span>1 / 2 / 4 Bytes</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm"><span class="font-mono font-bold">long</span> <span>8 Bytes (L suffix)</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm"><span class="font-mono font-bold">float / double</span> <span>4 / 8 Bytes</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm"><span class="font-mono font-bold">char</span> <span>2 Bytes (Unicode)</span></div>
+                            <div class="flex justify-between text-sm"><span class="font-mono font-bold">boolean</span> <span>true / false</span></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="collections" class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3 text-sm">03</span>
-                    Collections Framework
-                </h2>
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto">
-                    <table class="w-full text-sm text-left min-w-[500px]">
-                        <thead class="bg-slate-50 text-slate-500 uppercase text-xs">
+            <section id="oop" class="mb-20 scroll-mt-24">
+                <h2 class="section-title border-purple-500 text-purple-600">02. OOP Pillars (Object Oriented Programming)</h2>
+                <p class="mb-8 text-slate-600">Java is a robust OOP language. Understanding these four pillars is non-negotiable for any developer.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="cheat-card">
+                        <h3 class="font-bold text-purple-700 mb-2">1. Encapsulation</h3>
+                        <p class="text-xs text-slate-500 mb-4">Wrapping data (variables) and code (methods) together as a single unit.</p>
+                        <pre class="bg-slate-50 border border-slate-100 text-slate-700"><code>class User {
+    private String name; // Private Variable
+    public String getName() { return name; } // Getter
+    public void setName(String n) { name = n; } // Setter
+}</code></pre>
+                    </div>
+
+                    <div class="cheat-card">
+                        <h3 class="font-bold text-purple-700 mb-2">2. Inheritance</h3>
+                        <p class="text-xs text-slate-500 mb-4">A mechanism where one class acquires the properties of another.</p>
+                        <pre class="bg-slate-50 border border-slate-100 text-slate-700"><code>class Animal { void eat() { } }
+class Dog extends Animal { 
+    void bark() { } // Dog inherits eat()
+}</code></pre>
+                    </div>
+
+                    <div class="cheat-card">
+                        <h3 class="font-bold text-purple-700 mb-2">3. Polymorphism</h3>
+                        <p class="text-xs text-slate-500 mb-4">One name, many forms. Method Overloading vs Overriding.</p>
+                        <pre class="bg-slate-50 border border-slate-100 text-slate-700"><code>// Overloading: Same name, different params
+void add(int a, int b) { }
+void add(int a, int b, int c) { }</code></pre>
+                    </div>
+
+                    <div class="cheat-card">
+                        <h3 class="font-bold text-purple-700 mb-2">4. Abstraction</h3>
+                        <p class="text-xs text-slate-500 mb-4">Hiding implementation details and showing only functionality.</p>
+                        <pre class="bg-slate-50 border border-slate-100 text-slate-700"><code>abstract class Shape {
+    abstract void draw(); // No body
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="collections" class="mb-20 scroll-mt-24">
+                <h2 class="section-title border-green-500 text-green-600">03. Collections Framework & Performance</h2>
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm mb-10">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-50 text-slate-600 uppercase text-xs font-black">
                             <tr>
-                                <th class="px-6 py-4">Structure</th>
+                                <th class="px-6 py-4">Data Structure</th>
                                 <th class="px-6 py-4">Implementation</th>
-                                <th class="px-6 py-4">Key Characteristics</th>
+                                <th class="px-6 py-4">Search (Big O)</th>
+                                <th class="px-6 py-4">Key Feature</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
-                            <tr>
-                                <td class="px-6 py-4 font-bold">List</td>
-                                <td class="px-6 py-4 font-mono text-blue-600">ArrayList</td>
-                                <td class="px-6 py-4">Fast random access, duplicate allowed.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-bold">Set</td>
-                                <td class="px-6 py-4 font-mono text-blue-600">HashSet</td>
-                                <td class="px-6 py-4">Unique elements, no order.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-bold">Map</td>
-                                <td class="px-6 py-4 font-mono text-blue-600">HashMap</td>
-                                <td class="px-6 py-4">Key-Value pairs, unique keys.</td>
-                            </tr>
+                            <tr class="hover:bg-green-50/30 transition"><td class="px-6 py-4 font-bold">List</td><td class="px-6 py-4">ArrayList</td><td class="px-6 py-4">O(1)</td><td class="px-6 py-4">Index-based, fast search.</td></tr>
+                            <tr class="hover:bg-green-50/30 transition"><td class="px-6 py-4 font-bold">Set</td><td class="px-6 py-4">HashSet</td><td class="px-6 py-4">O(1)</td><td class="px-6 py-4">Unique elements only.</td></tr>
+                            <tr class="hover:bg-green-50/30 transition"><td class="px-6 py-4 font-bold">Map</td><td class="px-6 py-4">HashMap</td><td class="px-6 py-4">O(1)</td><td class="px-6 py-4">Key-Value, Unique keys.</td></tr>
+                            <tr class="hover:bg-green-50/30 transition"><td class="px-6 py-4 font-bold">Queue</td><td class="px-6 py-4">PriorityQueue</td><td class="px-6 py-4">O(log n)</td><td class="px-6 py-4">Natural sorting/Priority.</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section id="streams" class="mb-12">
-                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-8 h-8 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mr-3 text-sm">04</span>
-                    Java 8+ Streams
-                </h2>
-                <div class="cheat-card bg-slate-900 p-6 rounded-xl shadow-xl overflow-x-auto">
-                    <div class="code-block relative">
-                        <button onclick="copyCode(this)" class="copy-btn absolute top-0 right-0 p-1 bg-slate-700 text-white rounded text-xs hover:bg-slate-600">Copy</button>
-                        <pre class="text-orange-300"><code>List&lt;String&gt; names = Arrays.asList("Java", "Python", "C++");
+            <section id="streams" class="mb-20 scroll-mt-24">
+                <h2 class="section-title border-orange-500 text-orange-600">04. Java 8+ Streams & Lambda</h2>
+                <div class="cheat-card bg-slate-900 border-none shadow-2xl">
+                    <h4 class="text-orange-400 font-bold mb-4">⚡ Modern Functional Programming</h4>
+                    <pre class="text-orange-100"><code>List&lt;String&gt; names = Arrays.asList("Java", "Python", "JavaScript", "C++");
 
+// Filter, Map and Collect
 List&lt;String&gt; filtered = names.stream()
-    .filter(s -> s.startsWith("J"))
-    .map(String::toUpperCase)
-    .sorted()
-    .collect(Collectors.toList());
+    .filter(s -> s.startsWith("J"))      // Filter elements
+    .map(String::toUpperCase)            // Transform elements
+    .sorted()                             // Sort
+    .collect(Collectors.toList());        // Collect to List
 
-// Output: ["JAVA"]</code></pre>
+System.out.println(filtered); // [JAVA, JAVASCRIPT]</code></pre>
+                </div>
+                <div class="mt-6 p-4 bg-orange-50 rounded-xl text-orange-800 text-sm">
+                    <strong>Note:</strong> Streams are <strong>lazy</strong>. They don't process data until a terminal operation (like <code>collect</code>, <code>forEach</code>, or <code>reduce</code>) is called.
+                </div>
+            </section>
+
+            <section id="exceptions" class="mb-20 scroll-mt-24">
+                <h2 class="section-title border-red-500 text-red-600">05. Exception Handling & Best Practices</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="cheat-card">
+                        <h4 class="font-bold mb-4 text-red-700">Standard Try-Catch</h4>
+                        <pre class="bg-slate-50 border border-red-100 text-slate-700"><code>try {
+    int data = 100/0;
+} catch (ArithmeticException e) {
+    System.out.println("Error: " + e);
+} finally {
+    System.out.println("I always run.");
+}</code></pre>
+                    </div>
+                    <div class="cheat-card">
+                        <h4 class="font-bold mb-4 text-red-700">Custom Exception</h4>
+                        <pre class="bg-slate-50 border border-red-100 text-slate-700"><code>class MyEx extends Exception {
+    public MyEx(String msg) {
+        super(msg);
+    }
+}
+// Throw it:
+throw new MyEx("User not found");</code></pre>
                     </div>
                 </div>
             </section>
 
+            <section id="revision" class="mb-20 scroll-mt-24">
+                <div class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
+                    <h2 class="text-3xl font-black mb-8 border-b border-slate-700 pb-4">🔥 Quick Interview Revision Checklist</h2>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>JDK vs JRE vs JVM:</strong> JVM runs code; JRE = JVM + Libs; JDK = JRE + Tools.</li>
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>Immutable Strings:</strong> Strings cannot be changed once created. Use StringBuilder for heavy edits.</li>
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>Static Keyword:</strong> Belongs to the class, not the instance.</li>
+                        </ul>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>HashMap working:</strong> Works on hashing principle using hashCode() and equals().</li>
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>Interface vs Abstract:</strong> Interface is 100% abstract (pre-Java 8); Abstract can have state.</li>
+                            <li class="flex gap-3"><span class="text-blue-500 font-bold">✔</span> <strong>Garbage Collection:</strong> Automatic memory management using Mark-and-Sweep.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="mb-20 scroll-mt-24">
+                <h2 class="text-3xl font-bold mb-10 text-slate-800">❓ Frequently Asked Java Questions</h2>
+                <div class="space-y-6">
+                    <div class="cheat-card">
+                        <h4 class="font-bold text-slate-800">Q. What is the best way to revise Java quickly for an interview?</h4>
+                        <p class="mt-2 text-slate-600 text-sm">The best way is to focus on core concepts: OOP pillars, Collections framework, and Exception handling. Use this cheat sheet to brush up on syntax and solve at least 5-10 coding problems on Strings and Arrays.</p>
+                    </div>
+                    <div class="cheat-card">
+                        <h4 class="font-bold text-slate-800">Q. Why Java is not a purely object-oriented language?</h4>
+                        <p class="mt-2 text-slate-600 text-sm">Java supports <strong>Primitive Data Types</strong> (int, char, etc.) which are not objects. Hence, it is not 100% object-oriented.</p>
+                    </div>
+                    <div class="cheat-card">
+                        <h4 class="font-bold text-slate-800">Q. Is Java still relevant in 2026?</h4>
+                        <p class="mt-2 text-slate-600 text-sm">Absolutely. Java remains the backbone of Enterprise software, Backend systems, and Android development. With regular updates (Java 17, 21+), it continues to be top-tier.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-20 py-10 border-t border-slate-200 text-center">
+                <p class="text-slate-500 text-sm mb-6 uppercase tracking-widest font-bold">Continue Your Journey</p>
+                <div class="flex flex-wrap justify-center gap-6 text-blue-600 font-bold">
+                    <a href="/Pages/java-mcq-quiz.html" class="hover:underline">Java MCQ Quiz</a>
+                    <a href="/Pages/java-string-questions.html" class="hover:underline">String Questions</a>
+                    <a href="/Pages/java-practice-programs.html" class="hover:underline">Practice Programs</a>
+                    <a href="/Pages/java-freshers-interview-questions.html" class="hover:underline">Java Roadmap</a>
+                </div>
+            </div>
         </main>
     </div>
 
-   <footer class="footer">
-  <div class="container">
-
-    <div class="footer-top">
-
-      <div class="footer-col">
-        <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
-        <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
-
-      <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </p>
-
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
-
-    </div>
-
-  </div>
-</footer>
+    <footer class="bg-white border-t py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">© 2026 <strong>InterviewHub</strong> — Learn Java, Practice Coding, Crack Interviews.</p>
+        </div>
+    </footer>
 
     <script>
-        function copyCode(btn) {
-            const code = btn.nextElementSibling.innerText;
-            const textarea = document.createElement('textarea');
-            textarea.value = code;
-            document.body.appendChild(textarea);
-            textarea.select();
-            
-            try {
-                document.execCommand('copy');
-                const originalText = btn.innerText;
-                btn.innerText = 'Copied!';
-                btn.classList.add('bg-green-600');
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.classList.remove('bg-green-600');
-                }, 2000);
-            } catch (err) {
-                console.error('Fallback copy failed', err);
-            }
-            
-            document.body.removeChild(textarea);
+        function copyAllCode() {
+            let allCode = "";
+            document.querySelectorAll("pre").forEach(block => {
+                allCode += block.innerText + "\n\n";
+            });
+            navigator.clipboard.writeText(allCode).then(() => {
+                alert("Success! All Java code snippets have been copied to your clipboard.");
+            });
         }
 
-        // Active link highlighting on scroll
+        // Active Link Highlighting
         window.addEventListener('scroll', () => {
             let current = "";
             const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.sidebar-link');
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 120) {
+                if (pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link => {
+            document.querySelectorAll('.sidebar-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
+                if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
             });
