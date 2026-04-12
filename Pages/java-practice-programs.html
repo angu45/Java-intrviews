@@ -84,10 +84,175 @@
       </div>
     </div>
     </header>
+<main class='main-content'>
 
-    <main class='main-content'><h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Java Practice Lab:
-Real-World Programming Scenarios & Logic Building</h1><p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">Theoretical excellence is the foundation, but <strong>practical execution</strong> is the building. For your page <code>/Pages/java-practice-programs.html</code>, we have expanded our laboratory guide to include complex logic building, file-based persistence, and multi-layered application structures. This content is designed to help students bridge the gap between "knowing code" and "building software," with 100% unique content and SEO-optimized structures for the JavaIQ Lab series.</p><p style="background-color: #f4f7f9; border-left: 6px solid #2980b9; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>The Learning Path:</strong> To master Java, you must progress from <strong>Basic Syntax</strong> (loops/conditionals) to <strong>Data Structures</strong> (Arrays/Collections), and finally to <strong>System Design</strong> (OOP/File I/O). This guide provides 20+ hands-on programs with detailed explanations of the "why" behind the logic.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. Basic Logic & Mathematical Algorithms</h2><p>Logic building starts with the ability to translate a mathematical formula into a set of computational steps. These programs are the "warm-up" for any developer.</p><h3>Program 1: The Fibonacci Series (Iterative vs. Recursive)</h3><p>The Fibonacci series ($0, 1, 1, 2, 3, 5, 8...$) is the classic way to learn about state management and recursion. While recursion looks cleaner, it consumes more stack memory ($O(2^n)$). The iterative approach is much more efficient ($O(n)$) for large numbers.</p><h3>Program 2: Prime Number with Optimization</h3><p>Checking if a number is prime doesn't require checking all numbers up to $n$. You only need to check up to $\sqrt{n}$. This optimization reduces execution time significantly when processing thousands of numbers.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Array Manipulation & Search Logic</h2><p>Arrays are contiguous memory locations. Practical knowledge of arrays involves understanding how to traverse them without causing an <code>ArrayIndexOutOfBoundsException</code>.</p><h3>Program 3: Find Missing Number in an Array</h3><p>Given an array of $n-1$ integers in the range of $1$ to $n$, find the missing one.<strong>Logic:</strong> Calculate the expected sum using the formula $S = \frac{n(n+1)}{2}$. Subtract the actual sum of array elements from $S$. The result is your missing number. This is an $O(n)$ solution with $O(1)$ space.</p><h3>Program 4: Matrix Multiplication</h3><p>Multi-dimensional arrays are used in graphics and data science. Matrix multiplication requires three nested loops. It is a great exercise to understand how row-major and column-major traversal works in memory.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. String Engineering & Pattern Matching</h2><p>Strings in Java are objects. Most practical programs involve manipulating these objects without creating excessive garbage in the <strong>String Constant Pool (SCP)</strong>.</p><h3>Program 5: String Anagram Check</h3><p>Two strings are anagrams if they contain the same characters in a different order (e.g., "listen" and "silent").<strong>Practical Step:</strong> Convert both to lowercase, remove spaces, convert to char arrays, and sort them. If the sorted arrays are equal, they are anagrams.</p><h3>Program 6: Count Vowels, Consonants, and Special Characters</h3><p>This program teaches you how to use the <code>Character</code> class methods like <code>isLetter()</code>, <code>isDigit()</code>, and how to handle ASCII values effectively.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Advanced OOP-Based Practice</h2><p>Moving beyond single-file programs, these exercises help you understand how classes interact in a professional environment.</p><h3>Program 7: Basic Banking System (Encapsulation)</h3><p>Create a class <code>Account</code> with private variables <code>balance</code> and <code>accountNumber</code>. Use <code>deposit()</code> and <code>withdraw()</code> methods.<strong>Goal:</strong> Learn how to protect data. Ensure that <code>withdraw()</code> fails if the balance is insufficient.</p><h3>Program 8: Shape Hierarchy (Polymorphism)</h3><p>Create an abstract class <code>Shape</code> with a method <code>calculateArea()</code>. Implement this in <code>Circle</code>, <code>Rectangle</code>, and <code>Triangle</code>.<strong>Goal:</strong> Understand how a single reference can call different implementations at runtime.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. File Handling & Data Persistence</h2><p>A program that loses data when it closes is rarely useful. These programs teach you to keep records in <code>.txt</code> or <code>.dat</code> files.</p><h3>Program 9: Student Management System (File I/O)</h3><p>Write a program that takes student details (Name, Roll No, Marks) from the console and saves them into a file. Then, read the file to display the list of all students.</p><h3>Program 10: File Search Utility</h3><p>Write a program that searches for a specific word inside a large text file and returns the line numbers where the word appears. This is a practical look at <code>BufferedReader</code> and <code>Scanner</code> performance.</p><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Collection Framework Exercises</h2><p>In modern Java, we rarely use raw arrays. We use Collections. These exercises focus on the power of <strong>ArrayList</strong>, <strong>HashMap</strong>, and <strong>HashSet</strong>.</p><table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #3498db;"><tr style="background-color: #3498db; color: white;"><th>Collection</th><th>Practice Task</th><th>Learning Outcome</th></tr><tr><td><strong>ArrayList</strong></td><td>Sort a list of Employee objects by Salary.</td><td>Using <code>Comparator</code> and <code>Collections.sort()</code>.</td></tr><tr style="background-color: #f2f2f2;"><td><strong>HashMap</strong></td><td>Count word frequency in a paragraph.</td><td>Key-Value pair management.</td></tr><tr><td><strong>HashSet</strong></td><td>Remove all duplicates from a given List.</td><td>Understanding uniqueness in hashing.</td></tr></table><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">7. Practical Interview Questions: The Logic Round</h2><div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;"><h4 style="color: #c0392b;">P1. How to Reverse an Array in-place?</h4><p>Use two pointers—one at the start and one at the end. Swap the elements and move the pointers toward the center. This is $O(1)$ space complexity.</p></div><div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;"><h4 style="color: #c0392b;">P2. How to check for Balanced Parentheses?</h4><p>Use a <strong>Stack</strong> data structure. Push the opening bracket; when a closing bracket appears, pop and check for a match. If the stack is empty at the end, the string is balanced.</p></div><h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">8. Conclusion: From Practice to Proficiency</h2><p>The secret to becoming a great Java programmer is not reading, but <strong>typing</strong>. Every time you write a program, you encounter bugs. Solving those bugs is where the real learning happens. Use this practice guide as your roadmap. Start with the basics, move to OOP, and eventually build full-fledged console applications. Mastering these 20+ scenarios will make you not only interview-ready but job-ready.</p><p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Keep practicing, and remember: The compiler is your best teacher. Happy Coding at JavaIQ Lab!</p>
-    </main>
+<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
+Java Practice Lab: Real-World Programming Scenarios & Logic Building
+</h1>
+
+<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">
+Theoretical excellence is the foundation, but <strong>practical execution</strong> is the building. For your page <code>/Pages/java-practice-programs.html</code>, we have expanded our laboratory guide to include complex logic building, file-based persistence, and multi-layered application structures. This content is designed to help students bridge the gap between "knowing code" and "building software," with 100% unique content and SEO-optimized structures for the JavaIQ Lab series.
+</p>
+
+<p style="background-color: #f4f7f9; border-left: 6px solid #2980b9; padding: 20px; border-radius: 4px; margin: 20px 0;">
+<strong>The Learning Path:</strong> To master Java, you must progress from <strong>Basic Syntax</strong> (loops/conditionals) to <strong>Data Structures</strong> (Arrays/Collections), and finally to <strong>System Design</strong> (OOP/File I/O). This guide provides 20+ hands-on programs with detailed explanations of the "why" behind the logic.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+1. Basic Logic & Mathematical Algorithms
+</h2>
+
+<p>
+Logic building starts with the ability to translate a mathematical formula into a set of computational steps. These programs are the "warm-up" for any developer.
+</p>
+
+<h3>Program 1: The Fibonacci Series (Iterative vs. Recursive)</h3>
+<p>
+The Fibonacci series ($0, 1, 1, 2, 3, 5, 8...$) is the classic way to learn about state management and recursion. While recursion looks cleaner, it consumes more stack memory ($O(2^n)$). The iterative approach is much more efficient ($O(n)$) for large numbers.
+</p>
+
+<h3>Program 2: Prime Number with Optimization</h3>
+<p>
+Checking if a number is prime doesn't require checking all numbers up to $n$. You only need to check up to $\sqrt{n}$. This optimization reduces execution time significantly when processing thousands of numbers.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+2. Array Manipulation & Search Logic
+</h2>
+
+<p>
+Arrays are contiguous memory locations. Practical knowledge of arrays involves understanding how to traverse them without causing an <code>ArrayIndexOutOfBoundsException</code>.
+</p>
+
+<h3>Program 3: Find Missing Number in an Array</h3>
+<p>
+Given an array of $n-1$ integers in the range of $1$ to $n$, find the missing one.
+<strong>Logic:</strong> Calculate the expected sum using the formula $S = \frac{n(n+1)}{2}$. Subtract the actual sum of array elements from $S$. The result is your missing number. This is an $O(n)$ solution with $O(1)$ space.
+</p>
+
+<h3>Program 4: Matrix Multiplication</h3>
+<p>
+Multi-dimensional arrays are used in graphics and data science. Matrix multiplication requires three nested loops. It is a great exercise to understand how row-major and column-major traversal works in memory.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+3. String Engineering & Pattern Matching
+</h2>
+
+<p>
+Strings in Java are objects. Most practical programs involve manipulating these objects without creating excessive garbage in the <strong>String Constant Pool (SCP)</strong>.
+</p>
+
+<h3>Program 5: String Anagram Check</h3>
+<p>
+Two strings are anagrams if they contain the same characters in a different order (e.g., "listen" and "silent").
+<strong>Practical Step:</strong> Convert both to lowercase, remove spaces, convert to char arrays, and sort them. If the sorted arrays are equal, they are anagrams.
+</p>
+
+<h3>Program 6: Count Vowels, Consonants, and Special Characters</h3>
+<p>
+This program teaches you how to use the <code>Character</code> class methods like <code>isLetter()</code>, <code>isDigit()</code>, and how to handle ASCII values effectively.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+4. Advanced OOP-Based Practice
+</h2>
+
+<p>
+Moving beyond single-file programs, these exercises help you understand how classes interact in a professional environment.
+</p>
+
+<h3>Program 7: Basic Banking System (Encapsulation)</h3>
+<p>
+Create a class <code>Account</code> with private variables <code>balance</code> and <code>accountNumber</code>. Use <code>deposit()</code> and <code>withdraw()</code> methods.
+<strong>Goal:</strong> Learn how to protect data. Ensure that <code>withdraw()</code> fails if the balance is insufficient.
+</p>
+
+<h3>Program 8: Shape Hierarchy (Polymorphism)</h3>
+<p>
+Create an abstract class <code>Shape</code> with a method <code>calculateArea()</code>. Implement this in <code>Circle</code>, <code>Rectangle</code>, and <code>Triangle</code>.
+<strong>Goal:</strong> Understand how a single reference can call different implementations at runtime.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+5. File Handling & Data Persistence
+</h2>
+
+<p>
+A program that loses data when it closes is rarely useful. These programs teach you to keep records in <code>.txt</code> or <code>.dat</code> files.
+</p>
+
+<h3>Program 9: Student Management System (File I/O)</h3>
+<p>
+Write a program that takes student details (Name, Roll No, Marks) from the console and saves them into a file. Then, read the file to display the list of all students.
+</p>
+
+<h3>Program 10: File Search Utility</h3>
+<p>
+Write a program that searches for a specific word inside a large text file and returns the line numbers where the word appears. This is a practical look at <code>BufferedReader</code> and <code>Scanner</code> performance.
+</p>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+6. Collection Framework Exercises
+</h2>
+
+<p>
+In modern Java, we rarely use raw arrays. We use Collections.
+</p>
+
+<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #3498db;">
+<tr style="background-color: #3498db; color: white;">
+<th>Collection</th>
+<th>Practice Task</th>
+<th>Learning Outcome</th>
+</tr>
+
+<tr>
+<td><strong>ArrayList</strong></td>
+<td>Sort a list of Employee objects by Salary.</td>
+<td>Using <code>Comparator</code> and <code>Collections.sort()</code>.</td>
+</tr>
+
+<tr style="background-color: #f2f2f2;">
+<td><strong>HashMap</strong></td>
+<td>Count word frequency in a paragraph.</td>
+<td>Key-Value pair management.</td>
+</tr>
+
+<tr>
+<td><strong>HashSet</strong></td>
+<td>Remove all duplicates from a given List.</td>
+<td>Understanding uniqueness in hashing.</td>
+</tr>
+</table>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+7. Practical Interview Questions: The Logic Round
+</h2>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">P1. How to Reverse an Array in-place?</h4>
+<p>Use two pointers—one at the start and one at the end. Swap the elements and move the pointers toward the center. This is $O(1)$ space complexity.</p>
+</div>
+
+<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #c0392b;">P2. How to check for Balanced Parentheses?</h4>
+<p>Use a <strong>Stack</strong> data structure. Push the opening bracket; when a closing bracket appears, pop and check for a match. If the stack is empty at the end, the string is balanced.</p>
+</div>
+
+<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">
+8. Conclusion: From Practice to Proficiency
+</h2>
+
+<p>
+The secret to becoming a great Java programmer is not reading, but <strong>typing</strong>. Every time you write a program, you encounter bugs. Solving those bugs is where the real learning happens.
+</p>
+
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
+Keep practicing, and remember: The compiler is your best teacher. Happy Coding at JavaIQ Lab!
+</p>
+
+</main>
 <footer class="footer">
   <div class="container">
 
