@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Java Data Types & Memory: Primitive vs Reference & Stack vs Heap | InterviewHub</title>
-    <meta name='description' content='Detailed guide on Java data types, including primitive vs non-primitive comparisons, Stack vs Heap memory management, and how Wrapper classes work with Autoboxing.'>
-    <meta name='keywords' content='Java data types, primitive vs non-primitive, stack vs heap memory Java, Java wrapper classes, autoboxing and unboxing, Java memory management, primitive types size and range, reference types in Java, Java programming for beginners, JVM memory allocation.'>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Data Types & Memory: Primitive vs Reference, Stack vs Heap | InterviewHub</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
+    <!-- SEO -->
+    <meta name="description" content="Learn Java data types with primitive vs reference comparison, Stack vs Heap memory, wrapper classes, autoboxing, and JVM memory concepts for interviews.">
+    <meta name="keywords" content="Java data types, primitive vs non primitive Java, stack vs heap Java, Java memory management, wrapper classes Java, autoboxing unboxing Java, JVM memory interview questions">
+    <meta name="author" content="InterviewHub">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-data-types-questions.html">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Java Data Types & Memory Explained | InterviewHub">
+    <meta property="og:description" content="Understand primitive vs reference types, Stack vs Heap memory, and Java wrapper classes for interviews.">
+    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-data-types-questions.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java Data Types & Memory | InterviewHub">
+    <meta name="twitter:description" content="Master Java memory and data types for coding interviews.">
+    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Performance -->
+    <link rel="preload" as="image" href="/Logo.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XQRT7QNZXX');
     </script>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Java Data Types and Memory Management",
+      "description": "Complete guide on Java primitive and reference types, stack vs heap memory, and wrapper classes.",
+      "author": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://intrviews.vercel.app/Logo.png"
+        }
+      },
+      "mainEntityOfPage": "https://intrviews.vercel.app/Pages/java-data-types-questions.html"
+    }
+    </script>
+
 </head>
 <body>
 
