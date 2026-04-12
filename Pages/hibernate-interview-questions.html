@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Hibernate Interview Questions: Architecture, Cache & Object States | InterviewHub</title>
-    <meta name='description' content='Hibernate interview questions, Hibernate interview questions for experienced, Hibernate ORM tutorial, Hibernate architecture explained, object relational mapping in Java, JDBC vs Hibernate, Session vs SessionFactory, Hibernate session lifecycle, Hibernate object states, transient persistent detached states, Hibernate caching mechanism, Hibernate second level cache Ehcache, HQL vs SQL, HQL query examples, Hibernate get vs load method, merge vs update in Hibernate, dynamic update in Hibernate, lazy loading vs eager loading, Hibernate mapping associations, many-to-one relationship in Hibernate, dirty checking feature, Hibernate configuration file, N+1 select problem in Hibernate'>
-    <meta name='keywords' content='Master Hibernate ORM. Explore Session vs SessionFactory, First & Second level cache, HQL, and top 25+ technical interview questions for 2026.'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-    <link rel='stylesheet' href='/css/style.css'>
-    <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XQRT7QNZXX');
-    </script>
+  <!-- Title -->
+  <title>Hibernate Interview Questions: Architecture, Cache, ORM Concepts | InterviewHub</title>
+
+  <!-- Correct SEO -->
+  <meta name="description" content="Prepare for Hibernate interviews with detailed concepts like ORM architecture, Session vs SessionFactory, caching, HQL, object states, and real-world Java persistence questions.">
+
+  <meta name="keywords" content="Hibernate interview questions, Hibernate ORM tutorial, Hibernate architecture, Session vs SessionFactory, Hibernate caching, first level cache, second level cache, HQL vs SQL, Hibernate object states, transient persistent detached, Hibernate get vs load, merge vs update, lazy vs eager loading, Java ORM concepts, Hibernate examples">
+
+  <meta name="author" content="InterviewHub">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://intrviews.vercel.app/Pages/hibernate-interview-questions.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hibernate Interview Questions & ORM Guide">
+  <meta property="og:description" content="Master Hibernate ORM with architecture, caching, HQL, and interview Q&A.">
+  <meta property="og:url" content="https://intrviews.vercel.app/Pages/hibernate-interview-questions.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://intrviews.vercel.app/preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hibernate Interview Questions & Answers">
+  <meta name="twitter:description" content="Learn Hibernate architecture, caching, ORM, and crack interviews easily.">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQRT7QNZXX');
+  </script>
+
+  <!-- Schema (SEO Boost 🚀) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hibernate Interview Questions and ORM Guide",
+    "author": {
+      "@type": "Organization",
+      "name": "InterviewHub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "InterviewHub"
+    }
+  }
+  </script>
+
 </head>
 <body>
 
