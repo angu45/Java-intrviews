@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <!-- Basic -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Encapsulation Guide: Data Hiding, Getters & Setters | InterviewHub</title>
 
-    <!-- SEO -->
     <meta name="description" content="Learn Java encapsulation with data hiding, private variables, getters and setters, real examples, and top interview questions for OOP concepts.">
     <meta name="keywords" content="Java encapsulation, data hiding in Java, getters and setters Java, OOP encapsulation interview questions, access modifiers Java, encapsulation example Java, Java OOP concepts">
     <meta name="author" content="InterviewHub">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-encapsulation-questions.html">
+    <link rel="canonical" href="https://interview-hub.in/Pages/java-encapsulation-questions.html">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
@@ -23,29 +24,23 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Java Encapsulation Explained | InterviewHub">
     <meta property="og:description" content="Master data hiding, getters & setters, and encapsulation concepts in Java with examples and interview questions.">
-    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-encapsulation-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
+    <meta property="og:url" content="https://interview-hub.in/Pages/java-encapsulation-questions.html">
     <meta property="og:type" content="article">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Java Encapsulation Guide | InterviewHub">
     <meta name="twitter:description" content="Understand encapsulation in Java with real examples and interview questions.">
-    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta name="twitter:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Theme -->
     <meta name="theme-color" content="#0f172a">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Performance -->
     <link rel="preload" as="image" href="/Logo.png">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -54,7 +49,6 @@
       gtag('config', 'G-XQRT7QNZXX');
     </script>
 
-    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,31 +61,29 @@
       },
       "publisher": {
         "@type": "Organization",
-        "name": "InterviewHub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://intrviews.vercel.app/Logo.png"
-        }
+        "name": "InterviewHub"
       },
-      "mainEntityOfPage": "https://intrviews.vercel.app/Pages/java-encapsulation-questions.html"
+      "mainEntityOfPage": "https://interview-hub.in/Pages/java-encapsulation-questions.html"
     }
     </script>
 
 </head>
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <a href="https://intrviews.vercel.app">
+        <a href="https://interview-hub.in">
           <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
         </a>
       </div>
 
       <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in">Home</a>
+        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+        <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -104,6 +96,7 @@
     <main class='main-content'>
 <h1>Encapsulation in Java: Data Hiding and Robustness</h1>
 
+
 <p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Encapsulation is the first pillar of Object-Oriented Programming (OOP) and serves as a protective shield for your data. For your page <code>/Pages/java-encapsulation-questions.html</code>, we have detailed how this concept prevents unauthorized access and keeps your code modular. This content is unique, SEO-friendly, and designed to help developers understand the "Why" behind data hiding.</p>
 
 <p style="background-color: #e8f8f5; border-left: 6px solid #1abc9c; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Definition:</strong> Encapsulation is the technique of wrapping data (variables) and the code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class are hidden from other classes and can be accessed only through the methods of their current class.</p>
@@ -112,7 +105,7 @@
 <p>To implement encapsulation in Java, you must follow two primary steps:</p>
 <ul style="line-height: 1.8;">
 <li><strong>Private Variables:</strong> Declare the variables of the class as <code>private</code>. This ensures that no external class can access or modify them directly.</li>
-<li><strong>Public Getter and Setter Methods:</strong> Provide <code>public</code> methods to view (get) and modify (set) the variable values. This gives you full control over what data is entered into your system.</li>
+<li><strong>Public Getter and Setter Methods:</strong> Provide <code>public</code> methods to view (get) and modify (set) the variable values. This gives you full control over काय data enters your system.</li>
 </ul>
 
 <h3 style="color: #16a085;">Example of an Encapsulated Class</h3>
@@ -167,31 +160,27 @@
 
 <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
 <h4 style="color: #2e86c1;">Q1. What is the difference between Encapsulation and Abstraction?</h4>
-<p>While they are related, <strong>Abstraction</strong> focuses on hiding the complexity (the "what"), whereas <strong>Encapsulation</strong> focuses on hiding the data (the "how"). Abstraction is often implemented using Interfaces, and Encapsulation is implemented using Access Modifiers.</p>
+<p>While they are related, <strong>Abstraction</strong> focuses on hiding the complexity (the "what"), whereas <strong>Encapsulation</strong> focuses on hiding the data (the "how").</p>
 </div>
 
 <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
 <h4 style="color: #2e86c1;">Q2. Can we achieve encapsulation without using 'private' keyword?</h4>
-<p>Technically, no. Without the <code>private</code> access modifier, the variables remain accessible to other classes (either in the same package or globally), which defeats the purpose of data hiding.</p>
+<p>Technically, no. Without <code>private</code>, variables remain accessible, which defeats the purpose of data hiding.</p>
 </div>
 
 <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
 <h4 style="color: #2e86c1;">Q3. Why is Encapsulation also called "Data Hiding"?</h4>
-<p>Because it restricts direct access to the data members of a class. By providing methods to interact with the data, the class "hides" the actual state of the object, exposing only what is necessary.</p>
-</div>
-
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #2e86c1;">Q4. What is a "Tightly Encapsulated Class"?</h4>
-<p>A class is said to be tightly encapsulated if every variable in the class is declared as <code>private</code>. If even one variable is public or default, it is not considered tightly encapsulated.</p>
+<p>Because it restricts direct access to data members. By providing methods to interact with data, the class "hides" its actual state.</p>
 </div>
 
 <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Real-World Analogy: The Capsule</h2>
-<p>The name "Encapsulation" comes from a medical capsule. Inside a capsule, several medicines (data and methods) are mixed and enclosed in a protective shell. You consume the capsule as a single unit without needing to know the exact chemical composition inside. Similarly, in Java, you interact with an object through its public methods without needing to see its private variables.</p>
+
+<p>In Java, you interact with an object through its public methods without needing to see its private variables, much like consuming a medical capsule without knowing the exact chemical mix inside.</p>
 
 <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Conclusion</h2>
 <p>Encapsulation is more than just making variables private; it is about building a secure and manageable architecture. By controlling how data is accessed and modified, you reduce the chances of bugs and make your Java programs much more robust.</p>
 
-<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Explore our other JavaIQ Lab modules to master all the pillars of Object-Oriented Programming.</p>
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Explore our other InterviewHub modules to master all the pillars of Object-Oriented Programming.</p>
     </main>
 
 <footer class="footer">
@@ -199,60 +188,93 @@
 
     <div class="footer-top">
 
-      <!-- Logo + About -->
       <div class="footer-col">
         <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
         <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
       </div>
 
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
+        <a href="https://interview-hub.in/">Home</a>
+        <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+        <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+        <a href="https://interview-hub.in/Pages/java-collections-questions.html">Collections</a>
       </div>
 
-      <!-- Resources -->
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
+        <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+        <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+        <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+        <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
       </div>
 
-      <!-- Important -->
       <div class="footer-col">
         <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
+        <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+        <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+        <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+        <a href="https://interview-hub.in/Pages/java-practice-programs.html">Practice Programs</a>
       </div>
 
     </div>
 
-    <!-- Bottom Section -->
     <div class="footer-bottom">
 
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
+      <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
 
-      <!-- Policy Links -->
       <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+        <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </p>
 
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
+      <p><small>Explore more at https://interview-hub.in/</small></p>
 
     </div>
 
   </div>
 </footer>
 
-    <script src='/js/main.js'></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // --- १. मोबाईल मेनू टोगल ---
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // --- २. डार्क मोड टोगल ---
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
