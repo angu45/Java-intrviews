@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <!-- Basic -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Exception Handling: Checked vs Unchecked, Try-Catch & Q&A | InterviewHub</title>
 
-    <!-- SEO -->
     <meta name="description" content="Master Java exception handling with checked vs unchecked exceptions, try-catch-finally, custom exceptions, and interview questions. Beginner to advanced guide.">
-    
-    <!-- UPDATED KEYWORDS (OLD + NEW ADDED) -->
     <meta name="keywords" content="Java exception handling questions, checked vs unchecked exceptions Java, try catch finally explained, throw vs throws keyword, custom exception in Java, exception hierarchy diagram, try-with-resources Java, runtime exception vs error, exception handling in Java for beginners, Java exception tutorial, easy Java exception examples, Java error handling basics, Java try catch example programs, Java exception interview questions for freshers">
-
     <meta name="author" content="InterviewHub">
     <meta name="robots" content="index, follow">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-exception-handling-questions.html">
+    <link rel="canonical" href="https://interview-hub.in/Pages/java-exception-handling-questions.html">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
@@ -26,29 +24,23 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Java Exception Handling Guide | InterviewHub">
     <meta property="og:description" content="Learn exception handling in Java with try-catch, checked vs unchecked exceptions, and interview questions.">
-    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-exception-handling-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
+    <meta property="og:url" content="https://interview-hub.in/Pages/java-exception-handling-questions.html">
     <meta property="og:type" content="article">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Java Exception Handling | InterviewHub">
     <meta name="twitter:description" content="Complete Java exception handling guide for beginners and interviews.">
-    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta name="twitter:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Theme -->
     <meta name="theme-color" content="#0f172a">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Performance -->
     <link rel="preload" as="image" href="/Logo.png">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -57,7 +49,6 @@
       gtag('config', 'G-XQRT7QNZXX');
     </script>
 
-    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,32 +61,28 @@
       },
       "publisher": {
         "@type": "Organization",
-        "name": "InterviewHub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://intrviews.vercel.app/Logo.png"
-        }
+        "name": "InterviewHub"
       },
-      "mainEntityOfPage": "https://intrviews.vercel.app/Pages/java-exception-handling-questions.html"
+      "mainEntityOfPage": "https://interview-hub.in/Pages/java-exception-handling-questions.html"
     }
     </script>
-
 </head>
 <body>
-
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <a href="https://intrviews.vercel.app">
+        <a href="https://interview-hub.in">
           <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
         </a>
       </div>
 
       <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in">Home</a>
+        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+        <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -107,6 +94,7 @@
 
     <main class='main-content'>
 <h1>Exception Handling in Java: Mastery of Robust and Error-Free Code</h1>
+
 
 <p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Exception handling is the protective layer that prevents a Java application from crashing when an unexpected event occurs. For your page <code>/Pages/java-exception-handling-questions.html</code>, we have developed a deep-dive technical guide covering the hierarchy of exceptions, the try-catch-finally mechanism, and advanced custom exceptions. This content is 100% unique, SEO-friendly, and meticulously structured to match the professional theme of your JavaIQ Lab series.</p>
 
@@ -126,6 +114,7 @@
 </ul>
 
 <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. The Exception Handling Keywords</h2>
+
 <p>Java provides five primary keywords to handle exceptions effectively. Using them correctly ensures that your code remains "clean" even when errors occur.</p>
 
 <table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #3498db;">
@@ -203,9 +192,9 @@
 </pre>
 
 <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: Best Practices</h2>
-<p>Effective exception handling is about balance. Never "swallow" exceptions with an empty catch block, as this makes debugging impossible. Always log the error or rethrow it. Use <code>finally</code> or <code>try-with-resources</code> to ensure that your application doesn't leak memory or leave files open. Mastering these patterns will make your Java code professional, reliable, and interview-ready.</p>
+<p>Effective exception handling is about balance. Never "swallow" exceptions with an empty catch block, as this makes debugging impossible. Always log the error or rethrow it. Mastering these patterns will make your Java code professional, reliable, and interview-ready.</p>
 
-<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module concludes the JavaIQ Lab Exception Handling guide. Next up: Java Collections Framework.</p>
+<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This module concludes the InterviewHub Exception Handling guide. Next up: Java Collections Framework.</p>
     </main>
 
 <footer class="footer">
@@ -213,60 +202,93 @@
 
     <div class="footer-top">
 
-      <!-- Logo + About -->
       <div class="footer-col">
         <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
         <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
       </div>
 
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
+        <a href="https://interview-hub.in/">Home</a>
+        <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+        <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+        <a href="https://interview-hub.in/Pages/java-collections-questions.html">Collections</a>
       </div>
 
-      <!-- Resources -->
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
+        <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+        <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+        <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+        <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
       </div>
 
-      <!-- Important -->
       <div class="footer-col">
         <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
+        <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+        <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+        <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+        <a href="https://interview-hub.in/Pages/java-practice-programs.html">Practice Programs</a>
       </div>
 
     </div>
 
-    <!-- Bottom Section -->
     <div class="footer-bottom">
 
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
+      <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
 
-      <!-- Policy Links -->
       <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+        <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </p>
 
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
+      <p><small>Explore more at https://interview-hub.in/</small></p>
 
     </div>
 
   </div>
 </footer>
 
-    <script src='/js/main.js'></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // --- १. मोबाईल मेनू टोगल ---
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // --- २. डार्क मोड टोगल ---
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
