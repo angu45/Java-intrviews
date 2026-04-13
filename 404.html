@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | InterviewHub</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            color: #3498db;
+            margin: 0;
+            line-height: 1;
+        }
+        .error-message {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+        .error-desc {
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .home-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+        .search-hint {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="https://interview-hub.in">
+          <img src="/Logo.png" alt="InterviewHub Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="https://interview-hub.in">Home</a>
+        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+        <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+        <a href="https://interview-hub.in/contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+        <button id="menu-btn" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+    <main class="main-content">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Oops! Page Missing.</p>
+            <p class="error-desc">
+                The page you are looking for might have been removed, had its name changed, 
+                or is temporarily unavailable. Let's get you back on track to cracking your interview!
+            </p>
+            
+            <a href="https://interview-hub.in" class="home-btn">Return to Home Page</a>
+
+            <p class="search-hint">
+                Lost? Try navigating through our Roadmap or Question Bank in the footer.
+            </p>
+        </div>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
+        <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="https://interview-hub.in/">Home</a>
+        <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+        <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+        <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+        <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
+      </div>
+      <div class="footer-col">
+        <h4>Important</h4>
+        <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+        <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+        <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
+      <p>
+        <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+        <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+        <a href="https://interview-hub.in/contact.html">Contact</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        menuBtn?.addEventListener('click', () => {
+            nav?.classList.toggle('active');
+            menuBtn.textContent = nav?.classList.contains('active') ? '✖' : '☰';
+        });
+
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle?.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+            themeToggle.textContent = (theme === 'dark') ? '☀️' : '🌙';
+            localStorage.setItem('theme', theme);
+        });
+    });
+    </script>
+</body>
+</html>
