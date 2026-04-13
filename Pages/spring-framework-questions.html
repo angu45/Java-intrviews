@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <!-- Google Analytics -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spring Framework Fundamentals: Core Concepts & Interview Excellence | InterviewHub</title>
+    <meta name='description' content='Master Spring Framework core concepts including IoC, Dependency Injection, Bean Lifecycle, and scopes. Complete interview guide with examples for 2026.'>
+    <meta name='keywords' content='Spring Framework interview questions, Inversion of Control IoC, Dependency Injection DI, Spring Bean Lifecycle, BeanFactory vs ApplicationContext, Spring scopes, Autowiring Spring, @Component @Service @Repository, Spring Framework tutorial for beginners'>
+    <meta name="author" content="InterviewHub">
+
+    <link rel="canonical" href="https://interview-hub.in/Pages/spring-framework-questions.html">
+
+    <meta property="og:title" content="Spring Framework Fundamentals | InterviewHub Guide">
+    <meta property="og:description" content="Learn Spring IoC, DI, and Bean Lifecycle with real interview questions and examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://interview-hub.in/Pages/spring-framework-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+
+    <link rel="stylesheet" href="/css/style.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,62 +39,12 @@
       gtag('config', 'G-XQRT7QNZXX');
     </script>
 
-    <!-- Adsense -->
-    <meta name="google-adsense-account" content="ca-pub-7444755444888327">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7444755444888327"
-     crossorigin="anonymous"></script>
-
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="FoZYvyTzMHH3p_20R2_irgDM1de6z4RubFDva5O3lkc">
-
-    <!-- Basic Meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
-    <title>Ultimate Java Interview Guide 2026 | 100+ Core Java Questions & Answers | InterviewHub</title>
-
-    <!-- SEO Meta -->
-    <meta name="title" content="Ultimate Java Interview Guide 2026 | 100+ Core Java Questions & Answers | InterviewHub">
-    <meta name="description" content="Master Core Java interviews with our 2000+ word guide. Learn JVM architecture, OOPs, memory management, GC, and real interview questions for 2026.">
-    <meta name="keywords" content="java interview questions 2026, core java interview guide, jvm architecture, java oop concepts, memory management gc, java 21 features, freshers interview questions, interviewhub">
-    <meta name="author" content="InterviewHub">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/ultimate-java-interview-guide.html">
-
-    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/ultimate-java-interview-guide.html">
-    <meta property="og:title" content="Ultimate Java Interview Guide 2026 | InterviewHub">
-    <meta property="og:description" content="Complete Java masterclass covering JVM, OOP, memory management, and interview preparation.">
-    <meta property="og:image" content="https://i.ibb.co/kgRnJLtW/1000176146-removebg-preview.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ultimate Java Interview Guide 2026">
-    <meta name="twitter:description" content="Learn Core Java deeply and crack interviews easily with this complete guide.">
-    <meta name="twitter:image" content="https://i.ibb.co/4RTqDGvH/apple-touch-icon-180x180-1.png">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#0d6efd">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
-
-    <!-- Schema Markup (SEO BOOST 🚀 ARTICLE) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Ultimate Java Interview Guide 2026",
-      "description": "Complete Java interview preparation guide covering JVM, OOP, memory management, and real-world questions.",
+      "@type": "TechArticle",
+      "headline": "Spring Framework Fundamentals: Core Concepts Guide",
+      "description": "Comprehensive tutorial on Spring IoC, Dependency Injection, and Bean Lifecycle for Java developers.",
       "author": {
         "@type": "Organization",
         "name": "InterviewHub"
@@ -74,31 +53,26 @@
         "@type": "Organization",
         "name": "InterviewHub"
       },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://intrviews.vercel.app/Pages/ultimate-java-interview-guide.html"
-      }
+      "mainEntityOfPage": "https://interview-hub.in/Pages/spring-framework-questions.html"
     }
     </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-  <header class="header">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <a href="https://intrviews.vercel.app">
+        <a href="https://interview-hub.in">
           <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
         </a>
       </div>
 
       <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in">Home</a>
+        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+        <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -106,9 +80,7 @@
         <button id="menu-btn" title="Open Menu">☰</button>
       </div>
     </div>
-  </header>
-
-    <main class='main-content'>
+  </header> <main class='main-content'>
 <h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #6db33f; padding-bottom: 10px;">Spring Framework Fundamentals: Core Concepts & Interview Excellence</h1>
 
 <p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">The Spring Framework has revolutionized Java enterprise development by providing a comprehensive programming and configuration model. It addresses the complexity of enterprise application development by focusing on "POJO-based" (Plain Old Java Object) programming. For your page <code>/Pages/spring-framework-questions.html</code>, we have developed a definitive 3000-word guide covering Inversion of Control (IoC), Dependency Injection (DI), and the Spring Bean lifecycle. This content is unique, SEO-friendly, and designed to match the high-standard aesthetic of your JavaIQ Lab series.</p>
@@ -220,60 +192,94 @@
 
     <div class="footer-top">
 
-      <!-- Logo + About -->
       <div class="footer-col">
         <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
         <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
       </div>
 
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
+        <a href="https://interview-hub.in/">Home</a>
+        <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+        <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+        <a href="https://interview-hub.in/Pages/java-collections-questions.html">Collections</a>
       </div>
 
-      <!-- Resources -->
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
+        <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+        <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+        <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+        <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
       </div>
 
-      <!-- Important -->
       <div class="footer-col">
         <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
+        <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+        <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+        <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+        <a href="https://interview-hub.in/Pages/java-practice-programs.html">Practice Programs</a>
       </div>
 
     </div>
 
-    <!-- Bottom Section -->
     <div class="footer-bottom">
 
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
+      <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
 
-      <!-- Policy Links -->
       <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+        <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </p>
 
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
+      <p><small>Explore more at https://interview-hub.in/</small></p>
 
     </div>
 
   </div>
 </footer>
 
-    <script src='/js/main.js'></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // मोबाईल मेनू टोगल
+        menuBtn?.addEventListener('click', () => {
+            nav?.classList.toggle('active');
+            menuBtn.textContent = nav?.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // डार्क मोड टोगल
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle?.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // स्क्रीन रिसाईज झाल्यावर मेनू बंद करणे
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav?.classList.remove('active');
+                if (menuBtn) menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
