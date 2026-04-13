@@ -1,246 +1,228 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Title -->
-  <title>Hibernate Interview Questions: Architecture, Cache, ORM Concepts | InterviewHub</title>
+    <title>Hibernate Interview Questions: Architecture, Cache, ORM Concepts | InterviewHub</title>
 
-  <!-- Correct SEO -->
-  <meta name="description" content="Prepare for Hibernate interviews with detailed concepts like ORM architecture, Session vs SessionFactory, caching, HQL, object states, and real-world Java persistence questions.">
+    <meta name="description" content="Prepare for Hibernate interviews with detailed concepts like ORM architecture, Session vs SessionFactory, caching, HQL, object states, and real-world Java persistence questions.">
+    <meta name="keywords" content="Hibernate interview questions, Hibernate ORM tutorial, Hibernate architecture, Session vs SessionFactory, Hibernate caching, first level cache, second level cache, HQL vs SQL, Hibernate object states, transient persistent detached, Hibernate get vs load, merge vs update, lazy vs eager loading, Java ORM concepts, Hibernate examples">
+    <meta name="author" content="InterviewHub">
+    <meta name="robots" content="index, follow">
 
-  <meta name="keywords" content="Hibernate interview questions, Hibernate ORM tutorial, Hibernate architecture, Session vs SessionFactory, Hibernate caching, first level cache, second level cache, HQL vs SQL, Hibernate object states, transient persistent detached, Hibernate get vs load, merge vs update, lazy vs eager loading, Java ORM concepts, Hibernate examples">
+    <link rel="canonical" href="https://interview-hub.in/Pages/hibernate-interview-questions.html">
 
-  <meta name="author" content="InterviewHub">
-  <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Hibernate Interview Questions & ORM Guide">
+    <meta property="og:description" content="Master Hibernate ORM with architecture, caching, HQL, and interview Q&A.">
+    <meta property="og:url" content="https://interview-hub.in/Pages/hibernate-interview-questions.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://interview-hub.in/preview.png">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://intrviews.vercel.app/Pages/hibernate-interview-questions.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hibernate Interview Questions & Answers">
+    <meta name="twitter:description" content="Learn Hibernate architecture, caching, ORM, and crack interviews easily.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Hibernate Interview Questions & ORM Guide">
-  <meta property="og:description" content="Master Hibernate ORM with architecture, caching, HQL, and interview Q&A.">
-  <meta property="og:url" content="https://intrviews.vercel.app/Pages/hibernate-interview-questions.html">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="https://intrviews.vercel.app/preview.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hibernate Interview Questions & Answers">
-  <meta name="twitter:description" content="Learn Hibernate architecture, caching, ORM, and crack interviews easily.">
+    <link rel="stylesheet" href="/css/style.css">
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="Pages/Assets/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
-  <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQRT7QNZXX');
+    </script>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/style.css">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XQRT7QNZXX');
-  </script>
-
-  <!-- Schema (SEO Boost 🚀) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Hibernate Interview Questions and ORM Guide",
-    "author": {
-      "@type": "Organization",
-      "name": "InterviewHub"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "InterviewHub"
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Hibernate Interview Questions and ORM Guide",
+      "author": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "url": "https://interview-hub.in/Pages/hibernate-interview-questions.html"
     }
-  }
-  </script>
-
+    </script>
 </head>
 <body>
-
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="https://intrviews.vercel.app">
-          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
-        </a>
-      </div>
-
-      <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
-        <button id="menu-btn" title="Open Menu">☰</button>
-      </div>
-    </div>
-  </header>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="https://interview-hub.in">
+                    <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="https://interview-hub.in">Home</a>
+                <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+                <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+                <a href="https://interview-hub.in/contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+                <button id="menu-btn" title="Open Menu">☰</button>
+            </div>
+        </div>
+    </header>
 
     <main class='main-content'>
-<h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #59626a; padding-bottom: 10px;">Hibernate ORM Mastery: Persistence, Mapping, and Interview Guide</h1>
+        <h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #59626a; padding-bottom: 10px;">Hibernate ORM Mastery: Persistence, Mapping, and Interview Guide</h1>
 
-<p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the realm of Java enterprise applications, bridging the gap between Object-Oriented code and Relational Databases is a significant challenge. Hibernate ORM is the most popular solution to this "Object-Relational Impedance Mismatch." For your page <code>/Pages/hibernate-interview-questions.html</code>, we have synthesized a massive 3000-word technical resource covering architecture, session management, caching, and HQL. This content is 100% unique, SEO-aligned, and designed to fit the professional aesthetic of JavaIQ Lab.</p>
+        
 
-<p style="background-color: #f2f4f4; border-left: 6px solid #59626a; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is Hibernate?</strong> Hibernate is an open-source, lightweight, Object-Relational Mapping (ORM) solution for Java. It simplifies the development of Java applications to interact with the database by providing an abstraction layer that maps Java classes to database tables and Java data types to SQL data types.</p>
+        <p style="line-height: 1.8; color: #34495e; font-size: 1.1em;">In the realm of Java enterprise applications, bridging the gap between Object-Oriented code and Relational Databases is a significant challenge. Hibernate ORM is the most popular solution to this "Object-Relational Impedance Mismatch."</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Hibernate Architecture</h2>
-<p>Hibernate has a layered architecture which helps the user to operate without having to know the underlying APIs. It utilizes various existing Java APIs, like JDBC, JTA, and JNDI.</p>
+        <p style="background-color: #f2f4f4; border-left: 6px solid #59626a; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>What is Hibernate?</strong> Hibernate is an open-source, Object-Relational Mapping (ORM) solution for Java. It maps Java classes to database tables and Java data types to SQL data types.</p>
 
-<ul style="line-height: 2;">
-<li><strong>Configuration:</strong> Represents the properties or configuration file (hibernate.cfg.xml). It is used to create the SessionFactory.</li>
-<li><strong>SessionFactory:</strong> A thread-safe, immutable cache of compiled mappings for a single database. It is a heavy-weight object used to create Sessions.</li>
-<li><strong>Session:</strong> A short-lived object used to get a physical connection with a database. It is not thread-safe and is used to perform CRUD operations.</li>
-<li><strong>Transaction:</strong> Represents a unit of work with the database. It handles the commit and rollback operations.</li>
-</ul>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Hibernate Architecture</h2>
+        <p>Hibernate has a layered architecture which helps the user to operate without having to know the underlying APIs.</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Hibernate Object States</h2>
-<p>Understanding the state of an object in Hibernate is critical for managing data persistence. An object can be in one of three states during its lifecycle.</p>
+        <ul style="line-height: 2;">
+            <li><strong>Configuration:</strong> Represents the configuration file (hibernate.cfg.xml). It is used to create the SessionFactory.</li>
+            <li><strong>SessionFactory:</strong> A thread-safe cache of compiled mappings. It is a heavy-weight object used to create Sessions.</li>
+            <li><strong>Session:</strong> A short-lived object used to get a physical connection with a database. It is not thread-safe.</li>
+            <li><strong>Transaction:</strong> Represents a unit of work with the database. It handles commit and rollback operations.</li>
+        </ul>
 
-<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #59626a;">
-<tr style="background-color: #59626a; color: white;">
-<th>State</th>
-<th>Description</th>
-</tr>
-<tr>
-<td><strong>Transient</strong></td>
-<td>The object is newly created and not yet associated with a Hibernate Session or the database.</td>
-</tr>
-<tr style="background-color: #f2f2f2;">
-<td><strong>Persistent</strong></td>
-<td>The object is associated with a session and has an identifier in the database. Any change to this object will be synchronized with the DB.</td>
-</tr>
-<tr>
-<td><strong>Detached</strong></td>
-<td>The object was persistent, but the session has been closed or the object has been evicted. It no longer tracks changes to the DB.</td>
-</tr>
-</table>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Hibernate Object States</h2>
+        
+        <p>Understanding the state of an object in Hibernate is critical for managing data persistence.</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Hibernate Caching Mechanism</h2>
-<p>Caching is one of the main reasons why Hibernate is highly performant. It reduces the number of hits to the database.</p>
+        <table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #59626a;">
+            <tr style="background-color: #59626a; color: white;">
+                <th>State</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><strong>Transient</strong></td>
+                <td>The object is newly created and not yet associated with a Hibernate Session.</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;">
+                <td><strong>Persistent</strong></td>
+                <td>The object is associated with a session and has an identifier in the database.</td>
+            </tr>
+            <tr>
+                <td><strong>Detached</strong></td>
+                <td>The session has been closed or the object has been evicted. It no longer tracks changes.</td>
+            </tr>
+        </table>
 
-<ul style="line-height: 1.8;">
-<li><strong>First-Level Cache (Level 1):</strong> Associated with the <strong>Session</strong> object. It is enabled by default. It is local to the current session and thread.</li>
-<li><strong>Second-Level Cache (Level 2):</strong> Associated with the <strong>SessionFactory</strong>. It is global across the application and requires third-party providers like Ehcache or Hazelcast.</li>
-</ul>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. Hibernate Caching Mechanism</h2>
+        
+        <ul style="line-height: 1.8;">
+            <li><strong>First-Level Cache (Level 1):</strong> Associated with the <strong>Session</strong> object. It is enabled by default.</li>
+            <li><strong>Second-Level Cache (Level 2):</strong> Associated with the <strong>SessionFactory</strong>. It is global across the application.</li>
+        </ul>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Top Hibernate Interview Questions</h2>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Top Hibernate Interview Questions</h2>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q1. What is the difference between get() and load() methods?</h4>
-<p><strong>get():</strong> Returns null if the object is not found. It always hits the database immediately (Eager loading). Use it when you aren't sure if the object exists.</p>
-<p><strong>load():</strong> Throws an <code>ObjectNotFoundException</code> if not found. It returns a <strong>Proxy object</strong> and only hits the database when a property other than ID is accessed (Lazy loading).</p>
-</div>
+        <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+            <h4 style="color: #c0392b;">Q1. What is the difference between get() and load() methods?</h4>
+            <p><strong>get():</strong> Returns null if the object is not found. It always hits the database immediately (Eager loading).</p>
+            <p><strong>load():</strong> Throws an exception if not found. It returns a <strong>Proxy object</strong> and only hits the DB when needed (Lazy loading).</p>
+        </div>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q2. What is HQL (Hibernate Query Language)?</h4>
-<p>HQL is an object-oriented query language, similar to SQL, but instead of operating on tables and columns, it operates on <strong>Persistent Objects</strong> and their properties. It is database-independent, meaning Hibernate translates HQL into the specific SQL dialect of the underlying DB.</p>
-</div>
+        <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+            <h4 style="color: #c0392b;">Q2. What is HQL (Hibernate Query Language)?</h4>
+            <p>HQL is an object-oriented query language. Instead of tables and columns, it operates on <strong>Persistent Objects</strong> and their properties. It is database-independent.</p>
+        </div>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q3. Explain the N+1 Select Problem.</h4>
-<p>This occurs when you fetch a list of parent objects, and Hibernate executes one query to fetch N parents, followed by N additional queries to fetch the children of each parent. This can be solved using <strong>Join Fetching</strong> or by configuring the fetching strategy in the mapping.</p>
-</div>
-
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q4. What is Dirty Checking in Hibernate?</h4>
-<p>Dirty Checking is a feature that allows Hibernate to automatically determine whether an object has been modified (is "dirty") within a session. If it has, Hibernate automatically updates the database with the new values when the transaction is committed, without you needing to call <code>update()</code> explicitly.</p>
-</div>
-
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q5. What is the difference between update() and merge()?</h4>
-<p><strong>update():</strong> Attempts to re-attach a detached object to the current session. If another instance of the same object is already in the session, it throws an exception.</p>
-<p><strong>merge():</strong> Copies the state of the detached object into a persistent object in the session (if it exists) or loads it. It is safer to use when you are unsure about the session's state.</p>
-</div>
-
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Hibernate Mapping: One-to-Many and Many-to-One</h2>
-<p>Mapping defines how Java relationships (Composition/Collection) correspond to Database relationships (Foreign Keys).</p>
-<ul style="line-height: 2;">
-<li><strong>One-to-One:</strong> One entity is related to exactly one other entity (e.g., Person and Passport).</li>
-<li><strong>One-to-Many:</strong> One entity is related to multiple other entities (e.g., Department and Employees).</li>
-<li><strong>Many-to-Many:</strong> Multiple entities related to multiple others (e.g., Students and Courses), usually requiring a "Join Table."</li>
-</ul>
-
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion: The Power of ORM</h2>
-<p>Hibernate continues to be a standard in Java development because it removes the boilerplate JDBC code and allows developers to focus on the object model. By mastering session management, caching, and mapping strategies, you can build data-intensive applications that are both fast and maintainable. Use these questions to prepare for your professional interviews and build a strong foundation in modern Java persistence.</p>
-
-<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">This concludes our guide on Hibernate. For more advanced tutorials on Spring Data JPA, visit JavaIQ Lab.</p>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Hibernate Mapping</h2>
+        <ul style="line-height: 2;">
+            <li><strong>One-to-One:</strong> Exactly one entity related to another (e.g., Person and Passport).</li>
+            <li><strong>One-to-Many:</strong> One entity related to multiple entities (e.g., Department and Employees).</li>
+            <li><strong>Many-to-Many:</strong> Requires a "Join Table" (e.g., Students and Courses).</li>
+        </ul>
     </main>
 
-<footer class="footer">
-  <div class="container">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
+                    <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <a href="https://interview-hub.in/">Home</a>
+                    <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+                    <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Important</h4>
+                    <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+                    <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+                    <a href="https://interview-hub.in/contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
+                <p>
+                    <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+                    <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a>
+                </p>
+                <p><small>Explore more at https://interview-hub.in/</small></p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="footer-top">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const nav = document.getElementById('nav');
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
 
-      <!-- Logo + About -->
-      <div class="footer-col">
-        <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
-        <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
-      </div>
+            menuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+            });
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
-      </div>
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️';
+            }
 
-      <!-- Resources -->
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
-      </div>
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-theme');
+                let theme = 'light';
+                if (body.classList.contains('dark-theme')) {
+                    theme = 'dark';
+                    themeToggle.textContent = '☀️';
+                } else {
+                    themeToggle.textContent = '🌙';
+                }
+                localStorage.setItem('theme', theme);
+            });
 
-      <!-- Important -->
-      <div class="footer-col">
-        <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
-      </div>
-
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="footer-bottom">
-
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
-
-      <!-- Policy Links -->
-      <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </p>
-
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
-
-    </div>
-
-  </div>
-</footer>
-
-    <script src='/js/main.js'></script>
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('active');
+                    menuBtn.textContent = '☰';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
