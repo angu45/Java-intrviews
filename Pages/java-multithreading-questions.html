@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-    <!-- Primary SEO -->
-    <title>Java Multithreading Guide: Thread Lifecycle, Synchronization & Interview Questions</title>
+    <title>Java Multithreading Guide: Thread Lifecycle, Synchronization & Interview Questions | InterviewHub</title>
     <meta name='description' content='Complete Java Multithreading Guide covering thread lifecycle, synchronization, deadlocks, volatile keyword, executor framework and 25+ interview questions.'>
     <meta name='keywords' content='Java multithreading questions, thread lifecycle Java, synchronization in Java, deadlock in Java, volatile keyword Java, executor service Java, Java concurrency interview questions'>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-multithreading-questions.html">
+    <link rel="canonical" href="https://interview-hub.in/Pages/java-multithreading-questions.html">
 
-    <!-- Robots -->
     <meta name="robots" content="index, follow">
 
-    <!-- Author -->
     <meta name="author" content="InterviewHub">
 
-    <!-- Open Graph (Facebook / LinkedIn) -->
     <meta property="og:title" content="Java Multithreading Guide | Master Threads & Concurrency 🚀">
     <meta property="og:description" content="Learn Java Multithreading with real interview questions, synchronization, deadlocks and executor framework.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-multithreading-questions.html">
-    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta property="og:url" content="https://interview-hub.in/Pages/java-multithreading-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Java Multithreading Guide | Interview Prep">
     <meta name="twitter:description" content="Thread lifecycle, synchronization & interview questions in one guide.">
-    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/Pages/Assets/favicon-16x16.png">
@@ -39,13 +36,8 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="/Pages/Assets/favicon.ico">
 
-    <!-- CSS -->
     <link rel='stylesheet' href='/css/style.css'>
 
-    <!-- Performance (Preconnect) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX'></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -54,46 +46,40 @@
       gtag('config', 'G-XQRT7QNZXX');
     </script>
 
-    <!-- Structured Data (SEO Boost) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Java Multithreading Guide",
-      "description": "Complete guide to Java multithreading, synchronization, and interview questions.",
+      "headline": "Java Multithreading Guide 2026",
+      "description": "Master thread lifecycle, synchronization, and advanced concurrency concepts for Java interviews.",
       "author": {
         "@type": "Organization",
         "name": "InterviewHub"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "InterviewHub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://intrviews.vercel.app/Logo.png"
-        }
+        "name": "InterviewHub"
       },
-      "mainEntityOfPage": "https://intrviews.vercel.app/Pages/java-multithreading-questions.html"
+      "mainEntityOfPage": "https://interview-hub.in/Pages/java-multithreading-questions.html"
     }
     </script>
-
 </head>
-    
 <body>
-
-  <header class="header">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <a href="https://intrviews.vercel.app">
+        <a href="https://interview-hub.in">
           <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
         </a>
       </div>
 
       <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in">Home</a>
+        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+        <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -216,60 +202,94 @@ SEO Metadata for java-multithreading-questions.
 
     <div class="footer-top">
 
-      <!-- Logo + About -->
       <div class="footer-col">
         <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
         <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
       </div>
 
-      <!-- Navigation -->
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
+        <a href="https://interview-hub.in/">Home</a>
+        <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+        <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+        <a href="https://interview-hub.in/Pages/java-collections-questions.html">Collections</a>
       </div>
 
-      <!-- Resources -->
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
+        <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+        <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+        <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+        <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
       </div>
 
-      <!-- Important -->
       <div class="footer-col">
         <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
+        <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+        <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+        <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+        <a href="https://interview-hub.in/Pages/java-practice-programs.html">Practice Programs</a>
       </div>
 
     </div>
 
-    <!-- Bottom Section -->
     <div class="footer-bottom">
 
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
+      <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
 
-      <!-- Policy Links -->
       <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
+        <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+        <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+        <a href="https://interview-hub.in/contact.html">Contact</a>
       </p>
 
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
+      <p><small>Explore more at https://interview-hub.in/</small></p>
 
     </div>
 
   </div>
 </footer>
 
-    <script src='/js/main.js'></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // --- १. मोबाईल मेनू टोगल ---
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // --- २. डार्क मोड टोगल ---
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // स्क्रीन रिसाईज झाल्यावर मेनू बंद करणे
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
