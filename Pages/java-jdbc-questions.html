@@ -1,61 +1,33 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
     <title>JDBC Tutorial (Easy to Advanced) | Interview Questions, Drivers, PreparedStatement Guide</title>
 
     <meta name="description" content="Master JDBC in Java with easy explanations and real examples. Learn JDBC architecture, driver types, PreparedStatement vs Statement, transaction management, connection pooling, and top interview questions for freshers and developers.">
 
-    <meta name="keywords" content="
-    JDBC interview questions,
-    Java database interview questions for freshers,
-    database connectivity in Java,
-    JDBC architecture in Java,
-    JDBC driver types,
-    Type 4 JDBC driver,
-    JDBC connection steps,
-    connection pooling in Java,
-    connection pooling frameworks in Java,
-    HikariCP vs DBCP,
-    PreparedStatement vs Statement,
-    PreparedStatement SQL injection prevention,
-    CallableStatement stored procedures,
-    executeQuery vs executeUpdate,
-    JDBC transaction management,
-    JDBC auto-commit and rollback,
-    ACID properties in JDBC,
-    JDBC ResultSet types,
-    ResultSetMetaData vs DatabaseMetaData,
-    ResultSet metadata in Java,
-    batch processing in JDBC,
-    JDBC tutorial for beginners,
-    easy JDBC explanation,
-    JDBC examples Java,
-    simple JDBC program,
-    JDBC interview questions with answers,
-    JDBC MCQ questions
-    ">
+    <meta name="keywords" content="JDBC interview questions, Java database interview questions for freshers, database connectivity in Java, JDBC architecture in Java, JDBC driver types, Type 4 JDBC driver, JDBC connection steps, connection pooling in Java, connection pooling frameworks in Java, HikariCP vs DBCP, PreparedStatement vs Statement, PreparedStatement SQL injection prevention, CallableStatement stored procedures, executeQuery vs executeUpdate, JDBC transaction management, JDBC auto-commit and rollback, ACID properties in JDBC, JDBC ResultSet types, ResultSetMetaData vs DatabaseMetaData, ResultSet metadata in Java, batch processing in JDBC, JDBC tutorial for beginners, easy JDBC explanation, JDBC examples Java, simple JDBC program, JDBC interview questions with answers, JDBC MCQ questions">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-jdbc-questions.html">
+    <link rel="canonical" href="https://interview-hub.in/Pages/java-jdbc-questions.html">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="JDBC Interview Questions & Tutorial | Java Database Connectivity Guide">
     <meta property="og:description" content="Learn JDBC step by step with examples, architecture, drivers, and interview questions.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-jdbc-questions.html">
-    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta property="og:url" content="https://interview-hub.in/Pages/java-jdbc-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Twitter SEO -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JDBC Tutorial for Beginners & Interviews">
     <meta name="twitter:description" content="Easy JDBC guide with driver types, PreparedStatement, and interview Q&A.">
-    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta name="twitter:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
@@ -63,10 +35,8 @@
     <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -74,30 +44,49 @@
       gtag('js', new Date());
       gtag('config', 'G-XQRT7QNZXX');
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JDBC (Java Database Connectivity) Mastery Guide",
+      "description": "Comprehensive JDBC tutorial covering architecture, driver types, PreparedStatement, and transaction management.",
+      "author": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "mainEntityOfPage": "https://interview-hub.in/Pages/java-jdbc-questions.html"
+    }
+    </script>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
+        <div class="container header-container">
+          <div class="logo">
+            <a href="https://interview-hub.in">
+              <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
+            </a>
+          </div>
 
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="https://intrviews.vercel.app">
-          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
-        </a>
-      </div>
+          <nav class="nav" id="nav">
+            <a href="https://interview-hub.in">Home</a>
+            <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+            <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+            <a href="https://interview-hub.in/contact.html">Contact</a>
+          </nav>
 
-      <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
-        <button id="menu-btn" title="Open Menu">☰</button>
-      </div>
-    </div>
-  </header>
+          <div class="header-actions">
+            <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+            <button id="menu-btn" title="Open Menu">☰</button>
+          </div>
+        </div>
+    </header>
 
     <main class='main-content'>
 <h1 style="color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px;">JDBC (Java Database Connectivity) Mastery: Architecture, Connectivity, and Interview Excellence</h1>
@@ -228,64 +217,87 @@ Meta Title: JDBC Interview Questions: Architecture, Drivers & Statements Guide
 Meta Description: Master JDBC for Java. Explore Driver types, PreparedStatement vs Statement, Transaction management, and top 25+ technical interview questions.
 Targeted Keywords: JDBC interview questions, JDBC driver types, PreparedStatement vs Statement, JDBC architecture in Java, connection pooling Java, executeQuery vs executeUpdate, JDBC transaction management, resultset metadata Java.
     </main>
-<footer class="footer">
-  <div class="container">
 
-    <div class="footer-top">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
+                    <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <a href="https://interview-hub.in/">Home</a>
+                    <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+                    <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+                    <a href="https://interview-hub.in/Pages/java-collections-questions.html">Collections</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+                    <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+                    <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+                    <a href="https://interview-hub.in/Pages/java-developer-resume-tips.html">Resume Tips</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Important</h4>
+                    <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+                    <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+                    <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+                    <a href="https://interview-hub.in/Pages/java-practice-programs.html">Practice Programs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
+                <p>
+                    <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+                    <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+                    <a href="https://interview-hub.in/contact.html">Contact</a>
+                </p>
+                <p><small>Explore more at https://interview-hub.in/</small></p>
+            </div>
+        </div>
+    </footer>
 
-      <!-- Logo + About -->
-      <div class="footer-col">
-        <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
-        <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
-      </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
-      </div>
+        // --- १. मोबाईल मेनू टोगल ---
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
 
-      <!-- Resources -->
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
-      </div>
+        // --- २. डार्क मोड टोगल ---
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
 
-      <!-- Important -->
-      <div class="footer-col">
-        <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
-      </div>
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
 
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="footer-bottom">
-
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
-
-      <!-- Policy Links -->
-      <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </p>
-
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
-
-    </div>
-
-  </div>
-</footer>
-    <script src='/js/main.js'></script>
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
