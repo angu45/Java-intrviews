@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJGXDD8J');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary SEO -->
     <title>Java Inheritance Tutorial (Easy to Advanced) | Types, Super Keyword & Interview Questions</title>
 
     <meta name="description" content="Learn Java Inheritance with easy examples. Understand types of inheritance, super keyword, method overriding vs hiding, constructor chaining, IS-A relationship, and top interview questions for freshers and developers.">
 
-    <meta name="keywords" content="
-    Java inheritance questions,
-    types of inheritance in Java,
-    super keyword in Java,
-    method overriding vs method hiding,
-    IS-A relationship Java,
-    inheritance interview questions,
-    why no multiple inheritance in Java,
-    constructor chaining Java,
-    inheritance in Java tutorial,
-    Java inheritance examples for beginners,
-    easy Java inheritance explanation,
-    OOP inheritance concepts Java,
-    Java inheritance MCQ questions,
-    single multilevel hierarchical inheritance,
-    Java inheritance interview questions for freshers,
-    real world inheritance examples Java
-    ">
+    <meta name="keywords" content="Java inheritance questions, types of inheritance in Java, super keyword in Java, method overriding vs method hiding, IS-A relationship Java, inheritance interview questions, why no multiple inheritance in Java, constructor chaining Java, inheritance in Java tutorial, Java inheritance examples for beginners, easy Java inheritance explanation, OOP inheritance concepts Java, Java inheritance MCQ questions, single multilevel hierarchical inheritance, Java inheritance interview questions for freshers, real world inheritance examples Java">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://intrviews.vercel.app/Pages/java-inheritance-questions.html">
+    <link rel="canonical" href="https://interview-hub.in/Pages/java-inheritance-questions.html">
 
-    <!-- Open Graph (Social SEO) -->
     <meta property="og:title" content="Java Inheritance Guide | Types, Super Keyword & Interview Prep">
     <meta property="og:description" content="Master inheritance in Java with easy explanations, real examples, and interview questions.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://intrviews.vercel.app/Pages/java-inheritance-questions.html">
-    <meta property="og:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta property="og:url" content="https://interview-hub.in/Pages/java-inheritance-questions.html">
+    <meta property="og:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Twitter SEO -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Java Inheritance Tutorial for Beginners & Interviews">
     <meta name="twitter:description" content="Learn inheritance in Java step by step with examples and interview Q&A.">
-    <meta name="twitter:image" content="https://intrviews.vercel.app/Logo.png">
+    <meta name="twitter:image" content="https://interview-hub.in/Logo.png">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="Pages/Assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Pages/Assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Pages/Assets/favicon-16x16.png">
@@ -52,10 +35,8 @@
     <link rel="icon" type="image/png" sizes="512x512" href="Pages/Assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="Pages/Assets/favicon.ico">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQRT7QNZXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -63,49 +44,69 @@
       gtag('js', new Date());
       gtag('config', 'G-XQRT7QNZXX');
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Java Inheritance Tutorial",
+      "description": "Complete guide on Java inheritance, types, super keyword, and interview questions.",
+      "author": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "InterviewHub"
+      },
+      "mainEntityOfPage": "https://interview-hub.in/Pages/java-inheritance-questions.html"
+    }
+    </script>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJGXDD8J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="https://interview-hub.in">
+                    <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
+                </a>
+            </div>
 
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <a href="https://intrviews.vercel.app">
-          <img src="Logo.png" alt="InterviewHub Logo" class="logo-img">
-        </a>
-      </div>
+            <nav class="nav" id="nav">
+                <a href="https://interview-hub.in">Home</a>
+                <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html">Java</a>
+                <a href="https://interview-hub.in/Pages/java-oop-interview-questions.html">OOP</a>
+                <a href="https://interview-hub.in/contact.html">Contact</a>
+            </nav>
 
-      <nav class="nav" id="nav">
-        <a href="https://intrviews.vercel.app">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/basic-java-interview-questions.html">Java</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oop-interview-questions.html">OOP</a>
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
-        <button id="menu-btn" title="Open Menu">☰</button>
-      </div>
-    </div>
-  </header>
+            <div class="header-actions">
+                <button id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+                <button id="menu-btn" title="Open Menu">☰</button>
+            </div>
+        </div>
+    </header>
 
     <main class='main-content'>
-<h1>Inheritance in Java: Building Hierarchical and Reusable Code</h1>
+        <h1>Inheritance in Java: Building Hierarchical and Reusable Code</h1>
+        
 
-<p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Inheritance is the cornerstone of reusability in Java. It allows a new class to absorb the fields and methods of an existing class, facilitating the "Is-A" relationship. For your page <code>/Pages/java-inheritance-questions.html</code>, we have developed a deep-dive technical guide that covers everything from basic syntax to complex memory allocation and interview-level edge cases. This content is 100% unique, SEO-friendly, and meticulously structured for Google ranking.</p>
+        <p style="line-height: 1.8; color: #2c3e50; font-size: 1.1em;">Inheritance is the cornerstone of reusability in Java. It allows a new class to absorb the fields and methods of an existing class, facilitating the "Is-A" relationship. For your page <code>/Pages/java-inheritance-questions.html</code>, we have developed a deep-dive technical guide that covers everything from basic syntax to complex memory allocation and interview-level edge cases.</p>
 
-<p style="background-color: #f4f9ff; border-left: 6px solid #3498db; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Concept:</strong> Inheritance is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an integral part of OOPs (Object Oriented Programming System). The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class. Moreover, you can add new methods and fields in your current class also.</p>
+        <p style="background-color: #f4f9ff; border-left: 6px solid #3498db; padding: 20px; border-radius: 4px; margin: 20px 0;"><strong>Core Concept:</strong> Inheritance is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an integral part of OOPs (Object Oriented Programming System).</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Syntax and Terminology</h2>
-<p>To implement inheritance, Java uses the <code>extends</code> keyword. This keyword signifies that you are creating a subclass that derives its functionality from a superclass.</p>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">1. The Syntax and Terminology</h2>
+        <p>To implement inheritance, Java uses the <code>extends</code> keyword. This keyword signifies that you are creating a subclass that derives its functionality from a superclass.</p>
 
-<ul style="line-height: 2;">
-<li><strong>Super Class (Parent):</strong> The class whose features are inherited.</li>
-<li><strong>Sub Class (Child):</strong> The class that inherits the other class. It can also add its own specific features.</li>
-<li><strong>Reusability:</strong> As the name specifies, reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class.</li>
-</ul>
+        <ul style="line-height: 2;">
+            <li><strong>Super Class (Parent):</strong> The class whose features are inherited.</li>
+            <li><strong>Sub Class (Child):</strong> The class that inherits the other class. It can also add its own specific features.</li>
+            <li><strong>Reusability:</strong> Facilitates you to reuse the fields and methods of the existing class.</li>
+        </ul>
 
-<h3 style="color: #16a085;">Basic Code Example</h3>
-<pre style="background-color: #1e1e1e; color: #dcdcaa; padding: 15px; border-radius: 8px; border: 1px solid #444; overflow-x: auto;">
+        <h3 style="color: #16a085;">Basic Code Example</h3>
+        <pre style="background-color: #1e1e1e; color: #dcdcaa; padding: 15px; border-radius: 8px; border: 1px solid #444; overflow-x: auto;">
 <span style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">Employee</span> {
 <span style="color: #569cd6;">float</span> salary = <span style="color: #b5cea8;">40000</span>;
 }
@@ -121,159 +122,151 @@
 }
 </pre>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Types of Inheritance in Java</h2>
-<p>On the basis of class, there can be three types of inheritance in java: single, multilevel and hierarchical. In java programming, multiple and hybrid inheritance is supported through interface only.</p>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">2. Types of Inheritance in Java</h2>
+        
+        <p>On the basis of class, there can be three types of inheritance in java: single, multilevel and hierarchical. In java programming, multiple and hybrid inheritance is supported through interface only.</p>
 
-<table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #2980b9;">
-<tr style="background-color: #2980b9; color: white; text-align: center;">
-<th>Type</th>
-<th>Description</th>
-<th>Visual Structure</th>
-</tr>
-<tr>
-<td><strong>Single Inheritance</strong></td>
-<td>One child class inherits from one parent class.</td>
-<td>Class A &rarr; Class B</td>
-</tr>
-<tr style="background-color: #f2f2f2;">
-<td><strong>Multilevel Inheritance</strong></td>
-<td>A child class inherits from a parent, which is also a child of another parent.</td>
-<td>Class A &rarr; Class B &rarr; Class C</td>
-</tr>
-<tr>
-<td><strong>Hierarchical Inheritance</strong></td>
-<td>Multiple child classes inherit from a single parent class.</td>
-<td>Class A &rarr; Class B & Class C</td>
-</tr>
-</table>
+        <table border="1" cellpadding="12" style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid #2980b9;">
+            <tr style="background-color: #2980b9; color: white; text-align: center;">
+                <th>Type</th>
+                <th>Description</th>
+                <th>Visual Structure</th>
+            </tr>
+            <tr>
+                <td><strong>Single Inheritance</strong></td>
+                <td>One child class inherits from one parent class.</td>
+                <td>Class A &rarr; Class B</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;">
+                <td><strong>Multilevel Inheritance</strong></td>
+                <td>A child class inherits from a parent, which is also a child of another parent.</td>
+                <td>Class A &rarr; Class B &rarr; Class C</td>
+            </tr>
+            <tr>
+                <td><strong>Hierarchical Inheritance</strong></td>
+                <td>Multiple child classes inherit from a single parent class.</td>
+                <td>Class A &rarr; Class B & Class C</td>
+            </tr>
+        </table>
 
-<h3 style="color: #e67e22;">Why Multiple Inheritance is not supported in Java?</h3>
-<p>To reduce complexity and simplify the language, multiple inheritance is not supported in java. Consider a scenario where Class A has a method <code>display()</code> and Class B also has a method <code>display()</code>. If Class C inherits from both A and B, and you call <code>display()</code>, the compiler wouldn't know which method to execute. This is known as the <strong>Diamond Problem</strong>. To avoid this ambiguity, Java uses Interfaces to achieve similar functionality safely.</p>
+        <h3 style="color: #e67e22;">Why Multiple Inheritance is not supported in Java?</h3>
+        
+        <p>To reduce complexity and simplify the language, multiple inheritance is not supported in java. Java uses Interfaces to achieve similar functionality safely.</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. The Role of 'super' and Constructors</h2>
-<p>When you create an instance of a subclass, the parent class constructor is called first. This is known as <strong>Constructor Chaining</strong>. The <code>super</code> keyword is used to refer to the immediate parent class object.</p>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">3. The Role of 'super' and Constructors</h2>
+        <p>When you create an instance of a subclass, the parent class constructor is called first. This is known as <strong>Constructor Chaining</strong>. The <code>super</code> keyword is used to refer to the immediate parent class object.</p>
 
-<ul style="line-height: 1.8;">
-<li>It can be used to refer to immediate parent class instance variable.</li>
-<li>It can be used to invoke immediate parent class method.</li>
-<li><code>super()</code> can be used to invoke immediate parent class constructor.</li>
-</ul>
+        <ul style="line-height: 1.8;">
+            <li>It can be used to refer to immediate parent class instance variable.</li>
+            <li>It can be used to invoke immediate parent class method.</li>
+            <li><code>super()</code> can be used to invoke immediate parent class constructor.</li>
+        </ul>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Comprehensive Interview Questions & Detailed Explanations</h2>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">4. Comprehensive Interview Questions & Detailed Explanations</h2>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q1. Does a subclass inherit the private members of its superclass?</h4>
-<p>No, a subclass does not inherit the <code>private</code> members of its parent class. However, if the superclass has public or protected methods (like getters and setters) for accessing these private fields, those methods can be used by the subclass.</p>
-</div>
+        <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+            <h4 style="color: #c0392b;">Q1. Does a subclass inherit the private members of its superclass?</h4>
+            <p>No, a subclass does not inherit the <code>private</code> members of its parent class.</p>
+        </div>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q2. What is the difference between IS-A and HAS-A relationship?</h4>
-<p><strong>IS-A relationship:</strong> This is achieved through Inheritance. For example, a "Car IS-A Vehicle". It is a tight coupling.</p>
-<p><strong>HAS-A relationship:</strong> This is achieved through Association/Composition. For example, a "Car HAS-A Engine". It is used for better code modularity and flexibility.</p>
-</div>
+        <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+            <h4 style="color: #c0392b;">Q2. What is the difference between IS-A and HAS-A relationship?</h4>
+            <p><strong>IS-A relationship:</strong> Achieved through Inheritance (Car IS-A Vehicle).</p>
+            <p><strong>HAS-A relationship:</strong> Achieved through Composition (Car HAS-A Engine).</p>
+        </div>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q3. Can we override a static method?</h4>
-<p>No, you cannot override a static method. If you define a static method with the same signature in the child class, it is called <strong>Method Hiding</strong>, not overriding. This is because static methods are bound to the class at compile-time, whereas overriding is a runtime phenomenon.</p>
-</div>
+        <div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+            <h4 style="color: #c0392b;">Q3. Can we override a static method?</h4>
+            <p>No, you cannot override a static method. Defining a static method with the same signature in the child class is called <strong>Method Hiding</strong>.</p>
+        </div>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q4. What is the 'final' class in inheritance?</h4>
-<p>If a class is declared as <code>final</code>, it cannot be extended by any other class. This is used to prevent inheritance for security reasons or to ensure the integrity of the class's behavior (e.g., the <code>String</code> class is final).</p>
-</div>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced Theory: Upcasting and Downcasting</h2>
+        <p><strong>Upcasting:</strong> Casting a subtype to a supertype automatically. <code>Parent p = new Child();</code></p>
+        <p><strong>Downcasting:</strong> Casting a supertype to a subtype manually. <code>Child c = (Child)p;</code></p>
 
-<div style="background-color: #fdfefe; border: 1px solid #d5dbdb; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
-<h4 style="color: #c0392b;">Q5. How does memory allocation work in Inheritance?</h4>
-<p>When an object of a subclass is created, memory is allocated for all the instance variables of the subclass as well as all the instance variables of its superclasses (all the way up to the <code>Object</code> class). This is why the child object has access to parent properties.</p>
-</div>
+        <h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Conclusion</h2>
+        <p>Inheritance is a powerful tool that, when used correctly, can significantly reduce code redundancy and improve structure. Mastering inheritance is the gateway to understanding complex Java frameworks.</p>
 
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">5. Advanced Theory: Upcasting and Downcasting</h2>
-<p>In Java, inheritance allows us to treat an object of a subclass as an object of its superclass. This is a key part of Polymorphism.</p>
-
-<p><strong>Upcasting:</strong> Casting a subtype to a supertype. It is done automatically by the compiler.
-
-
-<code>Parent p = new Child();</code></p>
-
-<p><strong>Downcasting:</strong> Casting a supertype to a subtype. It must be done manually and can throw a <code>ClassCastException</code> if not handled carefully.
-
-
-<code>Child c = (Child)p;</code></p>
-
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">6. Summary of Key Rules</h2>
-<ul style="list-style-type: circle; line-height: 2;">
-<li>Constructors are NOT inherited but are called.</li>
-<li>Private members are NOT inherited.</li>
-<li>Final methods cannot be overridden.</li>
-<li>Java supports single, multilevel, and hierarchical inheritance with classes.</li>
-<li>The <code>Object</code> class is the root of the class hierarchy in Java.</li>
-</ul>
-
-<h2 style="color: #2980b9; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 40px;">7. Conclusion</h2>
-<p>Inheritance is a powerful tool that, when used correctly, can significantly reduce code redundancy and improve the logical structure of your software. By understanding the nuances of the <code>super</code> keyword, method overriding, and the limitations of multiple inheritance, you can build systems that are both robust and easy to scale.</p>
-
-<p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Mastering inheritance is the gateway to understanding complex Java frameworks. Continue your journey with our next module on Polymorphism.</p>
+        <p style="text-align: center; font-style: italic; color: #7f8c8d; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">Continue your journey with our next module on Polymorphism at InterviewHub.</p>
     </main>
 
-<footer class="footer">
-  <div class="container">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
+                    <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <a href="https://interview-hub.in/">Home</a>
+                    <a href="https://interview-hub.in/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
+                    <a href="https://interview-hub.in/Pages/java-oops-questions.html">OOP Principles</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://interview-hub.in/Pages/java-mcq-quiz.html">Question Bank</a>
+                    <a href="https://interview-hub.in/Pages/java-cheat-sheet.html">Cheat Sheets</a>
+                    <a href="https://interview-hub.in/Pages/java-coding-interview-questions.html">Coding Practice</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Important</h4>
+                    <a href="https://interview-hub.in/Pages/java-operators-questions.html">Operators</a>
+                    <a href="https://interview-hub.in/Pages/java-output-questions.html">Output Questions</a>
+                    <a href="https://interview-hub.in/Pages/java-string-questions.html">String Questions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 InterviewHub — Learn Java, Practice Coding, Crack Interviews.</p>
+                <p>
+                    <a href="https://interview-hub.in/privacy-policy.html">Privacy Policy</a> |
+                    <a href="https://interview-hub.in/disclaimer.html">Disclaimer</a> |
+                    <a href="https://interview-hub.in/contact.html">Contact</a>
+                </p>
+                <p><small>Explore more at https://interview-hub.in/</small></p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="footer-top">
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-      <!-- Logo + About -->
-      <div class="footer-col">
-        <img src="/Logo.png" alt="Logo" style="width:140px; margin-bottom:10px;">
-        <p>Your complete platform to prepare for Java interviews, coding rounds, and technical concepts — all in one place.</p>
-      </div>
+        // मोबाईल मेनू टोगल
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="https://intrviews.vercel.app/">Home</a>
-        <a href="https://intrviews.vercel.app/Pages/java-freshers-interview-questions.html">Java Roadmap</a>
-        <a href="https://intrviews.vercel.app/Pages/java-oops-questions.html">OOP Principles</a>
-        <a href="https://intrviews.vercel.app/Pages/java-collections-questions.html">Collections</a>
-      </div>
+        // डार्क मोड टोगल
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.textContent = '☀️';
+        }
 
-      <!-- Resources -->
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-mcq-quiz.html">Question Bank</a>
-        <a href="https://intrviews.vercel.app/Pages/java-cheat-sheet.html">Cheat Sheets</a>
-        <a href="https://intrviews.vercel.app/Pages/java-coding-interview-questions.html">Coding Practice</a>
-        <a href="https://intrviews.vercel.app/Pages/java-developer-resume-tips.html">Resume Tips</a>
-      </div>
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            let theme = 'light';
+            if (body.classList.contains('dark-theme')) {
+                theme = 'dark';
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
 
-      <!-- Important -->
-      <div class="footer-col">
-        <h4>Important</h4>
-        <a href="https://intrviews.vercel.app/Pages/java-operators-questions.html">Operators</a>
-        <a href="https://intrviews.vercel.app/Pages/java-output-questions.html">Output Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-string-questions.html">String Questions</a>
-        <a href="https://intrviews.vercel.app/Pages/java-practice-programs.html">Practice Programs</a>
-      </div>
-
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="footer-bottom">
-
-      <p>© 2026 Intrviews — Learn Java, Practice Coding, Crack Interviews.</p>
-
-      <!-- Policy Links -->
-      <p>
-        <a href="https://intrviews.vercel.app/privacy-policy.html">Privacy Policy</a> |
-        <a href="https://intrviews.vercel.app/disclaimer.html">Disclaimer</a> |
-        <a href="https://intrviews.vercel.app/contact.html">Contact</a>
-      </p>
-
-      <p><small>Explore more at https://intrviews.vercel.app/</small></p>
-
-    </div>
-
-  </div>
-</footer>
-
-    <script src='/js/main.js'></script>
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
