@@ -204,13 +204,87 @@ li {
     padding-left: 5px;
 }
 
+/* --- Footer Styling (Center Aligned & Stacked) --- */
 .footer {
+    background: var(--footer-bg);
+    color: #f8fafc;
+    padding: 50px 0 30px;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.footer-top {
+    /* Grid ऐवजी Flex वापरून सगळं सेंटरला घेतलं आहे */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    /* आडव्या बाजूने सेंटर */
+    text-align: center;     /* मजकूर सेंटर */
+    gap: 40px;              /* प्रत्येक कॉलममध्ये अंतर */
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    width: 100%;
+    max-width: 400px;       /* मजकूर जास्त पसरू नये म्हणून */
+}
+
+.footer-col h3, 
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* हेडलाईनच्या खाली छोटी बॉर्डर (Design साठी) */
+.footer-col h3::after,
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.footer-col a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: block;         /* एका खाली एक दिसण्यासाठी */
+    margin-bottom: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px); /* थोडा वर सरकेल */
+}
+
+.footer-bottom {
     text-align: center;
-    padding: 30px;
-    background: var(--bg-header) !important; /* Changes with theme */
-    border-top: 1px solid var(--border);
-    margin-top: 50px;
-    color: var(--text); /* Readable on both light/dark */
+    border-top: 1px solid #1e293b;
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: #64748b;
+    display: flex;
+    flex-direction: column; /* कॉपीराइट मजकूर सुद्धा एका खाली एक */
+    gap: 10px;
+}
+
+.footer-bottom small {
+    word-break: break-all;  /* मोठी लिंक असेल तर कट होऊन खाली येईल */
+    opacity: 0.7;
+}
+
+/* Mobile साठी सुटसुटीत पॅडिंग */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px;
+    }
 }
 /* --- Responsive Menu (Mobile) --- */
 @media (max-width: 768px) {
