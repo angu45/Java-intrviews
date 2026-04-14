@@ -255,7 +255,6 @@ li {
     text-decoration: none;
     display: block;         /* एका खाली एक दिसण्यासाठी */
     margin-bottom: 12px;
-    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -268,7 +267,6 @@ li {
     text-align: center;
     border-top: 1px solid #1e293b;
     padding-top: 30px;
-    font-size: 0.85rem;
     color: #64748b;
     display: flex;
     flex-direction: column; /* कॉपीराइट मजकूर सुद्धा एका खाली एक */
