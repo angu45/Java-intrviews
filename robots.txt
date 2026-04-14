@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Host: interview-hub.in
 
 # Sitemap location
 Sitemap: https://interview-hub.in/sitemap.xml
