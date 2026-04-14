@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://intrviews.vercel.app/sitemap.xml
+Sitemap: https://interview-hub.in/sitemap.xml
 
 # Block admin / useless folders (optional safety)
 Disallow: /css/
