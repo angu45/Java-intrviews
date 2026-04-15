@@ -5,7 +5,7 @@ fetch("https://interview-hub.in/Pages/Assets/header.html")
         return response.text();
     })
     .then(data => {
-        document.getElementById("header").innerHTML = data;
+        document.getElementById("h1").innerHTML = data;
     })
     .catch(error => {
         console.error("Error loading header:", error);
@@ -18,7 +18,7 @@ fetch("https://interview-hub.in/Pages/Assets/footer.html")
         return response.text();
     })
     .then(data => {
-        document.getElementById("footer").innerHTML = data;
+        document.getElementById("f1").innerHTML = data;
     })
     .catch(error => {
         console.error("Error loading footer:", error);
