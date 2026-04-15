@@ -8,7 +8,6 @@ Sitemap: https://interview-hub.in/sitemap.xml
 # Block admin / useless folders (optional safety)
 Disallow: /css/
 Disallow: /js/
-Disallow: /Pages/Assets/
 
 # Allow important pages
 Allow: /Pages/
