@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" class="h-full">
 <head>
+<script src="Pages/js/main.js"></script>
+
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -81,27 +83,7 @@
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
   </style>
 </head>
-<body class="dark"> <header class="header">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="logo">
-        <a href="https://interview-hub.in/">
-          <img src="Logo.png" alt="InterviewHub" class="h-[38px]" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=&quot;font-weight:700;font-size:20px;color:var(--primary)&quot;>InterviewHub</span>')">
-        </a>
-      </div>
-      <nav class="hidden md:flex gap-6">
-        <a href="https://interview-hub.in/" class="hover:text-sky-400 transition">Home</a>
-        <a href="https://interview-hub.in/Pages/basic-java-interview-questions.html" class="hover:text-sky-400 transition">Java</a>
-        <a href="https://interview-hub.in/contact.html" class="font-bold" style="color: var(--primary)">Contact</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <button id="themeToggle" class="p-2 rounded-lg border border-slate-700 hover:bg-slate-700 transition" title="Toggle Light/Dark Mode">
-          <span id="themeIcon">☀️</span>
-        </button>
-        <button class="md:hidden">☰</button>
-      </div>
-    </div>
-  </header>
-
+<body class="dark"> <div id="h1"></div>
   <main class="max-w-2xl mx-auto px-6 py-16">
     <div class="text-center mb-10">
       <h1 class="font-mono text-4xl mb-2" style="color: var(--primary)">Contact Us</h1>
@@ -130,27 +112,7 @@
       </button>
     </form>
   </main>
-
-  <footer class="footer text-center md:text-left">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6 pb-10">
-        <div>
-            <h4 class="font-bold mb-4" style="color: var(--primary)">InterviewHub</h4>
-            <p class="text-sm leading-relaxed" style="color: var(--text-muted)">Your complete platform to prepare for Java interviews and technical concepts.</p>
-        </div>
-        <div>
-            <h4 class="font-bold mb-4" style="color: var(--primary)">Quick Links</h4>
-            <a href="https://interview-hub.in/" class="text-sm block mb-2 hover:text-sky-400" style="color: var(--text-muted)">Home</a>
-            <a href="https://interview-hub.in/contact.html" class="text-sm block hover:text-sky-400" style="color: var(--text-muted)">Contact</a>
-        </div>
-        <div>
-            <h4 class="font-bold mb-4" style="color: var(--primary)">Support</h4>
-            <p class="text-sm" style="color: var(--text-muted)">Email: support@interview-hub.in</p>
-        </div>
-    </div>
-    <div class="pt-6 text-center text-xs" style="border-top: 1px solid var(--border); color: var(--text-muted)">
-        © 2026 InterviewHub. All rights reserved.
-    </div>
-  </footer>
+<div id="f1"></div>
 
   <div id="toast" class="toast"></div>
 
