@@ -142,10 +142,10 @@ p {
     color: var(--light-text);
 }.ih-fluid-img {
     display: block;
-    width: 100%;
+    width: 200;
+   height: 109;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
     margin: 1.5rem auto;
     border-radius: 8px;
