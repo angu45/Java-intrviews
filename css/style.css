@@ -140,24 +140,22 @@ h3 {
 p {
     margin-bottom: 20px;
     color: var(--light-text);
-}
-
-.ih-fluid-img {
+}.ih-fluid-img {
     display: block;
-    height:256px;
-    width:140px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    margin: 25px auto;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    margin: 1.5rem auto;
+    border-radius: 8px;
 }
 
-.ih-fluid-img:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: #007bff;
+@media (max-width: 768px) {
+    .ih-fluid-img {
+        aspect-ratio: auto;
+        max-height: 250px;
+    }
 }
 
 
