@@ -145,18 +145,26 @@ p {
 .ih-fluid-img {
     display: block;
     width: 100%;
-    max-width: 512px;   /* original width */
-    height: auto;       /* maintain ratio */
-    margin: 1.5rem auto;
-    border-radius: 8px;
-}.ih-fluid-img {
-    width: 100%;
-    aspect-ratio: 512 / 279; /* exact ratio */
-    object-fit: contain;     /* no crop */
-    display: block;
-    margin: 1.5rem auto;
-    border-radius: 8px;
+    max-width: 850px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.ih-fluid-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .ih-fluid-img {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+}
+
 
 /* --- Java Code Block & Elements --- */
 pre {
