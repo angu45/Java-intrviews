@@ -28,23 +28,20 @@ body.dark-theme {
 .ih-fluid-img {
     display: block;
     width: 100%;
-    max-width: 850px;
+    max-width: 600%;
+    max-height: 350px;
+    object-fit: contain;
     height: auto;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ih-fluid-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {
     .ih-fluid-img {
-        max-width: 95%;
-        margin: 15px auto;
+        max-width: 90%;
+        max-height: 250px;
+        margin: 10px auto;
     }
 }
 
