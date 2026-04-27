@@ -29,7 +29,7 @@ body.dark-theme {
     display: block;
     width: 100%;
     max-width: 600%;
-    max-height: 350px;
+    max-height: 250px;
     object-fit: contain;
     height: auto;
     margin: 15px auto;
