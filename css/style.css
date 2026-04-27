@@ -160,11 +160,7 @@ p {
     border-color: #007bff;
 }
 
-@media (max-width: 768px) {
-    .ih-fluid-img {
-        width: 95%;
-    }
-}
+
 /* --- Java Code Block & Elements --- */
 pre {
     background: var(--code-bg);
