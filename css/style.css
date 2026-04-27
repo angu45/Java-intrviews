@@ -140,24 +140,23 @@ h3 {
 p {
     margin-bottom: 20px;
     color: var(--light-text);
-}.ih-fluid-img {
+}
+
+.ih-fluid-img {
     display: block;
-    width: 200;
-   height: 109;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100%;
+    max-width: 512px;   /* original width */
+    height: auto;       /* maintain ratio */
+    margin: 1.5rem auto;
+    border-radius: 8px;
+}.ih-fluid-img {
+    width: 100%;
+    aspect-ratio: 512 / 279; /* exact ratio */
+    object-fit: contain;     /* no crop */
+    display: block;
     margin: 1.5rem auto;
     border-radius: 8px;
 }
-
-@media (max-width: 768px) {
-    .ih-fluid-img {
-        aspect-ratio: auto;
-        max-height: 250px;
-    }
-}
-
 
 /* --- Java Code Block & Elements --- */
 pre {
