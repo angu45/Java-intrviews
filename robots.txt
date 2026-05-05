@@ -5,10 +5,6 @@ Host: interview-hub.in
 # Sitemap location
 Sitemap: https://interview-hub.in/sitemap.xml
 
-# Block admin / useless folders (optional safety)
-Disallow: /css/
-Disallow: /js/
-
 # Allow important pages
 Allow: /Pages/
 Allow: /contact.html
