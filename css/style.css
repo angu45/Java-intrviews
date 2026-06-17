@@ -1,4 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Adsterra Ads Container Style to Fix Overflow */
+.ad-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 25px auto;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* स्क्रीनच्या बाहेर जाणारा भाग कापला जाईल */
+}
+
+.ad-wrapper div {
+    max-width: 100%;
+    overflow-x: auto; /* जाहिरात मोठी असल्यास अंतर्गत स्क्रोल होईल, पूर्ण लेआउट बिघडणार नाही */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* जर जाहिरातीच्या iframe ची रुंदी स्क्रीनपेक्षा मोठी असेल तर ती रिस्पॉन्सिव्ह करण्यासाठी */
+.ad-wrapper iframe {
+    max-width: 100% !important;
+    height: auto !important;
+}
 
 /* --- Root Variables (Refined Color Palette) --- */
 :root {
