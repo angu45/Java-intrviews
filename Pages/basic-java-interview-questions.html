@@ -416,51 +416,8 @@ Unlike C or C++, which compile directly into machine-specific machine code, Java
 });</script>
 
 
-<script>(function() {
-    // Helper function: स्क्रिप्ट्स लोड करण्यासाठी
-    function loadScript(url, targetElement, isAsync = false, cfAsync = null) {
-        let s = document.createElement('script');
-        s.src = url;
-        s.async = isAsync;
-        if (cfAsync) s.setAttribute('data-cfasync', cfAsync);
-        targetElement.appendChild(s);
-    }
 
-    // 1. Header Ad
-    const header = document.querySelector('.header');
-    if (header) {
-        let adHeader = document.createElement('div');
-        adHeader.style.textAlign = 'center';
-        header.parentNode.insertBefore(adHeader, header.nextSibling);
-        loadScript("https://www.highperformanceformat.com/cf7bd4ee539eda2677efd99eff50a2d2/invoke.js", adHeader);
-    }
-
-    // 2. Body Ad
-    const mainContent = document.querySelector('.intro-grid');
-    if (mainContent) {
-        let adBody = document.createElement('div');
-        adBody.className = 'ad-wrapper';
-        adBody.innerHTML = '<div id="container-24405e7671380bdad5f4995cc3ced788"></div>';
-        mainContent.appendChild(adBody);
-        loadScript("https://pl29771021.effectivecpmnetwork.com/24405e7671380bdad5f4995cc3ced788/invoke.js", document.body, true, 'false');
-    }
-
-    // 3. Footer Ad
-    const footer = document.querySelector('.footer');
-    if (footer) {
-        let adFooter = document.createElement('div');
-        adFooter.style.textAlign = 'center';
-        adFooter.style.padding = '20px';
-        footer.parentNode.insertBefore(adFooter, footer);
-        loadScript("https://www.highperformanceformat.com/205fb233060fbad43fbc41be95aa1f80/invoke.js", adFooter);
-    }
-
-    // 4. इतर दोन अतिरिक्त स्क्रिप्ट्स
-    loadScript("https://pl29771028.effectivecpmnetwork.com/a5/9d/1b/a59d1b609bbaf19d19fd1c124776d780.js", document.body);
-    loadScript("https://pl29771026.effectivecpmnetwork.com/8d/7f/50/8d7f504587004391580f2b828baca6f8.js", document.body);
-})();
-
-</script>
+<script src="Pages/ads.js"></script>
 
 </body>
 </html>
