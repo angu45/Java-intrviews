@@ -415,46 +415,49 @@ Unlike C or C++, which compile directly into machine-specific machine code, Java
     });
 });</script>
 <script>(function() {
-    const adData = [
-        { type: 'script', src: 'https://pl29771021.effectivecpmnetwork.com/24405e7671380bdad5f4995cc3ced788/invoke.js', async: true, cf: 'false' },
-        { type: 'script', src: 'https://pl29771028.effectivecpmnetwork.com/a5/9d/1b/a59d1b609bbaf19d19fd1c124776d780.js' },
-        { type: 'script', src: 'https://pl29771026.effectivecpmnetwork.com/8d/7f/50/8d7f504587004391580f2b828baca6f8.js' },
-        { type: 'html', content: '<div id="container-24405e7671380bdad5f4995cc3ced788"></div>' },
-        { type: 'custom', key: 'cf7bd4ee539eda2677efd99eff50a2d2', src: 'https://www.highperformanceformat.com/cf7bd4ee539eda2677efd99eff50a2d2/invoke.js' },
-        { type: 'custom', key: '205fb233060fbad43fbc41be95aa1f80', src: 'https://www.highperformanceformat.com/205fb233060fbad43fbc41be95aa1f80/invoke.js' }
+    // 1. Header ad (Header cha khali)
+    const header = document.querySelector('.header');
+    if (header) {
+        let adHeader = document.createElement('div');
+        adHeader.style.textAlign = 'center';
+        adHeader.innerHTML = '<script src="https://www.highperformanceformat.com/cf7bd4ee539eda2677efd99eff50a2d2/invoke.js"></script>';
+        header.parentNode.insertBefore(adHeader, header.nextSibling);
+    }
+
+    // 2. Body madhil ad (Main content madhe)
+    const mainContent = document.querySelector('.intro-grid');
+    if (mainContent) {
+        let adBody = document.createElement('div');
+        adBody.className = 'ad-wrapper';
+        adBody.innerHTML = '<div id="container-24405e7671380bdad5f4995cc3ced788"></div>';
+        mainContent.appendChild(adBody);
+    }
+
+    // 3. Footer chya end la mothi ad
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        let adFooter = document.createElement('div');
+        adFooter.style.textAlign = 'center';
+        adFooter.style.padding = '20px';
+        adFooter.innerHTML = '<script src="https://www.highperformanceformat.com/205fb233060fbad43fbc41be95aa1f80/invoke.js"></script>';
+        footer.parentNode.insertBefore(adFooter, footer);
+    }
+
+    // 4. Scripts Load karne
+    const scriptUrls = [
+        "https://pl29771021.effectivecpmnetwork.com/24405e7671380bdad5f4995cc3ced788/invoke.js",
+        "https://pl29771028.effectivecpmnetwork.com/a5/9d/1b/a59d1b609bbaf19d19fd1c124776d780.js",
+        "https://pl29771026.effectivecpmnetwork.com/8d/7f/50/8d7f504587004391580f2b828baca6f8.js"
     ];
 
-    function injectAds() {
-        const bodyChildren = Array.from(document.body.children);
-        adData.forEach(ad => {
-            const randomIndex = Math.floor(Math.random() * bodyChildren.length);
-            const target = bodyChildren[randomIndex];
-
-            if (ad.type === 'script') {
-                let s = document.createElement('script');
-                s.src = ad.src;
-                if(ad.async) s.async = true;
-                if(ad.cf) s.setAttribute('data-cfasync', ad.cf);
-                document.body.appendChild(s);
-            } else if (ad.type === 'html') {
-                let d = document.createElement('div');
-                d.innerHTML = ad.content;
-                document.body.insertBefore(d, target);
-            } else if (ad.type === 'custom') {
-                window.atOptions = { 'key': ad.key, 'format': 'iframe', 'height': 60, 'width': 468, 'params': {} };
-                let s = document.createElement('script');
-                s.src = ad.src;
-                document.body.insertBefore(s, target);
-            }
-        });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectAds);
-    } else {
-        injectAds();
-    }
+    scriptUrls.forEach(url => {
+        let s = document.createElement('script');
+        s.src = url;
+        s.async = true;
+        document.body.appendChild(s);
+    });
 })();
+
 
 </script>
 
